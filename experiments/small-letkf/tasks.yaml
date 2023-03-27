@@ -1,0 +1,647 @@
+# Generate the CICE (ice model) forecast initial conditions; this
+# application is performed using a Singularity image container file.
+app_cice_remapper:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     exclusive: ''
+     time: '19:00'
+
+# Generate the MOM6 (ocean model) forecast initial conditions; this
+# application is performed using a Singularity image container file.
+app_mom6_remapper:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     exclusive: ''
+     time: '19:00'
+
+# Generate the MOM6 (ocean model) forecast initial conditions using an
+# ORAS5 analysis; this application is performed using a Singularity
+# image container file.
+app_oras5_remapper:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     exclusive: ''
+     time: '19:00'
+
+# Archive the forcast cycle /com files to the AWS s3 bucket
+archive_awscom:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
+     
+# Archive the post-processed files to the AWS s3 bucket.
+archive_awspost:
+     ntasks: 1
+     account: gsienkf
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
+
+# Archive the production files (e.g., forecast input files) to the AWS
+# s3 bucket.
+archive_awsprod:
+     ntasks: 1
+     account: gsienkf
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
+
+# Archive the production files (e.g., forecast input files) to the AWS
+# s3 bucket for the respective ensemble members.
+ARCHIVE_AWSPROD_ENS:
+     ntasks: 1
+     account: gsienkf
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
+
+# Archive the necessary UFS-RNR files to the NOAA HPSS.
+archive_noaahpss:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
+
+# Recenter the ensemble perturbations relative to the control
+# analysis.
+atmos_ensperts_recenter:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     partition: hera
+     cpus-per-task: 2
+     ntasks-per-node: 20
+     time: '59:00'
+
+# Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
+# control member.
+atmos_gdas_cntrl_inputs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+     
+# Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
+# respective ensemble members.
+ATMOS_GDAS_ENS_INPUTS:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Collect (GEFS) atmosphere model inputs from the NOAA HPSS.
+atmos_gefs_cntrl_inputs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Compute the UFS FV3 computational grids.
+atmos_grids:
+     account: gsienkf
+     nodes: 6
+     ntasks: 6
+     partition: hera
+     mem: 16G
+     time: '1:59:00'
+
+# Generate the atmosphere model forecast initial conditions
+# for the control member.
+atmos_initconds_cntrl:
+     account: gsienkf
+     nodes: 1
+     ntasks: 36
+     partition: hera
+     time: '9:59'
+
+# Generate the atmosphere model forecast initial conditions for the
+# respective ensemble members.
+ATMOS_INITCONDS_ENS:
+     account: gsienkf
+     nodes: 1
+     ntasks: 36
+     partition: hera
+     time: '59:00'
+     exclusive: ''
+     
+# Execute the background forecast for the control member.
+bkgrd_forecast_cntrl:
+     account: gsienkf
+     nodes: 8
+     ntasks: 208
+     partition: hera
+     exclusive: ''
+     cpus-per-task: 1
+     ntasks-per-node: 26
+     time: '29:00'
+
+# Execute the ensemble member background forecasts.
+BKGRD_FORECAST_ENS:
+     account: gsienkf
+     nodes: 8
+     ntasks: 208
+     partition: hera
+     exclusive: ''
+     cpus-per-task: 1
+     ntasks-per-node: 26
+     time: '29:00'
+
+# Collect CICE control member forecast model inputs from the NOAA
+# HPSS.
+cice_cntrl_inputs_noaahpss:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Clean-up no longer needed UFS-RNR files and cycles.
+cleanup:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Generate Cylc workflow images.
+cylc_graph:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '10:00'
+
+# UFS satellite observation database applications.
+database_satellites:
+     account: gsienkf
+     ntasks: 1
+     partition: hera
+     time: '10:00'
+
+# Archive all log, cylc, and no-scrub path files and remove any
+# remaining, no longer required, files.
+finish:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '25:00'
+
+# Collects GDAS atmosphere observations from the NOAA HPSS.
+gdas_bufr_inputs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Execute the GSI 3DVAR application for the control member.
+gsi_3dvar_cntrl:
+     account: gsienkf
+     nodes: 1
+     ntasks: 20
+     ntasks-per-node: 20
+     partition: hera
+     time: '45:00'
+     exclusive: ''
+
+# Execute the GSI 3DVAR application for an ensemble of members; this
+# is typically used for LETKF and hybrid-gain experiments.
+gsi_3dvar_ens:
+     account: gsienkf
+     nodes: 1
+     ntasks: 20
+     ntasks-per-node: 20
+     partition: hera
+     time: '45:00'
+     exclusive: '' 
+     
+# Generate the GSI conventional observation innovation statistics
+# diagnostics.
+gsi_convdiags:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     time: '10:00'
+     exclusive: ''
+
+# Execute the GSI ENKF (e.g., LETKF) application.
+gsi_enkf:
+     account: gsienkf
+     nodes: 10
+     ntasks: 100
+     partition: hera
+     cpus-per-task: 4
+     ntasks-per-node: 10
+     time: '59:00'
+     exclusive: ''
+     
+# Execute the GSI global_cycle application.
+gsi_globalcycle:
+     account: gsienkf
+     ntasks: 6
+     partition: hera
+     time: '15:00'
+
+# Execute the ensemble member GSI global_cycle applications.
+GSI_GLOBALCYCLE_ENS:
+     account: gsienkf
+     ntasks: 6
+     partition: hera
+     time: '15:00'
+
+# Compute the forward operators for each ensemble member using the
+# GSI.
+GSI_HOX_ENS:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     partition: hera
+     time: '20:00'
+
+# Compute the UFS forward operators for the ensemble mean using the
+# GSI.
+gsi_hox_ensmean:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     partition: hera
+     time: '20:00'
+
+# Compute the hybrid-gain analysis using the GSI applications.
+gsi_hybgain:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     cpus-per-task: 2
+     ntasks-per-node: 20
+     partition: hera
+     time: '19:00'
+
+# UFS GSI observer applications.
+gsi_observer:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     partition: hera
+     time: '40:00'
+     
+# UFS GSI observation verification application.
+gsi_obsverif:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     time: '1:00:00'
+     exclusive: ''
+     
+# Post-process the GSI application output files.
+gsi_post:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     exclusive: ''
+     time: '9:00'
+
+# Define the launcher task; this is required of all UFS-RNR
+# applications.
+launch:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '15:00'
+
+# Collect MOM6 control member forecast model inputs from the NOAA
+# HPSS.
+mom6_cntrl_inputs_noaahpss:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Collect CIMSS ADT derived observations and write TC-vitals formatted
+# files.
+obsprep_atmos_cimssadttcv:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '19:00'
+
+# Update the GDAS/GEFS Atmosphere observation BUFR-formatted file(s).
+obsprep_atmos_bufrupdate:
+     account: gsienkf
+     ntasks: 1
+     cpus-per-task: 2
+     partition: hera
+     nodes: 1
+     mem: 32G
+     time: '59:00'
+     exclusive: ''
+     
+# Atmosphere data-assimilation (JEDI FV3) observation pre-processing.
+obsprep_atmos_ioda:
+     account: gsienkf
+     ntasks: 1
+     cpus-per-task: 2
+     partition: hera
+     time: '59:00'
+
+# Ocean data-assimilation (JEDI SOCA) observation pre-processing.
+obsprep_ocean_ioda:
+     account: gsienkf
+     ntasks: 1
+     cpus-per-task: 2
+     partition: hera
+     time: '59:00'
+
+# UFS control (deterministic) forecast ocean initial condition
+# creation and generation applications.
+ocean_cntrl_initconds:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     partition: hera
+     time: '59:00' 
+
+# Generate the ice and ocean model ensemble members using the SOCA
+# ensemble perturbations application.
+ocean_ens_initconds_socaensperts:
+     account: gsienkf
+     nodes: 5
+     ntasks: 5
+     partition: hera
+     cpus-per-task: 8
+     ntasks-per-node: 1
+     time: '59:00'
+     exclusive: ''
+
+# Execute the ensemble member production forecasts.
+PROD_FORECAST_ENS:
+     account: gsienkf
+     nodes: 8
+     ntasks: 208
+     partition: hera
+     exclusive: ''
+     cpus-per-task: 1
+     ntasks-per-node: 26
+     time: '29:00'
+
+# Execute the SOCA 3DVAR application.
+soca_3dvar:
+     account: gsienkf
+     nodes: 1
+     ntasks: 5
+     cpus-per-task: 2
+     ntasks-per-node: 20
+     partition: hera
+     time: '29:00'
+     exclusive: ''
+
+# Execute the SOCA ensemble member checkpoint_model application.
+SOCA_CHECKPOINT_MODEL_ENS:
+     account: gsienkf
+     nodes: 1
+     ntasks: 1
+     partition: hera
+     exclusive: ''
+     time: '19:00'
+     
+# Generate the SOCA insitu observation innovation statistics
+# diagnostics.
+soca_insitudiags:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     time: '10:00'
+     exclusive: ''
+     
+# Execute the SOCA LETKF observer application.
+soca_letkf_observer:
+     account: gsienkf
+     nodes: 10
+     ntasks: 400
+     ntasks-per-node: 40
+     partition: hera
+     time: '25:00'
+     mem: 32G
+     exclusive: ''
+
+# Execute the SOCA LETKF solver application.
+soca_letkf_solver:
+     account: gsienkf
+     nodes: 30
+     ntasks: 180
+     ntasks-per-node: 6
+     partition: hera
+     mem: 96GB
+     time: '59:00'
+     exclusive: ''
+
+# Post-process the SOCA application output files.
+soca_post:
+     account: gsienkf
+     ntasks: 1
+     nodes: 1
+     mem: 32G
+     partition: hera
+     exclusive: ''
+     time: '59:00'
+
+# Collect CIMSS ADT formatted observation files from the world-wide
+# web.
+staging_fetch_atmoscimssadt:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00' 
+     
+# Collect the atmosphere model initial conditions files for
+# the control member forecast application.
+staging_fetch_atmosfcst_cntrl:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+
+# Collect the ensemble of atmosphere model initial conditions files
+# for the forecast application.
+STAGING_FETCH_ATMOSFCST_ENS:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+
+# Collect the atmosphere GSI application bias-correction coefficient
+# files.
+staging_fetch_atmosgsibcc:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+     
+# Collect the atmosphere observation files for the GSI application.
+staging_fetch_atmosobs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+
+# Collect the atmosphere tropical cyclone (TC) SYNDAT (TC-vitals)
+# observation files for the GSI application.
+staging_fetch_atmostcvsyndat:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+
+# Collect the ice model initial conditions files for the forecast
+# application.
+staging_fetch_icefcst:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+     
+# Collect the ocean model initial conditions files for the forecast
+# application.
+staging_fetch_oceanfcst:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '29:00'
+
+# Collect the ocean observation files for the SOCA application.
+staging_fetch_oceanobs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '19:00'
+
+# Stage the atmosphere model forecast initial conditions on AWS in a
+# s3 bucket.
+staging_store_atmosfcst_cntrl:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '9:00'
+
+# Stage the atmosphere ensemble member forecast initial conditions on
+# AWS in a s3 bucket.
+STAGING_STORE_ATMOSFCST_ENS:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '9:00'
+     
+# Stage the atmosphere observation files on AWS in a s3 bucket.
+staging_store_atmosobs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '1:59:00'
+
+# Create a local tarball file and stage within the specified AWS s3
+# bucket.
+staging_store_awsfix:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '1:59:00'
+
+# Compute the GSI conventional observation statistics and stage the
+# files accordingly.
+staging_store_convdiags:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '5:00'
+
+# Remap an ice analysis variable to a destination ocean grid
+# projection.
+staging_store_iceanalyremap:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '20:00'
+
+# Stage the ice model forecast initial conditions on AWS in a s3
+# bucket.
+staging_store_icefcst:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '9:00'
+
+# Compute the SOCA insitu observation statistics and stage the files
+# accordingly.
+staging_store_insitudiags:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '5:00'
+
+# Stage the ocean model forecast initial conditions on AWS in a s3
+# bucket.
+staging_store_oceanfcst:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '9:00'
+     
+# Remap an ocean analysis variable to a destination ocean grid
+# projection.
+staging_store_ocnanalyremap:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '20:00'
+
+# Stage the local pre-processed SOCA observation files in the
+# respective AWS s3 bucket.
+staging_store_socaobs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '5:00'
+
+# UFS ocean component model input files (e.g., observations) collected
+# from the world-wide web (WWW).
+www_ocean_inputs:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '59:00'
+
+# Collect atmosphere observations from a specified AWS s3 bucket using
+# the UFS fetching applications (ufs_apps).
+UFS_APPS_FETCH_ATMOS_AWSS3:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '20:00'
+
+# Launch the UFS applications (ufs_apps).
+ufs_apps_launch:
+     account: gsienkf
+     ntasks: 1
+     partition: service
+     time: '5:00'
