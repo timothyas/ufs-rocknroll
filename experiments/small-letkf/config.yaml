@@ -27,7 +27,7 @@ CYLCrnr: !ENV ${rocknroll}/experiments/small-letkf/workflow.rc
 # Define the path to the YAML-formatted file containing the UFS-RNR
 # experiment configuration; this typically exists beneath
 # parm/experiments.
-YAMLrnr: !ENV ${HOMErnr}/parm/experiments/ufs-rnr.LETKF.C96L127_1p0.coupled.yaml
+YAMLrnr: !ENV ${rocknroll}/experiments/small-letkf/ufs-rnr.yaml
 
 # Define the top-level directory where all files for the respective
 # UFS-RNR experiment are to be placed that are not to be scrubbed;

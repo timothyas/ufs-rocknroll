@@ -1,0 +1,131 @@
+# $$$ YAML DOCUMENTATION BLOCK
+  
+# UFS-RNR :: parm/experiments/ufs-rnr.LETKF.C96L127_1p0.coupled.yaml
+
+# Email: henry.winterbottom@noaa.gov
+
+# DESCRIPTION:
+
+# This YAML formatted file contains the Unified Forecasting System
+# (UFS) Reforecast and Reanalysis (RNR) global experiment
+# configuration.
+
+#----
+
+# Configuration options for the UFS-RNR experiment.
+ufs_rnr:
+     
+     # Define the UFS-RNR domain configuration; the available options
+     # are:
+
+     # global: global model only (i.e., not nested grids)
+     domain: global
+
+     # Specify whether the coupled UFS system is to be run; if False,
+     # only the atmosphere model will be run (uncoupled) and all other
+     # component model specifications will be ignored.
+     coupled: True
+
+     # Define the UFS-RNR YAML formatted file containing the fix-files
+     # for the forecast application.
+     fix_files: !ENV ${PARMrnr}/ufs_rnr/fix.1p0.yaml
+
+     # Define the atmosphere model configuration file; this is a YAML
+     # formatted file.
+     atmos_config: !ENV ${PARMrnr}/atmos/atmos.C96_L127.coupled.ensemble.yaml
+
+     # Define the YAML-formatted file containing the atmosphere model
+     # inputs for both cold- and warm-start applications to be
+     # collected from the NOAA HPSS.
+     atmos_hpss_inputs: !ENV ${PARMrnr}/atmos/inputs_noaahpss.yaml
+
+     # Define the YAML-formatted file containing atmosphere
+     # application inputs that are archived on the respective UFS-RNR
+     # experiment platform.
+     atmos_local_inputs: !ENV ${PARMrnr}/atmos/inputs_local.RDHPCS-Hera.yaml
+   
+     # Define the ice model configuration file; this is a YAML
+     # formatted file.
+     ice_config: !ENV ${PARMrnr}/ice/ice.yaml
+
+     # Define the YAML-formatted file containing the ice model inputs
+     # for cold-start applications to be collected from the NOAA HPSS.
+     ice_hpss_inputs: !ENV ${PARMrnr}/ice/inputs_noaahpss.yaml      
+
+     # Define the YAML-formatted file containing the ice model inputs
+     # for both cold- and warm-start applications.
+     ice_www_inputs: !ENV ${PARMrnr}/ice/inputs_www.yaml
+
+     # Define the ocean model configuration file; this is a YAML
+     # formatted file.
+     ocean_config: !ENV ${PARMrnr}/ocean/ocean.yaml
+
+     # Define the YAML-formatted file containing the ocean model
+     # inputs for cold-start applications to be collected from the
+     # NOAA HPSS.
+     ocean_hpss_inputs: !ENV ${PARMrnr}/ocean/inputs_noaahpss.yaml
+     
+     # Define the YAML-formatted file containing the ocean model
+     # inputs for both cold- and warm-start applications.
+     ocean_www_inputs: !ENV ${PARMrnr}/ocean/inputs_www.yaml
+
+     # Define the production forecast configuration file; this is a
+     # YAML formatted file.
+     production_config: !ENV ${PARMrnr}/production/production.C96L127.yaml
+
+     # Define the NCEP products suite configuration file; this is a
+     # YAML formatted file.
+     ncepprods_config: !ENV ${PARMrnr}/ncep_products/ncepprods.yaml 
+     
+     # Define the staging application fetch configuration file; this
+     # is a YAML formatted file.
+     fetch_config: !ENV ${PARMrnr}/staging/fetch.gefsv12.RDHPCS-Hera.yaml
+
+     # Define the staging application store configuration file; this
+     # is a YAML formatted file.
+     store_config: !ENV ${PARMrnr}/staging/store.RDHPCS-Hera.yaml
+
+     # Define the YAML-formatted file containing the Amazon Web
+     # Services (AWS) s3 archive information; this includes the s3
+     # bucket name as well as the user's credential keys; NOTE: this
+     # should be a file that is readable ONLY by the user.
+     aws_archive_config: !ENV ${PARMrnr}/archive/user_aws_credentials.yaml
+
+     # Define the YAML-formatted file containing the Amazon Web
+     # Services (AWS) s3 user information; this includes the user
+     # access key and secret access key identifications; NOTE: this
+     # should be a file that is readable ONLY by the user.
+     aws_staging_config: !ENV ${PARMrnr}/staging/user_aws_credentials.NOAA-BDP.read_only.yaml
+
+     # Define the coupler configuration file template (i.e.,
+     # nems.configure); this file is used by the UFS-RNR to determine
+     # the coupling configurations and is required by all UFS-RNR
+     # forecast applications.
+     nems_configure_tmpl: !ENV ${PARMrnr}/ufs_rnr/nems.configure.atmos-ocean-ice
+
+     # Define the computational core/layout configuration file for the
+     # respective experiment forecast model(s).
+     fcst_proc_config: !ENV ${PARMrnr}/ufs_rnr/procs.configure.1p0.coupled.yaml
+
+     # Define the UFS-RNR platform configuration file; this is a
+     # YAML-formatted file containing the supported UFS-RNR platforms
+     # and primarily used for archiving applications.
+     platform_config: !ENV ${PARMrnr}/platform/platform.yaml
+
+#----
+
+# Workflow application archive configurations; this includes AWS s3
+# credentials and NOAA HPSS archive paths.
+archive_config: !ENV ${PARMrnr}/archive/archive_config.yaml
+
+# Workflow Singularity container applications configurations.
+containers: !ENV ${rocknroll}/experiments/small-letkf/containers.yaml
+
+# Workflow data-assimilation configurations.
+data_assimilation: !ENV ${PARMrnr}/experiments/data_assimilation/coupled.LETKF_gsi.LETKF_soca.yaml
+
+# Workflow application database configurations.
+database: !ENV ${PARMrnr}/ufs_rnr/database.yaml
+
+# Workflow executable paths.
+executables: !ENV ${PARMrnr}/ufs_rnr/executables.yaml
