@@ -20,3 +20,17 @@ i.e.,
   took 20 minutes for a 100 member ensemble but times-out at 45 minutes for 5
   members by using at most 20 tasks per node (and therefore 1 node for this
   small setup). It still took too long with 2 nodes.
+
+## The graphs
+
+### Initial
+
+<img src="small-letkf.graph.initial.png" width=1000>
+
+### Cycling
+
+<img src="small-letkf.graph.cycling.png" width=1000>
+
+### Final
+
+<img src="small-letkf.graph.final.png" width=1000>
