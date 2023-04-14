@@ -45,3 +45,7 @@ i.e.,
   Seems very inefficient if I'm interpreting that correctly.
 
 - Are the GSI convdiags only using 3DVar?
+
+### Note:
+need to put the runtime.rc into the `cylc/runtime` directory... this is hard
+coded unfortunately
