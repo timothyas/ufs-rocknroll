@@ -1,0 +1,520 @@
+# Ensemble application settings.
+ensemble:
+
+     # Hybrid gain settings.
+     hybrid_gain:
+
+          # Define the weighting coefficient for the 3DVAR analysis.
+          alpha: 0.25
+
+          # Define the weighting coefficient for the ENKF ensemble
+          # mean analysis.
+          beta: 1.0
+
+#----
+
+# GSI bias-correction coefficient settings.
+gsi_bcc:
+
+     # Specify whether to initialize the first GSI cycle with
+     # bias-correction coefficients that have been set to zero; this
+     # is typically used to spin-up the GSI bias-correction
+     # coefficients to a state consistent with the respective
+     # experiment; if True, no bias-correction coefficients will be
+     # collected and the initial files will be collected from the
+     # paths specified below.
+     zero_bcc: True
+
+     # Specify the paths to the respective GSI bias-correction
+     # coefficient files.
+     gsi_abias: !ENV ${PARMrnr}/gsi/bcc/gdas.abias
+     gsi_abias_air: !ENV ${PARMrnr}/gsi/bcc/gdas.abias_air
+     gsi_abias_pc: !ENV ${PARMrnr}/gsi/bcc/gdas.abias_pc
+
+     # Specify the local file prefix; it is assumed that the
+     # respective string will be appended by the respective GSI
+     # bias-correction coefficient file suffixes defined below.
+     gsi_bcc_prefix: gdas.t%Hz
+
+     # Define the GSI bias-correction coefficient file suffixes; these
+     # will be used to construct the respective GSI bias-correction
+     # coefficient files on the local host.
+     gsi_bcc_suffix:
+          gsi_abias: abias
+          gsi_abias_air: abias_air
+          gsi_abias_pc: abias_pc
+     
+#----
+
+# GSI application general settings.
+gsi_general:
+
+     # Define the path to the calc_analysis.nml template file.
+     calc_analysis_tmpl: !ENV ${PARMrnr}/gsi/calc_analysis.nml.tmpl
+     
+     # Define the path to the calc_increment_ens.nml template file.
+     calc_increment_ens_tmpl: !ENV ${PARMrnr}/gsi/calc_increment_ens.nml.tmpl
+
+     # Define the path to the chgres_nc_gauss.nml template file.
+     chgres_nc_gauss_tmpl: !ENV ${PARMrnr}/gsi/chgres_nc_gauss.nml.tmpl
+
+     # Define the logical variable specifying whether to apply
+     # correlated observation error capabilities within the GSI; if
+     # True, the corr_obserr_fixed_file_path attribute must be
+     # defined; this is a boolean valued variable.
+     corr_obserr: False
+
+     # Defube the path to the YAML-formatted file containing the fixed
+     # files for the correlated observation error capabilities.
+     corr_obserr_fixed_file_path: !ENV ${PARMrnr}/gsi/fix_gsi_corr_obserr.yaml
+     
+     # Define the path to the CRTM coefficients for the GSI
+     # application.
+     crtm_coeffs_file_path: !ENV ${HOMErnr}/fix/gsi/crtm
+
+     # Define the path to the fixed files for the GSI application.
+     fixed_file_path: !ENV ${HOMErnr}/fix/gsi
+
+     # Define the path to the gsiparm.anl template file for GSI
+     # analysis applications.
+     gsiparm_anl_tmpl: !ENV ${PARMrnr}/gsi/gsiparm.anl.tmpl
+
+     # Define the path to the gsiparm.anl template file for GSI
+     # observer applications.
+     gsiparm_observer_tmpl: !ENV ${PARMrnr}/gsi/gsiparm.observer.tmpl
+
+     # Define the path to the external file containing the observation
+     # inputs information (OBS_INPUT) for the GSI application.
+     gsi_obsinput: !ENV ${PARMrnr}/gsi/gsi.obs_input
+
+     # Define whether to concatenate the GSI ncdiag files in parallel;
+     # if False, serial concatenation will be assumed.
+     ncdiag_parallel: False
+     
+#----
+
+# GSI 3-dimensional variational (3DVAR) data-assimilation application
+# settings.
+gsi_3dvar:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files; this is a boolean valued
+     # variable.
+     scrub: True
+     
+     # Define the path to the YAML-formatted file containing the GSI
+     # fixed (e.g., static) files for the GSI application.
+     fixed_file_yaml: !ENV ${PARMrnr}/gsi/fix_gsi_3dvar.yaml
+
+     # Define the background forecast hours to be used for the GSI
+     # ensemble member forward operator calculations.
+     bkgrd_fhrs: 3, 6, 9
+
+     # Specify whether to assimilate satellite observations; this is a
+     # boolean valued variable.
+     assim_sat_obs: True
+
+     # Specify whether to assimilate conventional-type observations;
+     # this is a boolean valued variable.
+     assim_conv_obs: True
+
+     # Specify whether to assimilate tropical-cyclone (TC)
+     # observations (e.g., tc-vitals); this is a boolean valued
+     # variable.
+     assim_tc_obs: True
+
+     # Define the path to the YAML-formatted file containing the GSI
+     # products.
+     products_yaml: !ENV ${PARMrnr}/gsi/products/gsi_3dvar.yaml
+
+     # Define the GSI 3DVAR application namelist parameter settings.
+     gsi_nml_params:
+
+          # Define the UFS 64-level (L64) namelist/configuration
+          # parameters.
+          L64:
+               
+               miter: 1
+               niter(1): 150
+               niter(2): 0
+               tlnmc_option: 1
+               nstrong: 1
+               nvmodes_keep: 8
+               period_max: 6.0
+               period_width: 1.5
+               lupdqc: False
+               aircraft_t_bc: True
+               lread_obs_save: True
+               lobsdiag_forenkf: True
+               upd_aircraft: True
+               ndeg: 4
+               nsig_ext: 12
+               gpstop: 50
+               nlayers_63: 3
+               nlayers_64: 6
+
+          # Define the UFS 127-level (L127) namelist/configuration
+          # parameters.
+          L127:
+
+               miter: 1
+               niter(1): 150
+               niter(2): 0
+               tlnmc_option: 1
+               nstrong: 1
+               nvmodes_keep: 8
+               period_max: 6.0
+               period_width: 1.5
+               lupdqc: False
+               aircraft_t_bc: True
+               lread_obs_save: True
+               lobsdiag_forenkf: True
+               upd_aircraft: True
+               ndeg: 4
+               nsig_ext: 56
+               gpstop: 55
+               nlayers_63: 1
+               nlayers_64: 1
+
+     # Specify whether to have the GSI compute the increment using the
+     # GSI 3DVAR analysis and the first-guess (background; True) or to
+     # compute the analysis using the increment produced by the GSI
+     # 3DVAR application (False):
+     compute_increment: True
+
+     # Specify whether to define the GSI conventional observation
+     # information file (e.g., convinfo) from a historical/archived
+     # convinfo file; this will override any convinfo-type file in the
+     # specified fixed files (see fixed_file_yaml, above); this is a
+     # boolean valued variable.
+     use_database_convinfo: True
+
+     # Specify whether to define the GSI ozone observation information
+     # file (e.g., ozinfo) from a historical/archived ozinfo file;
+     # this will override any ozinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_ozinfo: True
+
+     # Specify whether to define the GSI satellite information file
+     # (e.g., satinfo) from a historical/archived satinfo file snippet
+     # specific to the respective satellites; this will override any
+     # satinfo-type file in the specified fixed files (see
+     # fixed_file_yaml, above); this is a boolean valued variable.
+     use_database_satinfo: True
+
+#----
+
+# GSI global_cycle application general settings.
+gsi_globalcycle:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files; this is a boolean valued
+     # variable.
+     scrub: True
+
+     # Specify whether to update sea-ice analysis for coupled-model
+     # applications; NOTE: the sea-ice analysis will always be updated
+     # for uncoupled (e.g., atmosphere-only) simulations.
+     update_seaice: False
+
+     # Define the path to the global_cycle namelist/input file
+     # templates.
+     nml_templates:
+
+          # Define the path to the global_cycle fort.35 template file.
+          fort.35: !ENV ${PARMrnr}/gsi/global_cycle.fort.35.tmpl
+
+          # Define the path to the global_cycle fort.36 template file.
+          fort.36: !ENV ${PARMrnr}/gsi/global_cycle.fort.36.tmpl
+
+          # Define the path to the global_cycle fort.37 template file.
+          fort.37: !ENV ${PARMrnr}/gsi/global_cycle.fort.37.tmpl
+
+     # Define the path to the fixed files for the GSI global_cycle
+     # application.
+     fixed_file_path: !ENV ${HOMErnr}/fix/fv3/fix_am
+          
+     # Define the path to the YAML-formatted file containing the GSI
+     # global_cycle fixed (e.g., static) files for the GSI
+     # global_cycle application.
+     fixed_file_yaml: !ENV ${PARMrnr}/gsi/fix_gsi_globalcycle.yaml
+
+     # Define the path to the YAML-formatted file containing the GSI
+     # products.
+     products_yaml: !ENV ${PARMrnr}/gsi/products/gsi_globalcycle.yaml
+
+     # Define the search string for the sea-ice analysis.
+     ice_analysis: gdas.t%Hz.engicegrb
+
+     # Define the search string for the sea-surface temperature
+     # analysis.
+     sst_analysis: gdas.t%Hz.sstgrb
+
+     # Define the search string for the snow-analysis.
+     snow_analysis: gdas.t%Hz.snogrb_t574 
+              
+#----
+
+# GSI ensemble member forward operator (e.g., H(x)) calculation
+# settings.
+gsi_hox:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files; this is a boolean valued
+     # variable.
+     scrub: True
+     
+     # Define the path to the YAML-formatted file containing the GSI
+     # fixed (e.g., static) files for the GSI application.
+     fixed_file_yaml: !ENV ${PARMrnr}/gsi/fix_gsi_hox.yaml
+
+     # Define the background forecast hours to be used for the GSI
+     # ensemble member forward operator calculations.
+     bkgrd_fhrs: 3, 6, 9
+
+     # Specify whether to assimilate satellite observations; this is a
+     # boolean valued variable.
+     assim_sat_obs: True
+
+     # Specify whether to assimilate conventional-type observations;
+     # this is a boolean valued variable.
+     assim_conv_obs: True
+
+     # Specify whether to assimilate tropical-cyclone (TC)
+     # observations (e.g., tc-vitals); this is a boolean valued
+     # variable.
+     assim_tc_obs: True
+
+     # Define the path to the YAML-formatted file containing the GSI
+     # products.
+     products_yaml: !ENV ${PARMrnr}/gsi/products/gsi_hox.yaml
+
+     # Define the GSI H(x) application namelist parameter settings.
+     gsi_nml_params:
+
+          # Define the UFS 64-level (L64) namelist/configuration
+          # parameters.
+          L64:
+          
+               lupdqc: False
+               aircraft_t_bc: True
+               upd_aircraft: True
+
+          # Define the UFS 127-level (L127) namelist/configuration
+          # parameters.
+          L127:
+          
+               lupdqc: False
+               aircraft_t_bc: True
+               upd_aircraft: True
+
+     # Specify whether to define the GSI conventional observation
+     # information file (e.g., convinfo) from a pre-compiled SQLite3
+     # database file; this will override any convinfo-type file in the
+     # specified fixed files (see fixed_file_yaml, above); this is a
+     # boolean valued variable.
+     use_database_convinfo: True
+
+     # Specify whether to define the GSI ozone observation information
+     # file (e.g., ozinfo) from a pre-compiled SQLite3 database file;
+     # this will override any ozinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_ozinfo: True
+
+     # Specify whether to define the GSI satellite information file
+     # (e.g., satinfo) from a pre-compiled SQLite3 database file; this
+     # will override any satinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_satinfo: True
+     
+#----
+
+# GSI-based hybrid gain application settings.
+gsi_hybgain:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files; this is a boolean valued
+     # variable.
+     scrub: True
+
+     # Define the background forecast hours to be used for the GSI
+     # ensemble member forward operator calculations.
+     bkgrd_fhrs: 3, 6, 9
+     
+     # Define the path to the YAML-formatted file containing the GSI
+     # products.
+     products_yaml: !ENV ${PARMrnr}/gsi/products/gsi_hybgain.yaml
+
+#----
+
+# GSI ncdiag (observation fits) contentation settings.
+gsi_ncdiag:
+
+     # Define the maximum number of observation types to be
+     # concatenated simultaneously.
+     max_concat: 5
+
+#----
+
+# GSI observation file settings.
+gsi_observations:
+
+     # Satellite observation platforms and the GSI observation file
+     # key and value pairs.
+     satellite:
+
+          1bamua.tm00.bufr_d: amsuabufr
+          1bamub.tm00.bufr_d: amsubbufr
+          1bhrs2.tm00.bufr_d: hirs2bufr
+          1bhrs3.tm00.bufr_d: hirs3bufr
+          1bhrs4.tm00.bufr_d: hirs4bufr
+          1bmsu.tm00.bufr_d: msubufr
+          1bssu.tm00.bufr_d: ssubufr
+          1bmhs.tm00.bufr_d: mhsbufr
+          ahicsr.tm00.bufr_d: ahibufr
+          airsev.tm00.bufr_d: airsbufr
+          amuadb.tm00.bufr_d: amsuabufr_db
+          amsr2.tm00.bufr_d: amsr2bufr
+          amsre.tm00.bufr_d: amsrebufr
+          atms.tm00.bufr_d: atmsbufr
+          atmsdb.tm00.bufr_d: atmsbufr_db
+          avcsam.tm00.bufr_d: avhambufr
+          avcspm.tm00.bufr_d: avhpmbufr 
+          cris.tm00.bufr_d: crisbufr          
+          crisdb.tm00.bufr_d: crisbufr_db
+          crisf4.tm00.bufr_d: crisfsbufr
+          crisf4db.tm00.bufr_d: crisfsbufr_db
+          escris.tm00.bufr_d: crisbufrears
+          escrisf4.tm00.bufr_d: crisfsbufrears
+          esamua.tm00.bufr_d: amsuabufrears
+          esamub.tm00.bufr_d: amsubbufrears
+          esatms.tm00.bufr_d: atmsbufrears          
+          eshrs3.tm00.bufr_d: hirs3bufrears
+          esiasi.tm00.bufr_d: iasibufrears
+          esmhs.tm00.bufr_d: mhsbufrears
+          geoimr.tm00.bufr_d: gimgrbufr
+          goesnd.tm00.bufr_d: gsnd1bufr
+          gm1cr.tm00.bufr_d: gmibufr
+          gome.tm00.bufr_d: gomebufr
+          gsrcsr.tm00.bufr_d: abibufr
+          hrs3db.tm00.bufr_d: hirs3bufr_db
+          iasidb.tm00.bufr_d: iasibufr_db
+          mhsdb.tm00.bufr_d: mhsbufr_db          
+          mls.tm00.bufr_d: mlsbufr
+          mtiasi.tm00.bufr_d: iasibufr
+          omi.tm00.bufr_d: omibufr
+          ompsn8.tm00.bufr_d: ompsnpbufr
+          ompst8.tm00.bufr_d: ompstcbufr
+          osbuv8.tm00.bufr_d: sbuvbufr
+          sevcsr.tm00.bufr_d: seviribufr
+          spssmi.tm00.bufr_d: ssmirrbufr
+          sptrmm.tm00.bufr_d: tmirrbufr
+          ssmit.tm00.bufr_d: ssmitbufr
+          ssmis.tm00.bufr_d: ssmisbufr
+          ssmit.tm00.bufr_d: ssmitbufr
+
+     # Conventional type observations and the GSI observation file key
+     # and value pairs.
+     conventional:
+
+          gpsro.tm00.bufr_d: gpsrobufr
+          nsstbufr.tm00.bufr_d: nsstbufr
+          oscatw.tm00.bufr_d: oscatbufr
+          prepbufr.nr: prepbufr
+          prepbufr.acft_profiles.nr: prepbufr_profl
+          rapidscatw.tm00.bufr_d: rapidscatbufr
+          satwnd.tm00.bufr_d: satwndbufr
+
+     # Tropical cyclone observations and the GSI file key and value
+     # pairs.
+     tc:
+          syndata.tcvitals: tcvitl
+
+#----
+
+# GSI observer application settings; this task is the pre-processing
+# step that generates netcdf-formatted observation diagnostics (e.g.,
+# diag) files to be used by the JEDI IODA-converters to create
+# appropriate observation inputs for the respective JEDI applications.
+gsi_observer:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files; this is a boolean valued
+     # variable.
+     scrub: True
+     
+     # Define the path to the YAML-formatted file containing the GSI
+     # fixed (e.g., static) files for the GSI application.
+     fixed_file_yaml: !ENV ${PARMrnr}/gsi/fix_gsi_observer.yaml
+
+     # Define the background forecast hours to be used for the GSI
+     # ensemble member forward operator calculations.
+     bkgrd_fhrs: 3, 6, 9
+
+     # Specify whether to assimilate satellite observations; this is a
+     # boolean valued variable.
+     assim_sat_obs: True
+
+     # Specify whether to assimilate conventional-type observations;
+     # this is a boolean valued variable.
+     assim_conv_obs: True
+
+     # Specify whether to assimilate tropical-cyclone (TC)
+     # observations (e.g., tc-vitals); this is a boolean valued
+     # variable.
+     assim_tc_obs: True
+
+     # Define the path to the YAML-formatted file containing the GSI
+     # products.
+     products_yaml: !ENV ${PARMrnr}/gsi/products/gsi_observer.yaml    
+
+     # Define the GSI observer application namelist parameter
+     # settings.
+     gsi_nml_params:
+          
+          # Define the UFS 64-level (L64) namelist/configuration
+          # parameters.
+          L64:
+          
+               niter_no_qc(1): 25
+               niter_no_qc(2): 0
+               aircraft_t_bc: True
+               upd_aircraft: True
+
+          # Define the UFS 64-level (L127) namelist/configuration
+          # parameters.
+          L127:
+
+               niter_no_qc(1): 25
+               niter_no_qc(2): 0
+               aircraft_t_bc: True
+               upd_aircraft: True
+
+     # Specify whether to define the GSI conventional observation
+     # information file (e.g., convinfo) from a pre-compiled SQLite3
+     # database file; this will override any convinfo-type file in the
+     # specified fixed files (see fixed_file_yaml, above); this is a
+     # boolean valued variable.
+     use_database_convinfo: False
+
+     # Specify whether to define the GSI ozone observation information
+     # file (e.g., ozinfo) from a pre-compiled SQLite3 database file;
+     # this will override any ozinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_ozinfo: False
+
+     # Specify whether to define the GSI satellite information file
+     # (e.g., satinfo) from a pre-compiled SQLite3 database file; this
+     # will override any satinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_satinfo: False

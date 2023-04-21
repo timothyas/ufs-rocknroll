@@ -1,0 +1,132 @@
+# Configuration options for the data-assimilation applications.
+data_assimilation:
+
+     # Define the forecast duration override; this allows background
+     # forecasts to run beyond the standard duration as defined by the
+     # cycling interval and the width of the data- assimilation
+     # window; this value must not be less than the standard duration
+     # (typically 32400 seconds, 9.0-hours) and if so, the forecast
+     # duration will default to that deterimined by the respective
+     # data-assimilation application.
+     fcst_length_seconds: 43200
+
+     # Atmosphere model data-assimilation settings:
+     atmos:
+     
+          # Data assimilation options:
+
+          # 0: No data-assimilation; the atmosphere model production
+          #    forecast is initialized (e.g., cold-started) from a set
+          #    of initial conditions; in this instance, the UFS-RNR
+          #    background forecast application and the respective
+          #    atmosphere model data-assimilation applications should
+          #    not be part of the user workflow.
+
+          # 1: GSI-based 3DVAR.
+
+          # 2: GSI-based hybrid-gain; GSI 3DVAR using the ensemble
+          #    mean computed from the respective ensemble members and
+          #    GSI ENKF; the ENKF analysis ensemble is re-centered
+          #    relative to the GSI-based hybrid-gain solution and
+          #    incremental update analysis (IAU) is applied for each
+          #    ensemble member at the interval specified within the
+          #    GSI configuration file (see gsi_config, below); this is
+          #    a not a dual-resolution application.
+               
+          # 3: GSI-based hybrid-gain; GSI 3DVAR and GSI ENKF; the ENKF
+          #    analysis ensemble is re-centered relative to the
+          #    GSI-based hybrid-gain solution and incremental update
+          #    analysis (IAU) is applied for each ensemble member at
+          #    the interval specified within the GSI configuration
+          #    file (see gsi_config, below); this application supports
+          #    dual-resolution capabilities.
+          da_option: 2
+
+          # Define the ENKF configuration file; this is a YAML
+          # formatted file.
+          enkf_config: !ENV ${PARMrnr}/gsi/enkf.C96.yaml
+     
+          # Define the GSI configuration file; this is a YAML
+          # formatted file.
+          gsi_config: !ENV ${rocknroll}/experiments/quick-hero-800/gsi.yaml
+
+          # Define the GSI post-processing information file; this is a
+          # YAML formatted file.
+          gsi_post: !ENV ${PARMrnr}/gsi/gsi_post.yaml
+
+     # Ocean model data-assimilation settings:
+     ocean:
+
+          # 0: No data-assimilation; the ice and ocean model
+          #    production forecast is initialized (e.g., cold-started)
+          #    from a set of initial conditions; in this instance, the
+          #    UFS-RNR background forecast application and the
+          #    respective ice and ocean model data-assimilation
+          #    applications should not be part of the user workflow.
+
+          # Data assimilation options:
+
+          # 1: JEDI SOCA 3DVAR.
+
+          # 2: JEDI SOCA LETKF.
+          da_option: 2
+          
+          # Define the SOCA configuration file; this is a YAML
+          # formatted file.
+          soca_config: !ENV ${PARMrnr}/jedi/soca.yaml
+
+          # Define the SOCA post-processing information file; this is
+          # a YAML formatted file.
+          soca_post: !ENV ${PARMrnr}/jedi/soca/soca_post.yaml
+
+#----
+
+# Define the cycling interval for the UFS-RNR; this is the frequency,
+# for cycling applications, for which forecasts will be launched from
+# a previous forecast cycle restart file(s); units are seconds.
+cycling_interval: 21600
+
+# Define the atmosphere forecast model (e.g., data-assimilation)
+# interval; for data-assimilation applications, the allowable
+# observations, relative to the analysis time, are 0.5 x
+# atmos_analysis_interval; for example for a value of 21600 seconds,
+# the allowable observations would be within +/- 10800 seconds
+# relative to the analysis time; units are seconds.
+atmos_analysis_interval: 21600
+
+# Define the times at which to update the atmosphere model state; the
+# values are relative to 0000 UTC for each forecast date; for example,
+# data-assimilation to be performed at 1200 UTC each day would
+# correspond to a value of 43200 seconds (12 hours x 3600 seconds =
+# 43200 seconds); comma de-limited; units are seconds.
+atmos_analysis_time: 0, 21600, 43200, 64800, 86400
+
+# Define the ice forecast model (e.g., data-assimilation) interval;
+# for data-assimilation applications, the allowable observations,
+# relative to the analysis time, are 0.5 x ice_analysis_interval; for
+# example for a value of 21600 seconds, the allowable observations
+# would be within +/- 10800 seconds relative to the analysis time;
+# units are seconds.
+ice_analysis_interval: 86400
+
+# Define the times at which to update the ice model state; the values
+# are relative to 0000 UTC for each forecast date; for example,
+# data-assimilation to be performed at 1200 UTC each day would
+# correspond to a value of 43200 seconds (12 hours x 3600 seconds =
+# 43200 seconds); comma de-limited; units are seconds.
+ice_analysis_time: 43200
+
+# Define the ocean forecast model (e.g., data-assimilation) interval;
+# for data-assimilation applications, the allowable observations,
+# relative to the analysis time, are 0.5 x ocean_analysis_interval;
+# for example for a value of 21600 seconds, the allowable observations
+# would be within +/- 10800 seconds relative to the analysis time;
+# units are seconds.
+ocean_analysis_interval: 86400
+
+# Define the times at which to update the ocean model state; the
+# values are relative to 0000 UTC for each forecast date; for example,
+# data-assimilation to be performed at 1200 UTC each day would
+# correspond to a value of 43200 seconds (12 hours x 3600 seconds =
+# 43200 seconds); comma de-limited; units are seconds.
+ocean_analysis_time: 43200
