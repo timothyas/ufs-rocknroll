@@ -257,13 +257,15 @@ gsi_convdiags:
      exclusive: ''
 
 # Execute the GSI ENKF (e.g., LETKF) application.
+# Recommendation from Jeff: 1 task per node, set OMP_NUM_THREADS to number of cores
+# OMP_NUM_THREADS is set in runtime.rc manually
 gsi_enkf:
      account: gsienkf
-     nodes: 10
-     ntasks: 100
+     nodes: 80
+     ntasks: 80
      partition: hera
-     cpus-per-task: 4
-     ntasks-per-node: 10
+     ntasks-per-node: 1
+     cpus-per-task: 40
      time: '59:00'
      exclusive: ''
      
