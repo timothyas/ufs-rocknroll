@@ -1,0 +1,40 @@
+ --- Coordinates --- 
+lon
+    units            : degrees_east
+
+lat
+    units            : degrees_north
+
+lev
+
+ilev
+
+
+ --- Data Variables --- 
+hyai
+    dims             : ('ilev',)
+
+hybi
+    dims             : ('ilev',)
+
+delz_inc
+    dims             : ('lev', 'lat', 'lon')
+
+delp_inc
+    dims             : ('lev', 'lat', 'lon')
+
+o3mr_inc
+    dims             : ('lev', 'lat', 'lon')
+
+sphum_inc
+    dims             : ('lev', 'lat', 'lon')
+
+T_inc
+    dims             : ('lev', 'lat', 'lon')
+
+u_inc
+    dims             : ('lev', 'lat', 'lon')
+
+v_inc
+    dims             : ('lev', 'lat', 'lon')
+

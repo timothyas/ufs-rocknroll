@@ -1,0 +1,18 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+nj
+    dims             : ()
+
+ni
+    dims             : ()
+
+iEdit
+    dims             : ('nEdits',)
+
+jEdit
+    dims             : ('nEdits',)
+
+zEdit
+    dims             : ('nEdits',)
+

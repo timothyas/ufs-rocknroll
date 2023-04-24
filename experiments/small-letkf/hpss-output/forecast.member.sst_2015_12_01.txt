@@ -1,0 +1,60 @@
+ --- Coordinates --- 
+xh
+    domain_decomposition : [  1 360   1 360]
+    units            : degrees_east
+    long_name        : h point nominal longitude
+    axis             : X
+
+yh
+    domain_decomposition : [  1 320   1 320]
+    units            : degrees_north
+    long_name        : h point nominal latitude
+    axis             : Y
+
+time
+    long_name        : time
+    axis             : T
+    calendar_type    : JULIAN
+    bounds           : time_bnds
+
+nv
+    long_name        : vertex number
+
+
+ --- Data Variables --- 
+geolon
+    dims             : ('yh', 'xh')
+    units            : degrees_east
+    long_name        : Longitude of tracer (T) points
+    cell_methods     : time: point
+
+geolat
+    dims             : ('yh', 'xh')
+    units            : degrees_north
+    long_name        : Latitude of tracer (T) points
+    cell_methods     : time: point
+
+sst
+    dims             : ('time', 'yh', 'xh')
+    units            : degC
+    long_name        : Sea Surface Temperature
+    cell_methods     : area:mean yh:mean xh:mean time: mean
+    time_avg_info    : average_T1,average_T2,average_DT
+
+average_T1
+    dims             : ('time',)
+    long_name        : Start time for average period
+
+average_T2
+    dims             : ('time',)
+    long_name        : End time for average period
+
+average_DT
+    dims             : ('time',)
+    long_name        : Length of average period
+
+time_bnds
+    dims             : ('time', 'nv')
+    long_name        : time axis boundaries
+    calendar         : julian
+

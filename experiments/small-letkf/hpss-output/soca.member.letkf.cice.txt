@@ -1,0 +1,162 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+uvel
+    dims             : ('nj', 'ni')
+
+vvel
+    dims             : ('nj', 'ni')
+
+coszen
+    dims             : ('nj', 'ni')
+
+scale_factor
+    dims             : ('nj', 'ni')
+
+swvdr
+    dims             : ('nj', 'ni')
+
+swvdf
+    dims             : ('nj', 'ni')
+
+swidr
+    dims             : ('nj', 'ni')
+
+swidf
+    dims             : ('nj', 'ni')
+
+strocnxT
+    dims             : ('nj', 'ni')
+
+strocnyT
+    dims             : ('nj', 'ni')
+
+stressp_1
+    dims             : ('nj', 'ni')
+
+stressp_2
+    dims             : ('nj', 'ni')
+
+stressp_3
+    dims             : ('nj', 'ni')
+
+stressp_4
+    dims             : ('nj', 'ni')
+
+stressm_1
+    dims             : ('nj', 'ni')
+
+stressm_2
+    dims             : ('nj', 'ni')
+
+stressm_3
+    dims             : ('nj', 'ni')
+
+stressm_4
+    dims             : ('nj', 'ni')
+
+stress12_1
+    dims             : ('nj', 'ni')
+
+stress12_2
+    dims             : ('nj', 'ni')
+
+stress12_3
+    dims             : ('nj', 'ni')
+
+stress12_4
+    dims             : ('nj', 'ni')
+
+iceumask
+    dims             : ('nj', 'ni')
+
+frz_onset
+    dims             : ('nj', 'ni')
+
+fsnow
+    dims             : ('nj', 'ni')
+
+aicen
+    dims             : ('ncat', 'nj', 'ni')
+
+vicen
+    dims             : ('ncat', 'nj', 'ni')
+
+vsnon
+    dims             : ('ncat', 'nj', 'ni')
+
+Tsfcn
+    dims             : ('ncat', 'nj', 'ni')
+
+iage
+    dims             : ('ncat', 'nj', 'ni')
+
+FY
+    dims             : ('ncat', 'nj', 'ni')
+
+alvl
+    dims             : ('ncat', 'nj', 'ni')
+
+vlvl
+    dims             : ('ncat', 'nj', 'ni')
+
+apnd
+    dims             : ('ncat', 'nj', 'ni')
+
+hpnd
+    dims             : ('ncat', 'nj', 'ni')
+
+ipnd
+    dims             : ('ncat', 'nj', 'ni')
+
+dhs
+    dims             : ('ncat', 'nj', 'ni')
+
+ffrac
+    dims             : ('ncat', 'nj', 'ni')
+
+sice001
+    dims             : ('ncat', 'nj', 'ni')
+
+qice001
+    dims             : ('ncat', 'nj', 'ni')
+
+sice002
+    dims             : ('ncat', 'nj', 'ni')
+
+qice002
+    dims             : ('ncat', 'nj', 'ni')
+
+sice003
+    dims             : ('ncat', 'nj', 'ni')
+
+qice003
+    dims             : ('ncat', 'nj', 'ni')
+
+sice004
+    dims             : ('ncat', 'nj', 'ni')
+
+qice004
+    dims             : ('ncat', 'nj', 'ni')
+
+sice005
+    dims             : ('ncat', 'nj', 'ni')
+
+qice005
+    dims             : ('ncat', 'nj', 'ni')
+
+sice006
+    dims             : ('ncat', 'nj', 'ni')
+
+qice006
+    dims             : ('ncat', 'nj', 'ni')
+
+sice007
+    dims             : ('ncat', 'nj', 'ni')
+
+qice007
+    dims             : ('ncat', 'nj', 'ni')
+
+qsno001
+    dims             : ('ncat', 'nj', 'ni')
+

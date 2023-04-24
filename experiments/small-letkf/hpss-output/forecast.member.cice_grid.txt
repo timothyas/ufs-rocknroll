@@ -1,0 +1,33 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+ulon
+    dims             : ('nj', 'ni')
+    units            : radians
+    long_name        : Longitude of corner (Bu) points
+
+ulat
+    dims             : ('nj', 'ni')
+    units            : radians
+    long_name        : Latitude of corner (Bu) points
+
+hte
+    dims             : ('nj', 'ni')
+    units            : cm
+    long_name        : Distance between corner (Bu) points, east face
+
+htn
+    dims             : ('nj', 'ni')
+    units            : cm
+    long_name        : Distance between corner (Bu) points, north face
+
+angle
+    dims             : ('nj', 'ni')
+    units            : radians
+    long_name        : Angle at corner (Bu) points
+
+kmt
+    dims             : ('nj', 'ni')
+    units            : none
+    long_name        : ocean fraction at T-cell centers
+

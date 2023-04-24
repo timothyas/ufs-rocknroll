@@ -1,0 +1,68 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+icec_ssmi_emc
+    dims             : ('Time',)
+    obstype          : icec_ssmi_emc
+    nobs             : 945783.0
+
+icefb_cryosat_esa_l2
+    dims             : ('Time',)
+    obstype          : icefb_cryosat_esa_l2
+    nobs             : 153017.0
+
+profile_wod_salinity
+    dims             : ('Time',)
+    obstype          : profile_wod_salinity
+    nobs             : 26878.0
+
+profile_wod_temperature
+    dims             : ('Time',)
+    obstype          : profile_wod_temperature
+    nobs             : 26878.0
+
+rads_adt_c2
+    dims             : ('Time',)
+    obstype          : rads_adt_c2
+    nobs             : 46049.0
+
+rads_adt_j2
+    dims             : ('Time',)
+    obstype          : rads_adt_j2
+    nobs             : 46416.0
+
+rads_adt_sa
+    dims             : ('Time',)
+    obstype          : rads_adt_sa
+    nobs             : 42681.0
+
+smap_jpl
+    dims             : ('Time',)
+    obstype          : sss_smap_jpl_L2
+    nobs             : 475424.0
+
+sss_smap_jpl_L2
+    dims             : ('Time',)
+    obstype          : sss_smap_jpl_L2
+    nobs             : 475424.0
+
+sss_smos_esa_L2
+    dims             : ('Time',)
+    obstype          : sss_smos_esa_L2
+    nobs             : 818098.0
+
+sst_avhrr19
+    dims             : ('Time',)
+    obstype          : sst_avhrr19_l3u_nesdis
+    nobs             : 1649293.0
+
+sst_avhrr19_l3u_nesdis
+    dims             : ('Time',)
+    obstype          : sst_avhrr19_l3u_nesdis
+    nobs             : 1649293.0
+
+sst_avhrrmta_l3u_nesdis
+    dims             : ('Time',)
+    obstype          : sst_avhrrmta_l3u_nesdis
+    nobs             : 1763660.0
+

@@ -1,0 +1,644 @@
+ --- Coordinates --- 
+plevs
+
+
+ --- Data Variables --- 
+uv_asm_220_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_220_0000_count
+    dims             : ('plevs',)
+
+uv_asm_220_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_221_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_221_0000_count
+    dims             : ('plevs',)
+
+uv_asm_221_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_223_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_223_0000_count
+    dims             : ('plevs',)
+
+uv_asm_223_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_224_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_224_0000_count
+    dims             : ('plevs',)
+
+uv_asm_224_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_229_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_229_0000_count
+    dims             : ('plevs',)
+
+uv_asm_229_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_230_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_230_0000_count
+    dims             : ('plevs',)
+
+uv_asm_230_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_231_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_231_0000_count
+    dims             : ('plevs',)
+
+uv_asm_231_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_233_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_233_0000_count
+    dims             : ('plevs',)
+
+uv_asm_233_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_243_0057_bias
+    dims             : ('plevs',)
+
+uv_asm_243_0057_count
+    dims             : ('plevs',)
+
+uv_asm_243_0057_rms
+    dims             : ('plevs',)
+
+uv_asm_244_0003_bias
+    dims             : ('plevs',)
+
+uv_asm_244_0003_count
+    dims             : ('plevs',)
+
+uv_asm_244_0003_rms
+    dims             : ('plevs',)
+
+uv_asm_244_0004_bias
+    dims             : ('plevs',)
+
+uv_asm_244_0004_count
+    dims             : ('plevs',)
+
+uv_asm_244_0004_rms
+    dims             : ('plevs',)
+
+uv_asm_244_0206_bias
+    dims             : ('plevs',)
+
+uv_asm_244_0206_count
+    dims             : ('plevs',)
+
+uv_asm_244_0206_rms
+    dims             : ('plevs',)
+
+uv_asm_244_0209_bias
+    dims             : ('plevs',)
+
+uv_asm_244_0209_count
+    dims             : ('plevs',)
+
+uv_asm_244_0209_rms
+    dims             : ('plevs',)
+
+uv_asm_244_0223_bias
+    dims             : ('plevs',)
+
+uv_asm_244_0223_count
+    dims             : ('plevs',)
+
+uv_asm_244_0223_rms
+    dims             : ('plevs',)
+
+uv_asm_245_0257_bias
+    dims             : ('plevs',)
+
+uv_asm_245_0257_count
+    dims             : ('plevs',)
+
+uv_asm_245_0257_rms
+    dims             : ('plevs',)
+
+uv_asm_245_0259_bias
+    dims             : ('plevs',)
+
+uv_asm_245_0259_count
+    dims             : ('plevs',)
+
+uv_asm_245_0259_rms
+    dims             : ('plevs',)
+
+uv_asm_246_0257_bias
+    dims             : ('plevs',)
+
+uv_asm_246_0257_count
+    dims             : ('plevs',)
+
+uv_asm_246_0257_rms
+    dims             : ('plevs',)
+
+uv_asm_246_0259_bias
+    dims             : ('plevs',)
+
+uv_asm_246_0259_count
+    dims             : ('plevs',)
+
+uv_asm_246_0259_rms
+    dims             : ('plevs',)
+
+uv_asm_250_0172_bias
+    dims             : ('plevs',)
+
+uv_asm_250_0172_count
+    dims             : ('plevs',)
+
+uv_asm_250_0172_rms
+    dims             : ('plevs',)
+
+uv_asm_252_0172_bias
+    dims             : ('plevs',)
+
+uv_asm_252_0172_count
+    dims             : ('plevs',)
+
+uv_asm_252_0172_rms
+    dims             : ('plevs',)
+
+uv_asm_253_0057_bias
+    dims             : ('plevs',)
+
+uv_asm_253_0057_count
+    dims             : ('plevs',)
+
+uv_asm_253_0057_rms
+    dims             : ('plevs',)
+
+uv_asm_254_0057_bias
+    dims             : ('plevs',)
+
+uv_asm_254_0057_count
+    dims             : ('plevs',)
+
+uv_asm_254_0057_rms
+    dims             : ('plevs',)
+
+uv_asm_258_0784_bias
+    dims             : ('plevs',)
+
+uv_asm_258_0784_count
+    dims             : ('plevs',)
+
+uv_asm_258_0784_rms
+    dims             : ('plevs',)
+
+uv_asm_259_0784_bias
+    dims             : ('plevs',)
+
+uv_asm_259_0784_count
+    dims             : ('plevs',)
+
+uv_asm_259_0784_rms
+    dims             : ('plevs',)
+
+uv_asm_280_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_280_0000_count
+    dims             : ('plevs',)
+
+uv_asm_280_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_282_0000_bias
+    dims             : ('plevs',)
+
+uv_asm_282_0000_count
+    dims             : ('plevs',)
+
+uv_asm_282_0000_rms
+    dims             : ('plevs',)
+
+uv_asm_290_0004_bias
+    dims             : ('plevs',)
+
+uv_asm_290_0004_count
+    dims             : ('plevs',)
+
+uv_asm_290_0004_rms
+    dims             : ('plevs',)
+
+uv_mon_220_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_220_0000_count
+    dims             : ('plevs',)
+
+uv_mon_220_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_221_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_221_0000_count
+    dims             : ('plevs',)
+
+uv_mon_221_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_223_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_223_0000_count
+    dims             : ('plevs',)
+
+uv_mon_223_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_224_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_224_0000_count
+    dims             : ('plevs',)
+
+uv_mon_224_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_230_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_230_0000_count
+    dims             : ('plevs',)
+
+uv_mon_230_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_231_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_231_0000_count
+    dims             : ('plevs',)
+
+uv_mon_231_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_233_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_233_0000_count
+    dims             : ('plevs',)
+
+uv_mon_233_0000_rms
+    dims             : ('plevs',)
+
+uv_mon_243_0057_bias
+    dims             : ('plevs',)
+
+uv_mon_243_0057_count
+    dims             : ('plevs',)
+
+uv_mon_243_0057_rms
+    dims             : ('plevs',)
+
+uv_mon_245_0257_bias
+    dims             : ('plevs',)
+
+uv_mon_245_0257_count
+    dims             : ('plevs',)
+
+uv_mon_245_0257_rms
+    dims             : ('plevs',)
+
+uv_mon_245_0259_bias
+    dims             : ('plevs',)
+
+uv_mon_245_0259_count
+    dims             : ('plevs',)
+
+uv_mon_245_0259_rms
+    dims             : ('plevs',)
+
+uv_mon_246_0257_bias
+    dims             : ('plevs',)
+
+uv_mon_246_0257_count
+    dims             : ('plevs',)
+
+uv_mon_246_0257_rms
+    dims             : ('plevs',)
+
+uv_mon_246_0259_bias
+    dims             : ('plevs',)
+
+uv_mon_246_0259_count
+    dims             : ('plevs',)
+
+uv_mon_246_0259_rms
+    dims             : ('plevs',)
+
+uv_mon_250_0172_bias
+    dims             : ('plevs',)
+
+uv_mon_250_0172_count
+    dims             : ('plevs',)
+
+uv_mon_250_0172_rms
+    dims             : ('plevs',)
+
+uv_mon_252_0172_bias
+    dims             : ('plevs',)
+
+uv_mon_252_0172_count
+    dims             : ('plevs',)
+
+uv_mon_252_0172_rms
+    dims             : ('plevs',)
+
+uv_mon_253_0057_bias
+    dims             : ('plevs',)
+
+uv_mon_253_0057_count
+    dims             : ('plevs',)
+
+uv_mon_253_0057_rms
+    dims             : ('plevs',)
+
+uv_mon_254_0057_bias
+    dims             : ('plevs',)
+
+uv_mon_254_0057_count
+    dims             : ('plevs',)
+
+uv_mon_254_0057_rms
+    dims             : ('plevs',)
+
+uv_mon_280_0000_bias
+    dims             : ('plevs',)
+
+uv_mon_280_0000_count
+    dims             : ('plevs',)
+
+uv_mon_280_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_220_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_220_0000_count
+    dims             : ('plevs',)
+
+uv_rej_220_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_221_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_221_0000_count
+    dims             : ('plevs',)
+
+uv_rej_221_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_223_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_223_0000_count
+    dims             : ('plevs',)
+
+uv_rej_223_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_224_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_224_0000_count
+    dims             : ('plevs',)
+
+uv_rej_224_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_229_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_229_0000_count
+    dims             : ('plevs',)
+
+uv_rej_229_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_230_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_230_0000_count
+    dims             : ('plevs',)
+
+uv_rej_230_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_231_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_231_0000_count
+    dims             : ('plevs',)
+
+uv_rej_231_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_233_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_233_0000_count
+    dims             : ('plevs',)
+
+uv_rej_233_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_243_0057_bias
+    dims             : ('plevs',)
+
+uv_rej_243_0057_count
+    dims             : ('plevs',)
+
+uv_rej_243_0057_rms
+    dims             : ('plevs',)
+
+uv_rej_244_0003_bias
+    dims             : ('plevs',)
+
+uv_rej_244_0003_count
+    dims             : ('plevs',)
+
+uv_rej_244_0003_rms
+    dims             : ('plevs',)
+
+uv_rej_244_0004_bias
+    dims             : ('plevs',)
+
+uv_rej_244_0004_count
+    dims             : ('plevs',)
+
+uv_rej_244_0004_rms
+    dims             : ('plevs',)
+
+uv_rej_244_0206_bias
+    dims             : ('plevs',)
+
+uv_rej_244_0206_count
+    dims             : ('plevs',)
+
+uv_rej_244_0206_rms
+    dims             : ('plevs',)
+
+uv_rej_244_0209_bias
+    dims             : ('plevs',)
+
+uv_rej_244_0209_count
+    dims             : ('plevs',)
+
+uv_rej_244_0209_rms
+    dims             : ('plevs',)
+
+uv_rej_244_0223_bias
+    dims             : ('plevs',)
+
+uv_rej_244_0223_count
+    dims             : ('plevs',)
+
+uv_rej_244_0223_rms
+    dims             : ('plevs',)
+
+uv_rej_245_0257_bias
+    dims             : ('plevs',)
+
+uv_rej_245_0257_count
+    dims             : ('plevs',)
+
+uv_rej_245_0257_rms
+    dims             : ('plevs',)
+
+uv_rej_245_0259_bias
+    dims             : ('plevs',)
+
+uv_rej_245_0259_count
+    dims             : ('plevs',)
+
+uv_rej_245_0259_rms
+    dims             : ('plevs',)
+
+uv_rej_246_0257_bias
+    dims             : ('plevs',)
+
+uv_rej_246_0257_count
+    dims             : ('plevs',)
+
+uv_rej_246_0257_rms
+    dims             : ('plevs',)
+
+uv_rej_246_0259_bias
+    dims             : ('plevs',)
+
+uv_rej_246_0259_count
+    dims             : ('plevs',)
+
+uv_rej_246_0259_rms
+    dims             : ('plevs',)
+
+uv_rej_250_0172_bias
+    dims             : ('plevs',)
+
+uv_rej_250_0172_count
+    dims             : ('plevs',)
+
+uv_rej_250_0172_rms
+    dims             : ('plevs',)
+
+uv_rej_252_0172_bias
+    dims             : ('plevs',)
+
+uv_rej_252_0172_count
+    dims             : ('plevs',)
+
+uv_rej_252_0172_rms
+    dims             : ('plevs',)
+
+uv_rej_253_0057_bias
+    dims             : ('plevs',)
+
+uv_rej_253_0057_count
+    dims             : ('plevs',)
+
+uv_rej_253_0057_rms
+    dims             : ('plevs',)
+
+uv_rej_254_0057_bias
+    dims             : ('plevs',)
+
+uv_rej_254_0057_count
+    dims             : ('plevs',)
+
+uv_rej_254_0057_rms
+    dims             : ('plevs',)
+
+uv_rej_258_0784_bias
+    dims             : ('plevs',)
+
+uv_rej_258_0784_count
+    dims             : ('plevs',)
+
+uv_rej_258_0784_rms
+    dims             : ('plevs',)
+
+uv_rej_259_0784_bias
+    dims             : ('plevs',)
+
+uv_rej_259_0784_count
+    dims             : ('plevs',)
+
+uv_rej_259_0784_rms
+    dims             : ('plevs',)
+
+uv_rej_280_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_280_0000_count
+    dims             : ('plevs',)
+
+uv_rej_280_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_282_0000_bias
+    dims             : ('plevs',)
+
+uv_rej_282_0000_count
+    dims             : ('plevs',)
+
+uv_rej_282_0000_rms
+    dims             : ('plevs',)
+
+uv_rej_290_0004_bias
+    dims             : ('plevs',)
+
+uv_rej_290_0004_count
+    dims             : ('plevs',)
+
+uv_rej_290_0004_rms
+    dims             : ('plevs',)
+

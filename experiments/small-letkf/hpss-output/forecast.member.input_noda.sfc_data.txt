@@ -1,0 +1,638 @@
+ --- Coordinates --- 
+xaxis_1
+    long_name        : xaxis_1
+    units            : none
+    cartesian_axis   : X
+
+yaxis_1
+    long_name        : yaxis_1
+    units            : none
+    cartesian_axis   : Y
+
+zaxis_1
+    long_name        : zaxis_1
+    units            : none
+    cartesian_axis   : Z
+
+zaxis_2
+    long_name        : zaxis_2
+    units            : none
+    cartesian_axis   : Z
+
+zaxis_3
+    long_name        : zaxis_3
+    units            : none
+    cartesian_axis   : Z
+
+zaxis_4
+    long_name        : zaxis_4
+    units            : none
+    cartesian_axis   : Z
+
+Time
+    long_name        : Time
+    units            : time level
+    cartesian_axis   : T
+
+
+ --- Data Variables --- 
+slmsk
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : slmsk
+    units            : none
+    checksum         : CCD0000000000000
+
+tsea
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tsea
+    units            : none
+    checksum         : 2EC249E3EC7DFCB9
+
+sheleg
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : sheleg
+    units            : none
+    checksum         : D457E34839E0ABD2
+
+tg3
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tg3
+    units            : none
+    checksum         :  424136620000000
+
+zorl
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zorl
+    units            : none
+    checksum         :  5F7CC9CC1D9DFA6
+
+alvsf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : alvsf
+    units            : none
+    checksum         : 35FAD87533D6D94C
+
+alvwf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : alvwf
+    units            : none
+    checksum         :  C736756CC5F61C9
+
+alnsf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : alnsf
+    units            : none
+    checksum         : A323DBE412C5C888
+
+alnwf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : alnwf
+    units            : none
+    checksum         : 771A401DF1B4B6F9
+
+facsf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : facsf
+    units            : none
+    checksum         : 7313743180000000
+
+facwf
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : facwf
+    units            : none
+    checksum         : 82B545ED2EDA0000
+
+vfrac
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : vfrac
+    units            : none
+    checksum         : CA34EB6053BCCD99
+
+canopy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : canopy
+    units            : none
+    checksum         : 9F59944F9EC9602F
+
+f10m
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : f10m
+    units            : none
+    checksum         : 5BE6335D85C8FC14
+
+t2m
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : t2m
+    units            : none
+    checksum         : 1E57CAF6E22491FF
+
+q2m
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : q2m
+    units            : none
+    checksum         : 5462798E1D524EA8
+
+vtype
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : vtype
+    units            : none
+    checksum         : 237D000000000000
+
+stype
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : stype
+    units            : none
+    checksum         : B51A000000000000
+
+uustar
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : uustar
+    units            : none
+    checksum         :   EF2E0EC282FD0C
+
+ffmm
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : ffmm
+    units            : none
+    checksum         : A3CAE2D6E870AFBB
+
+ffhh
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : ffhh
+    units            : none
+    checksum         : F52BCC676BAB89BC
+
+hice
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : hice
+    units            : none
+    checksum         : 9E36C43CF5609E73
+
+fice
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : fice
+    units            : none
+    checksum         : 820D68FC4FCA5067
+
+tisfc
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tisfc
+    units            : none
+    checksum         : 23496F533FBB3F4E
+
+tprcp
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tprcp
+    units            : none
+    checksum         : D484B58E045AEA17
+
+srflag
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : srflag
+    units            : none
+    checksum         : 23CB707C9AE0EFB8
+
+snwdph
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : snwdph
+    units            : none
+    checksum         : 47A13FA5D1347C80
+
+shdmin
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : shdmin
+    units            : none
+    checksum         : AC4622BAE0000000
+
+shdmax
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : shdmax
+    units            : none
+    checksum         : 66F679AEA0000000
+
+slope
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : slope
+    units            : none
+    checksum         : 579E000000000000
+
+snoalb
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : snoalb
+    units            : none
+    checksum         : 367836CF60000000
+
+sncovr
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : sncovr
+    units            : none
+    checksum         : 85297260B75B2EF3
+
+snodl
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : snodl
+    units            : none
+    checksum         : C22B5C3BAF62AD37
+
+weasdl
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : weasdl
+    units            : none
+    checksum         : 919B7BFF52E0E4FE
+
+tsfc
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tsfc
+    units            : none
+    checksum         : 22D3A26733A49883
+
+tsfcl
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tsfcl
+    units            : none
+    checksum         : 2B3FA6489A69D6E4
+
+zorlw
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zorlw
+    units            : none
+    checksum         : 399BF64C19B7D416
+
+zorll
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zorll
+    units            : none
+    checksum         : 8D738CCCCCCCDD4C
+
+zorli
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zorli
+    units            : none
+    checksum         : E3AE666666666C4E
+
+albdirvis_lnd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : albdirvis_lnd
+    units            : none
+    checksum         : 733CA7B7DCE71CBF
+
+albdirnir_lnd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : albdirnir_lnd
+    units            : none
+    checksum         : 137159A81E6E17CE
+
+albdifvis_lnd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : albdifvis_lnd
+    units            : none
+    checksum         : 3F0E58E2CB9971E7
+
+albdifnir_lnd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : albdifnir_lnd
+    units            : none
+    checksum         : 8EB8BF6562ACB939
+
+emis_lnd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : emis_lnd
+    units            : none
+    checksum         : 62C61E366DF6EFCA
+
+tref
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tref
+    units            : none
+    checksum         : 339B4F9FF629B5EF
+
+z_c
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : z_c
+    units            : none
+    checksum         : B579771FD248F11B
+
+c_0
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : c_0
+    units            : none
+    checksum         : CEC92A6C0F932D22
+
+c_d
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : c_d
+    units            : none
+    checksum         : BD48B1D3E511C365
+
+w_0
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : w_0
+    units            : none
+    checksum         : 4CFBFAE755F4F15C
+
+w_d
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : w_d
+    units            : none
+    checksum         : BF3A98522E9D9DD7
+
+xt
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xt
+    units            : none
+    checksum         : 1C0C5B0E6B4394F9
+
+xs
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xs
+    units            : none
+    checksum         : BD1785263D36F554
+
+xu
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xu
+    units            : none
+    checksum         : F2FD7C39B77289A5
+
+xv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xv
+    units            : none
+    checksum         : E60D9BE1B0AFCA35
+
+xz
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xz
+    units            : none
+    checksum         : 491C431DD9BD6A2F
+
+zm
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zm
+    units            : none
+    checksum         : 2DEE8EBA1ECC624E
+
+xtts
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xtts
+    units            : none
+    checksum         : DC71153131630201
+
+xzts
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xzts
+    units            : none
+    checksum         : 55A9A31EC7030A19
+
+d_conv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : d_conv
+    units            : none
+    checksum         : DA2DC31F5B876B8D
+
+ifd
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : ifd
+    units            : none
+    checksum         : BDD0000000000000
+
+dt_cool
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : dt_cool
+    units            : none
+    checksum         : 579152C6767AFF3A
+
+qrain
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : qrain
+    units            : none
+    checksum         : 3992064771DF82DB
+
+snowxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : snowxy
+    units            : none
+    checksum         : E6A024205530ED86
+
+tvxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tvxy
+    units            : none
+    checksum         : D80B403453044562
+
+tgxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tgxy
+    units            : none
+    checksum         :  6D105CF25B968AE
+
+canicexy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : canicexy
+    units            : none
+    checksum         : C04018300ED445A7
+
+canliqxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : canliqxy
+    units            : none
+    checksum         : 479A7AF13B23103F
+
+eahxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : eahxy
+    units            : none
+    checksum         : 59B4CE49CA7F4057
+
+tahxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : tahxy
+    units            : none
+    checksum         : D758CFE877528303
+
+cmxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : cmxy
+    units            : none
+    checksum         : A34BC1E9D531689C
+
+chxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : chxy
+    units            : none
+    checksum         : 6FFD243638C910D9
+
+fwetxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : fwetxy
+    units            : none
+    checksum         : D2572D3654F9E6D9
+
+sneqvoxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : sneqvoxy
+    units            : none
+    checksum         : 9391B7D7951EC015
+
+alboldxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : alboldxy
+    units            : none
+    checksum         : 4CF3575388642D5D
+
+qsnowxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : qsnowxy
+    units            : none
+    checksum         : FDBFAFC6497D02AB
+
+wslakexy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : wslakexy
+    units            : none
+    checksum         : 119FA4F6E679CA20
+
+zwtxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : zwtxy
+    units            : none
+    checksum         : F49373C08F6A1099
+
+waxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : waxy
+    units            : none
+    checksum         : B37E4EAEDFE04561
+
+wtxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : wtxy
+    units            : none
+    checksum         : B37E5076D03AA9D8
+
+lfmassxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : lfmassxy
+    units            : none
+    checksum         : E9BA1A4C3BCF3818
+
+rtmassxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : rtmassxy
+    units            : none
+    checksum         : A091A4F6E679CA20
+
+stmassxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : stmassxy
+    units            : none
+    checksum         : 139B0FA1912481A9
+
+woodxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : woodxy
+    units            : none
+    checksum         : A091A4F6E679CA20
+
+stblcpxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : stblcpxy
+    units            : none
+    checksum         : B711A4F6E679CA20
+
+fastcpxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : fastcpxy
+    units            : none
+    checksum         : B711A4F6E679CA20
+
+xsaixy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xsaixy
+    units            : none
+    checksum         : F7F6BAB4F8B6078E
+
+xlaixy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : xlaixy
+    units            : none
+    checksum         : E9FCFCA2BC643C00
+
+taussxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : taussxy
+    units            : none
+    checksum         : 3F972DBDA42FF359
+
+smcwtdxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : smcwtdxy
+    units            : none
+    checksum         : 1B945D7865934334
+
+deeprechxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : deeprechxy
+    units            : none
+    checksum         : 43F824205530ED86
+
+rechxy
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : rechxy
+    units            : none
+    checksum         : 43F824205530ED86
+
+tiice
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : tiice
+    units            : none
+    checksum         : 71479C9132BB25B2
+
+stc
+    dims             : ('Time', 'zaxis_2', 'yaxis_1', 'xaxis_1')
+    long_name        : stc
+    units            : none
+    checksum         : E277A77E4FB9E182
+
+smc
+    dims             : ('Time', 'zaxis_2', 'yaxis_1', 'xaxis_1')
+    long_name        : smc
+    units            : none
+    checksum         : 1F1C537AF8BF56AC
+
+slc
+    dims             : ('Time', 'zaxis_2', 'yaxis_1', 'xaxis_1')
+    long_name        : slc
+    units            : none
+    checksum         : F5CA6F8FDC22BBF8
+
+snicexy
+    dims             : ('Time', 'zaxis_3', 'yaxis_1', 'xaxis_1')
+    long_name        : snicexy
+    units            : none
+    checksum         : 1BD75F3CDF04EB62
+
+snliqxy
+    dims             : ('Time', 'zaxis_3', 'yaxis_1', 'xaxis_1')
+    long_name        : snliqxy
+    units            : none
+    checksum         : F49BB2373217BCB9
+
+tsnoxy
+    dims             : ('Time', 'zaxis_3', 'yaxis_1', 'xaxis_1')
+    long_name        : tsnoxy
+    units            : none
+    checksum         :  295C1AE1E3F80FF
+
+smoiseq
+    dims             : ('Time', 'zaxis_2', 'yaxis_1', 'xaxis_1')
+    long_name        : smoiseq
+    units            : none
+    checksum         : 6663480F7BD36560
+
+zsnsoxy
+    dims             : ('Time', 'zaxis_4', 'yaxis_1', 'xaxis_1')
+    long_name        : zsnsoxy
+    units            : none
+    checksum         : 6359449DC23118BA
+

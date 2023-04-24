@@ -1,0 +1,48 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+obs_absolute_dynamic_topography@PreQC
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@EffectiveQC
+    dims             : ('nlocs',)
+
+record_number@MetaData
+    dims             : ('nlocs',)
+
+latitude@MetaData
+    dims             : ('nlocs',)
+
+longitude@MetaData
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@ObsError
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@ObsValue
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@hofx0_1
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@hofx0_2
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@hofx0_3
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@hofx0_4
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@hofx0_5
+    dims             : ('nlocs',)
+
+obs_absolute_dynamic_topography@ombg
+    dims             : ('nlocs',)
+
+variable_names@VarMetaData
+    dims             : ('nvars',)
+
+datetime@MetaData
+    dims             : ('nlocs',)
+

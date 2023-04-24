@@ -1,0 +1,18 @@
+ --- Coordinates --- 
+time
+    cartesian_axis   : T
+
+yh
+    units            : degrees_N
+    cartesian_axis   : Y
+
+xh
+    units            : degrees_E
+    cartesian_axis   : X
+
+
+ --- Data Variables --- 
+Kh
+    dims             : ('time', 'yh', 'xh')
+    units            : m2 s-1
+

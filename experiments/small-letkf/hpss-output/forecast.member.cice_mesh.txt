@@ -1,0 +1,26 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+origGridDims
+    dims             : ('origGridRank',)
+
+nodeCoords
+    dims             : ('nodeCount', 'coordDim')
+    units            : degrees
+
+elementConn
+    dims             : ('elementCount', 'maxNodePElement')
+    long_name        : Node indices that define the element connectivity
+
+numElementConn
+    dims             : ('elementCount',)
+    long_name        : Number of nodes per element
+
+centerCoords
+    dims             : ('elementCount', 'coordDim')
+    units            : degrees
+
+elementMask
+    dims             : ('elementCount',)
+    units            : unitless
+

@@ -2,6 +2,16 @@
 
 Tracking all outputs, figuring out what we have and what we need
 
+## TODO
+
+- [ ] When `gsi_enkf` finishes, find ensemble spread diagnostic (we have this
+  turned on!), figure out how to gather it with `ufs_rnr.gsi`
+- [ ] Dig into SOCA ensemble spread...
+- [ ] Look into... are we running for 9 hours? If so, why?
+- [ ] Think about how we can reduce storage... starting with extra grid and
+  initial condition files
+
+
 ## ufs-rnr
 
 Inside the tarball `ufs-rnr.<date>.tar`
@@ -49,6 +59,5 @@ See txt files for MOM and CICE output.
       looking at  time stamp 06:00Z 
     - `sfc*` at 0, 3, 6, 9 fhr. Note that we could put 0000Z outside, and do not
       need 0900Z
-    - 
 
 - Cannot read `forecast/member/INPUT/ocean_channels.nc`

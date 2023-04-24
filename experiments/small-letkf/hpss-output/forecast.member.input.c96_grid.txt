@@ -1,0 +1,52 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+tile
+    dims             : ()
+    standard_name    : grid_tile_spec
+    geometry         : spherical
+    north_pole       : 0.0 90.0
+    projection       : cube_gnomonic
+    discretization   : logically_rectangular
+    conformal        : FALSE
+
+x
+    dims             : ('nyp', 'nxp')
+    standard_name    : geographic_longitude
+    units            : degree_east
+
+y
+    dims             : ('nyp', 'nxp')
+    standard_name    : geographic_latitude
+    units            : degree_north
+
+dx
+    dims             : ('nyp', 'nx')
+    standard_name    : grid_edge_x_distance
+    units            : meters
+
+dy
+    dims             : ('ny', 'nxp')
+    standard_name    : grid_edge_y_distance
+    units            : meters
+
+area
+    dims             : ('ny', 'nx')
+    standard_name    : grid_cell_area
+    units            : m2
+
+angle_dx
+    dims             : ('nyp', 'nxp')
+    standard_name    : grid_vertex_x_angle_WRT_geographic_east
+    units            : degrees_east
+
+angle_dy
+    dims             : ('nyp', 'nxp')
+    standard_name    : grid_vertex_y_angle_WRT_geographic_north
+    units            : degrees_north
+
+arcx
+    dims             : ()
+    standard_name    : grid_edge_x_arc_type
+    north_pole       : 0.0 90.0
+

@@ -1,0 +1,29 @@
+ --- Coordinates --- 
+xt_ocean
+    long_name        : tcell longitude
+    units            : degree_E
+    cartesian_axis   : X
+
+yt_ocean
+    long_name        : tcell latitude
+    units            : degree_N
+    cartesian_axis   : Y
+
+st_ocean
+    long_name        : ucell zstar depth
+    units            : meters
+    cartesian_axis   : Z
+    positive         : down
+
+
+ --- Data Variables --- 
+temp
+    dims             : ('st_ocean', 'yt_ocean', 'xt_ocean')
+    long_name        : Potential temperature
+    units            : degrees C
+
+salt
+    dims             : ('st_ocean', 'yt_ocean', 'xt_ocean')
+    long_name        : Practical Salinity
+    units            : psu
+

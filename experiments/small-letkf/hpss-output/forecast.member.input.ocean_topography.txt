@@ -1,0 +1,37 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+depth
+    dims             : ('ny', 'nx')
+    units            : meters
+    standard_name    : depth below geoid
+    description      : Non-negative nominal thickness of the ocean at cell centers
+
+wet
+    dims             : ('ny', 'nx')
+    long_name        : Wet/dry mask
+    description      : Values: 1=Ocean, 0=Land
+
+h2
+    dims             : ('ny', 'nx')
+    units            : meters^2
+    standard_name    : Variance of sub-grid scale topography
+
+modified_mask
+    dims             : ('ny', 'nx')
+    long_name        : Modified mask
+    description      : Values: 1=Ocean, 0=Land, -1 indicates water points removed by "Ice 9" algorithm. 2 indicates wet points that are shallower than 1m deep.
+
+iEdit
+    dims             : ('nEdits',)
+    long_name        : i-index of edited data
+
+jEdit
+    dims             : ('nEdits',)
+    long_name        : j-index of edited data
+
+zEdit
+    dims             : ('nEdits',)
+    long_name        : Original value of height data
+    units            : meters
+

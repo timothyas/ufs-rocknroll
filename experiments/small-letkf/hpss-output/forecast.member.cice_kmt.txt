@@ -1,0 +1,8 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+kmt
+    dims             : ('nj', 'ni')
+    units            : none
+    long_name        : ocean fraction at T-cell centers
+

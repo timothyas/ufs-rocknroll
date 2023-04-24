@@ -1,0 +1,30 @@
+ --- Coordinates --- 
+xaxis_1
+    long_name        : xaxis_1
+    units            : none
+    cartesian_axis   : X
+
+yaxis_1
+    long_name        : yaxis_1
+    units            : none
+    cartesian_axis   : Y
+
+Time
+    long_name        : Time
+    units            : time level
+    cartesian_axis   : T
+
+
+ --- Data Variables --- 
+board
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : board
+    units            : none
+    checksum         :           1ABD5B
+
+lives
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : lives
+    units            : none
+    checksum         :            2DFE9
+

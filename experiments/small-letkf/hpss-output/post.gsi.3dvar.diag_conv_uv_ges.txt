@@ -1,0 +1,99 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+Station_ID
+    dims             : ('nobs',)
+
+Observation_Class
+    dims             : ('nobs',)
+
+Observation_Type
+    dims             : ('nobs',)
+
+Observation_Subtype
+    dims             : ('nobs',)
+
+Latitude
+    dims             : ('nobs',)
+
+Longitude
+    dims             : ('nobs',)
+
+Station_Elevation
+    dims             : ('nobs',)
+
+Pressure
+    dims             : ('nobs',)
+
+Height
+    dims             : ('nobs',)
+
+Time
+    dims             : ('nobs',)
+
+Prep_QC_Mark
+    dims             : ('nobs',)
+
+Setup_QC_Mark
+    dims             : ('nobs',)
+
+Nonlinear_QC_Var_Jb
+    dims             : ('nobs',)
+
+Prep_Use_Flag
+    dims             : ('nobs',)
+
+Analysis_Use_Flag
+    dims             : ('nobs',)
+
+Nonlinear_QC_Rel_Wgt
+    dims             : ('nobs',)
+
+Errinv_Input
+    dims             : ('nobs',)
+
+Errinv_Adjust
+    dims             : ('nobs',)
+
+Errinv_Final
+    dims             : ('nobs',)
+
+Wind_Reduction_Factor_at_10m
+    dims             : ('nobs',)
+
+u_Observation
+    dims             : ('nobs',)
+
+u_Obs_Minus_Forecast_adjusted
+    dims             : ('nobs',)
+
+u_Obs_Minus_Forecast_unadjusted
+    dims             : ('nobs',)
+
+v_Observation
+    dims             : ('nobs',)
+
+v_Obs_Minus_Forecast_adjusted
+    dims             : ('nobs',)
+
+v_Obs_Minus_Forecast_unadjusted
+    dims             : ('nobs',)
+
+u_Observation_Operator_Jacobian_stind
+    dims             : ('nobs', 'u_Observation_Operator_Jacobian_stind_arr_dim')
+
+u_Observation_Operator_Jacobian_endind
+    dims             : ('nobs', 'u_Observation_Operator_Jacobian_endind_arr_dim')
+
+u_Observation_Operator_Jacobian_val
+    dims             : ('nobs', 'u_Observation_Operator_Jacobian_val_arr_dim')
+
+v_Observation_Operator_Jacobian_stind
+    dims             : ('nobs', 'v_Observation_Operator_Jacobian_stind_arr_dim')
+
+v_Observation_Operator_Jacobian_endind
+    dims             : ('nobs', 'v_Observation_Operator_Jacobian_endind_arr_dim')
+
+v_Observation_Operator_Jacobian_val
+    dims             : ('nobs', 'v_Observation_Operator_Jacobian_val_arr_dim')
+

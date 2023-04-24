@@ -1,0 +1,15 @@
+ --- Coordinates --- 
+ny
+    units            : degrees_north
+    cartesian_axis   : Y
+
+nx
+    units            : degrees_east
+    cartesian_axis   : X
+
+
+ --- Data Variables --- 
+tideamp
+    dims             : ('ny', 'nx')
+    units            : m s-1
+
