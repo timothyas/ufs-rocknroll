@@ -12,8 +12,9 @@
             ocean_ens_pertconds_socaensperts: succeed => ocean_ens_ckptconds_socaensperts
 		    STAGING_FETCH_ATMOSFCST_ENS: succeed-all & ocean_ens_ckptconds_socaensperts: succeed & staging_fetch_atmosobs: succeed => BKGRD_FORECAST_ENS
 		    BKGRD_FORECAST_ENS: succeed-all & staging_fetch_atmosgsibcc: succeed & staging_fetch_atmostcvsyndat: succeed => gsi_3dvar_ens
-		    gsi_3dvar_ens: succeed => gsi_enkf
-		    gsi_enkf: succeed => gsi_hybgain
+		    gsi_3dvar_ens: succeed => gsi_enkfonly
+            gsi_enkfonly: succeed => gsi_enkfmean
+		    gsi_enkfmean: succeed => gsi_hybgain
 		    gsi_hybgain: succeed => gsi_post
 		    BKGRD_FORECAST_ENS: succeed-all & staging_fetch_oceanobs: succeed => soca_letkf_observer
 		    soca_letkf_observer: succeed => soca_letkf_solver
@@ -31,8 +32,9 @@
 		      launch: succeed => staging_fetch_atmosobs & staging_fetch_atmostcvsyndat & staging_fetch_oceanobs
 		      gsi_hybgain[-{{ CYCLE_INTERVAL }}]: succeed & SOCA_CHECKPOINT_MODEL_ENS[-{{ CYCLE_INTERVAL }}]: succeed-all & staging_fetch_atmosobs: succeed => BKGRD_FORECAST_ENS
 		      BKGRD_FORECAST_ENS: succeed-all & staging_fetch_atmostcvsyndat: succeed => gsi_3dvar_ens
-		      gsi_3dvar_ens: succeed => gsi_enkf
-		      gsi_enkf: succeed => gsi_hybgain
+		      gsi_3dvar_ens: succeed => gsi_enkfonly
+              gsi_enkfonly: succeed => gsi_enkfmean
+		      gsi_enkfmean: succeed => gsi_hybgain
 		      gsi_hybgain: succeed => gsi_post
 		      BKGRD_FORECAST_ENS: succeed-all & staging_fetch_oceanobs: succeed => soca_letkf_observer
 		      soca_letkf_observer: succeed => soca_letkf_solver
