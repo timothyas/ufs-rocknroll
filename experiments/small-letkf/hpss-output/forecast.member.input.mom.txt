@@ -1,0 +1,218 @@
+ --- Coordinates --- 
+lath
+    long_name        : Latitude
+    units            : degrees_north
+    cartesian_axis   : Y
+
+lonh
+    long_name        : Longitude
+    units            : degrees_east
+    cartesian_axis   : X
+
+latq
+    long_name        : Latitude
+    units            : degrees_north
+    cartesian_axis   : Y
+
+lonq
+    long_name        : Longitude
+    units            : degrees_east
+    cartesian_axis   : X
+
+Layer
+    long_name        : Layer pseudo-depth, -z*
+    units            : meter
+    cartesian_axis   : Z
+    positive         : up
+
+Interface
+    long_name        : Interface pseudo-depth, -z*
+    units            : meter
+    cartesian_axis   : Z
+    positive         : up
+
+Time
+    long_name        : Time
+    cartesian_axis   : T
+
+
+ --- Data Variables --- 
+Temp
+    dims             : ('Time', 'Layer', 'lath', 'lonh')
+    long_name        : Potential Temperature
+    units            : degC
+    checksum         : 1AD5CC755A7E8179
+
+Salt
+    dims             : ('Time', 'Layer', 'lath', 'lonh')
+    long_name        : Salinity
+    units            : PPT
+    checksum         : 101CA7CDC27E8A9B
+
+h
+    dims             : ('Time', 'Layer', 'lath', 'lonh')
+    long_name        : Layer Thickness
+    units            : m
+    checksum         : 4A631D917E6ADE95
+
+u
+    dims             : ('Time', 'Layer', 'lath', 'lonq')
+    long_name        : Zonal velocity
+    units            : m s-1
+    checksum         : EE90C4DF9FCA0758
+
+v
+    dims             : ('Time', 'Layer', 'latq', 'lonh')
+    long_name        : Meridional velocity
+    units            : m s-1
+    checksum         : 61BC6A4EBD723127
+
+frazil
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Frazil heat flux into ocean
+    units            : J m-2
+    checksum         : 4E77D363D64758A9
+
+ave_ssh
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Time average sea surface height
+    units            : meter
+    checksum         : 8D1A9599292902F4
+
+m_to_Z
+    dims             : ('Time',)
+    long_name        : Height unit conversion factor
+    units            : Z meter-1
+    checksum         : 3FF0000000000000
+
+m_to_H
+    dims             : ('Time',)
+    long_name        : Thickness unit conversion factor
+    units            : H meter-1
+    checksum         : 3FF0000000000000
+
+m_to_L
+    dims             : ('Time',)
+    long_name        : Length unit conversion factor
+    units            : L meter-1
+    checksum         : 3FF0000000000000
+
+s_to_T
+    dims             : ('Time',)
+    long_name        : Time unit conversion factor
+    units            : T second-1
+    checksum         : 3FF0000000000000
+
+kg_m3_to_R
+    dims             : ('Time',)
+    long_name        : Density unit conversion factor
+    units            : R m3 kg-1
+    checksum         : 3FF0000000000000
+
+J_kg_to_Q
+    dims             : ('Time',)
+    long_name        : Heat content unit conversion factor.
+    units            : Q kg J-1
+    checksum         : 3FF0000000000000
+
+sfc
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Free surface Height
+    units            : m
+    checksum         : F0995DF111F3C562
+
+u2
+    dims             : ('Time', 'Layer', 'lath', 'lonq')
+    long_name        : Auxiliary Zonal velocity
+    units            : m s-1
+    checksum         : 9BEE34EE9AE76104
+
+v2
+    dims             : ('Time', 'Layer', 'latq', 'lonh')
+    long_name        : Auxiliary Meridional velocity
+    units            : m s-1
+    checksum         : 3A0D76B5C93A69C9
+
+h2
+    dims             : ('Time', 'Layer', 'lath', 'lonh')
+    long_name        : Auxiliary Layer Thickness
+    units            : m
+    checksum         : 835F10C441993DD0
+
+uh
+    dims             : ('Time', 'Layer', 'lath', 'lonq')
+    long_name        : Zonal thickness flux
+    units            : m3 s-1
+    checksum         : A44AC05849AA5AC4
+
+vh
+    dims             : ('Time', 'Layer', 'latq', 'lonh')
+    long_name        : Meridional thickness flux
+    units            : m3 s-1
+    checksum         : FB9A4516B751404B
+
+diffu
+    dims             : ('Time', 'Layer', 'lath', 'lonq')
+    long_name        : Zonal horizontal viscous acceleration
+    units            : m s-2
+    checksum         : C05394C6A5A0E455
+
+diffv
+    dims             : ('Time', 'Layer', 'latq', 'lonh')
+    long_name        : Meridional horizontal viscous acceleration
+    units            : m s-2
+    checksum         : 46FA923274C6FE51
+
+ubtav
+    dims             : ('Time', 'lath', 'lonq')
+    long_name        : Time mean barotropic zonal velocity
+    units            : m s-1
+    checksum         : 55507F1405D83DAE
+
+vbtav
+    dims             : ('Time', 'latq', 'lonh')
+    long_name        : Time mean barotropic meridional velocity
+    units            : m s-1
+    checksum         : 6356815E9185C1E6
+
+DTBT
+    dims             : ('Time',)
+    long_name        : Barotropic timestep
+    checksum         : 40506AD585E72F7D
+
+MEKE
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Mesoscale Eddy Kinetic Energy
+    units            : m2 s-2
+    checksum         :  BFFCF07F5E4A232
+
+MEKE_Kh
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Lateral diffusivity from Mesoscale Eddy Kinetic Energy
+    units            : m2 s-1
+    checksum         :  56CF9B292784BE9
+
+Kd_shear
+    dims             : ('Time', 'Interface', 'lath', 'lonh')
+    long_name        : Shear-driven turbulent diffusivity at interfaces
+    units            : m2 s-1
+    checksum         : 9EA8A528E8514C83
+
+Kv_shear
+    dims             : ('Time', 'Interface', 'lath', 'lonh')
+    long_name        : Shear-driven turbulent viscosity at interfaces
+    units            : m2 s-1
+    checksum         : 490FA30FE96F3741
+
+MLD
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Instantaneous active mixing layer depth
+    units            : m
+    checksum         : 6FD5A6E147C58C01
+
+MLD_MLE_filtered
+    dims             : ('Time', 'lath', 'lonh')
+    long_name        : Time-filtered MLD for use in MLE
+    units            : m
+    checksum         : 4E7C52CF074F1C17
+

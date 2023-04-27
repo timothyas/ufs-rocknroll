@@ -1,0 +1,9 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+cost
+    dims             : ('nouter', 'ninner')
+
+grad
+    dims             : ('nouter', 'ninner')
+

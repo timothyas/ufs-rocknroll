@@ -1,0 +1,84 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+Station_ID
+    dims             : ('nobs',)
+
+Observation_Class
+    dims             : ('nobs',)
+
+Observation_Type
+    dims             : ('nobs',)
+
+Observation_Subtype
+    dims             : ('nobs',)
+
+Latitude
+    dims             : ('nobs',)
+
+Longitude
+    dims             : ('nobs',)
+
+Incremental_Bending_Angle
+    dims             : ('nobs',)
+
+Pressure
+    dims             : ('nobs',)
+
+Height
+    dims             : ('nobs',)
+
+Time
+    dims             : ('nobs',)
+
+Model_Elevation
+    dims             : ('nobs',)
+
+Setup_QC_Mark
+    dims             : ('nobs',)
+
+Prep_Use_Flag
+    dims             : ('nobs',)
+
+Analysis_Use_Flag
+    dims             : ('nobs',)
+
+Nonlinear_QC_Rel_Wgt
+    dims             : ('nobs',)
+
+Errinv_Input
+    dims             : ('nobs',)
+
+Errinv_Adjust
+    dims             : ('nobs',)
+
+Errinv_Final
+    dims             : ('nobs',)
+
+Observation
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_adjusted
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_unadjusted
+    dims             : ('nobs',)
+
+GPS_Type
+    dims             : ('nobs',)
+
+Temperature_at_Obs_Location
+    dims             : ('nobs',)
+
+Specific_Humidity_at_Obs_Location
+    dims             : ('nobs',)
+
+Observation_Operator_Jacobian_stind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_stind_arr_dim')
+
+Observation_Operator_Jacobian_endind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_endind_arr_dim')
+
+Observation_Operator_Jacobian_val
+    dims             : ('nobs', 'Observation_Operator_Jacobian_val_arr_dim')
+

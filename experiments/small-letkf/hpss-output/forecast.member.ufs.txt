@@ -1,0 +1,1269 @@
+ --- Coordinates --- 
+time
+
+
+ --- Data Variables --- 
+start_ymd
+    dims             : ()
+    standard_name    : start_ymd
+
+start_tod
+    dims             : ()
+    standard_name    : start_tod
+
+curr_ymd
+    dims             : ()
+    standard_name    : curr_ymd
+
+curr_tod
+    dims             : ()
+    standard_name    : curr_tod
+
+ExpAccumCnt
+    dims             : ('ExpAccumCnt_nx',)
+    standard_name    : ExpAccumCnt
+
+ImpAccumCnt
+    dims             : ('ImpAccumCnt_nx',)
+    standard_name    : ImpAccumCnt
+
+atmImp_Faxa_lat
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_lat
+
+atmImp_Faxa_lwdn
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_lwdn
+
+atmImp_Faxa_lwnet
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_lwnet
+
+atmImp_Faxa_rain
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : kg m-2 s-1
+    standard_name    : atmImp_Faxa_rain
+
+atmImp_Faxa_sen
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_sen
+
+atmImp_Faxa_snow
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : kg m-2 s-1
+    standard_name    : atmImp_Faxa_snow
+
+atmImp_Faxa_swndf
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_swndf
+
+atmImp_Faxa_swndr
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_swndr
+
+atmImp_Faxa_swvdf
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_swvdf
+
+atmImp_Faxa_swvdr
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : W m-2
+    standard_name    : atmImp_Faxa_swvdr
+
+atmImp_Faxa_taux
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : N m-2
+    standard_name    : atmImp_Faxa_taux
+
+atmImp_Faxa_tauy
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : N m-2
+    standard_name    : atmImp_Faxa_tauy
+
+atmImp_Sa_ofrac
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : 1
+    standard_name    : atmImp_Sa_ofrac
+
+atmImp_Sa_pbot
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : Pa
+    standard_name    : atmImp_Sa_pbot
+
+atmImp_Sa_pslv
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : Pa
+    standard_name    : atmImp_Sa_pslv
+
+atmImp_Sa_shum
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : kg kg-1
+    standard_name    : atmImp_Sa_shum
+
+atmImp_Sa_tbot
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : K
+    standard_name    : atmImp_Sa_tbot
+
+atmImp_Sa_u
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : m s-1
+    standard_name    : atmImp_Sa_u
+
+atmImp_Sa_v
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : m s-1
+    standard_name    : atmImp_Sa_v
+
+atmImp_Sa_z
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    units            : m
+    standard_name    : atmImp_Sa_z
+
+atmImp_lon
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+atmImp_lat
+    dims             : ('time', 'atmImp_ny', 'atmImp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+atmExp_Faii_lat
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : W m-2
+    standard_name    : atmExp_Faii_lat
+
+atmExp_Faii_lwup
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : W m-2
+    standard_name    : atmExp_Faii_lwup
+
+atmExp_Faii_sen
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : W m-2
+    standard_name    : atmExp_Faii_sen
+
+atmExp_Faii_taux
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : N m-2
+    standard_name    : atmExp_Faii_taux
+
+atmExp_Faii_tauy
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : N m-2
+    standard_name    : atmExp_Faii_tauy
+
+atmExp_Si_anidf
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : 1
+    standard_name    : atmExp_Si_anidf
+
+atmExp_Si_anidr
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : 1
+    standard_name    : atmExp_Si_anidr
+
+atmExp_Si_avsdf
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : 1
+    standard_name    : atmExp_Si_avsdf
+
+atmExp_Si_avsdr
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : 1
+    standard_name    : atmExp_Si_avsdr
+
+atmExp_Si_ifrac
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : 1
+    standard_name    : atmExp_Si_ifrac
+
+atmExp_Si_t
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : K
+    standard_name    : atmExp_Si_t
+
+atmExp_Si_vice
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : m
+    standard_name    : atmExp_Si_vice
+
+atmExp_Si_vsno
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : m
+    standard_name    : atmExp_Si_vsno
+
+atmExp_So_t
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    units            : K
+    standard_name    : atmExp_So_t
+
+atmExp_lon
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+atmExp_lat
+    dims             : ('time', 'atmExp_ny', 'atmExp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+atmFrac_aofrac
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    standard_name    : atmFrac_aofrac
+
+atmFrac_ifrac
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    standard_name    : atmFrac_ifrac
+
+atmFrac_lfrac
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    standard_name    : atmFrac_lfrac
+
+atmFrac_ofrac
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    standard_name    : atmFrac_ofrac
+
+atmFrac_lon
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+atmFrac_lat
+    dims             : ('time', 'atmFrac_ny', 'atmFrac_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+atmExpAccum_Faii_lat
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : W m-2
+    standard_name    : atmExpAccum_Faii_lat
+
+atmExpAccum_Faii_lwup
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : W m-2
+    standard_name    : atmExpAccum_Faii_lwup
+
+atmExpAccum_Faii_sen
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : W m-2
+    standard_name    : atmExpAccum_Faii_sen
+
+atmExpAccum_Faii_taux
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : N m-2
+    standard_name    : atmExpAccum_Faii_taux
+
+atmExpAccum_Faii_tauy
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : N m-2
+    standard_name    : atmExpAccum_Faii_tauy
+
+atmExpAccum_Si_anidf
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : 1
+    standard_name    : atmExpAccum_Si_anidf
+
+atmExpAccum_Si_anidr
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : 1
+    standard_name    : atmExpAccum_Si_anidr
+
+atmExpAccum_Si_avsdf
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : 1
+    standard_name    : atmExpAccum_Si_avsdf
+
+atmExpAccum_Si_avsdr
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : 1
+    standard_name    : atmExpAccum_Si_avsdr
+
+atmExpAccum_Si_ifrac
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : 1
+    standard_name    : atmExpAccum_Si_ifrac
+
+atmExpAccum_Si_t
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : K
+    standard_name    : atmExpAccum_Si_t
+
+atmExpAccum_Si_vice
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : m
+    standard_name    : atmExpAccum_Si_vice
+
+atmExpAccum_Si_vsno
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : m
+    standard_name    : atmExpAccum_Si_vsno
+
+atmExpAccum_So_t
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    units            : K
+    standard_name    : atmExpAccum_So_t
+
+atmExpAccum_lon
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+atmExpAccum_lat
+    dims             : ('time', 'atmExpAccum_ny', 'atmExpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+atmImpAccum_Faxa_lat
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_lat
+
+atmImpAccum_Faxa_lwdn
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_lwdn
+
+atmImpAccum_Faxa_lwnet
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_lwnet
+
+atmImpAccum_Faxa_rain
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : atmImpAccum_Faxa_rain
+
+atmImpAccum_Faxa_sen
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_sen
+
+atmImpAccum_Faxa_snow
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : atmImpAccum_Faxa_snow
+
+atmImpAccum_Faxa_swndf
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_swndf
+
+atmImpAccum_Faxa_swndr
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_swndr
+
+atmImpAccum_Faxa_swvdf
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_swvdf
+
+atmImpAccum_Faxa_swvdr
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : W m-2
+    standard_name    : atmImpAccum_Faxa_swvdr
+
+atmImpAccum_Faxa_taux
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : N m-2
+    standard_name    : atmImpAccum_Faxa_taux
+
+atmImpAccum_Faxa_tauy
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : N m-2
+    standard_name    : atmImpAccum_Faxa_tauy
+
+atmImpAccum_Sa_ofrac
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : 1
+    standard_name    : atmImpAccum_Sa_ofrac
+
+atmImpAccum_Sa_pbot
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : Pa
+    standard_name    : atmImpAccum_Sa_pbot
+
+atmImpAccum_Sa_pslv
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : Pa
+    standard_name    : atmImpAccum_Sa_pslv
+
+atmImpAccum_Sa_shum
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : kg kg-1
+    standard_name    : atmImpAccum_Sa_shum
+
+atmImpAccum_Sa_tbot
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : K
+    standard_name    : atmImpAccum_Sa_tbot
+
+atmImpAccum_Sa_u
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : m s-1
+    standard_name    : atmImpAccum_Sa_u
+
+atmImpAccum_Sa_v
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : m s-1
+    standard_name    : atmImpAccum_Sa_v
+
+atmImpAccum_Sa_z
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    units            : m
+    standard_name    : atmImpAccum_Sa_z
+
+atmImpAccum_lon
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+atmImpAccum_lat
+    dims             : ('time', 'atmImpAccum_ny', 'atmImpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+ocnImp_Fioo_q
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : W m-2
+    standard_name    : ocnImp_Fioo_q
+
+ocnImp_So_dhdx
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : m m-1
+    standard_name    : ocnImp_So_dhdx
+
+ocnImp_So_dhdy
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : m m-1
+    standard_name    : ocnImp_So_dhdy
+
+ocnImp_So_omask
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : 1
+    standard_name    : ocnImp_So_omask
+
+ocnImp_So_s
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : g kg-1
+    standard_name    : ocnImp_So_s
+
+ocnImp_So_t
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : K
+    standard_name    : ocnImp_So_t
+
+ocnImp_So_u
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : m s-1
+    standard_name    : ocnImp_So_u
+
+ocnImp_So_v
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    units            : m s-1
+    standard_name    : ocnImp_So_v
+
+ocnImp_lon
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+ocnImp_lat
+    dims             : ('time', 'ocnImp_ny', 'ocnImp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+ocnExp_Faxa_evap
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExp_Faxa_evap
+
+ocnExp_Faxa_lwnet
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Faxa_lwnet
+
+ocnExp_Faxa_rain
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExp_Faxa_rain
+
+ocnExp_Faxa_sen
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Faxa_sen
+
+ocnExp_Faxa_snow
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExp_Faxa_snow
+
+ocnExp_Fioi_melth
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Fioi_melth
+
+ocnExp_Fioi_meltw
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExp_Fioi_meltw
+
+ocnExp_Fioi_salt
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExp_Fioi_salt
+
+ocnExp_Foxx_swnet_idf
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Foxx_swnet_idf
+
+ocnExp_Foxx_swnet_idr
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Foxx_swnet_idr
+
+ocnExp_Foxx_swnet_vdf
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Foxx_swnet_vdf
+
+ocnExp_Foxx_swnet_vdr
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : W m-2
+    standard_name    : ocnExp_Foxx_swnet_vdr
+
+ocnExp_Foxx_taux
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : N m-2
+    standard_name    : ocnExp_Foxx_taux
+
+ocnExp_Foxx_tauy
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : N m-2
+    standard_name    : ocnExp_Foxx_tauy
+
+ocnExp_Sa_pslv
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    units            : Pa
+    standard_name    : ocnExp_Sa_pslv
+
+ocnExp_lon
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+ocnExp_lat
+    dims             : ('time', 'ocnExp_ny', 'ocnExp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+ocnFrac_ifrac
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    standard_name    : ocnFrac_ifrac
+
+ocnFrac_ifrad
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    standard_name    : ocnFrac_ifrad
+
+ocnFrac_ofrac
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    standard_name    : ocnFrac_ofrac
+
+ocnFrac_ofrad
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    standard_name    : ocnFrac_ofrad
+
+ocnFrac_lon
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+ocnFrac_lat
+    dims             : ('time', 'ocnFrac_ny', 'ocnFrac_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+ocnExpAccum_Faxa_evap
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExpAccum_Faxa_evap
+
+ocnExpAccum_Faxa_lwnet
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Faxa_lwnet
+
+ocnExpAccum_Faxa_rain
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExpAccum_Faxa_rain
+
+ocnExpAccum_Faxa_sen
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Faxa_sen
+
+ocnExpAccum_Faxa_snow
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExpAccum_Faxa_snow
+
+ocnExpAccum_Fioi_melth
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Fioi_melth
+
+ocnExpAccum_Fioi_meltw
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExpAccum_Fioi_meltw
+
+ocnExpAccum_Fioi_salt
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : ocnExpAccum_Fioi_salt
+
+ocnExpAccum_Foxx_swnet_idf
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Foxx_swnet_idf
+
+ocnExpAccum_Foxx_swnet_idr
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Foxx_swnet_idr
+
+ocnExpAccum_Foxx_swnet_vdf
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Foxx_swnet_vdf
+
+ocnExpAccum_Foxx_swnet_vdr
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnExpAccum_Foxx_swnet_vdr
+
+ocnExpAccum_Foxx_taux
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : N m-2
+    standard_name    : ocnExpAccum_Foxx_taux
+
+ocnExpAccum_Foxx_tauy
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : N m-2
+    standard_name    : ocnExpAccum_Foxx_tauy
+
+ocnExpAccum_Sa_pslv
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    units            : Pa
+    standard_name    : ocnExpAccum_Sa_pslv
+
+ocnExpAccum_lon
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+ocnExpAccum_lat
+    dims             : ('time', 'ocnExpAccum_ny', 'ocnExpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+ocnImpAccum_Fioo_q
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : W m-2
+    standard_name    : ocnImpAccum_Fioo_q
+
+ocnImpAccum_So_dhdx
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : m m-1
+    standard_name    : ocnImpAccum_So_dhdx
+
+ocnImpAccum_So_dhdy
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : m m-1
+    standard_name    : ocnImpAccum_So_dhdy
+
+ocnImpAccum_So_omask
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : 1
+    standard_name    : ocnImpAccum_So_omask
+
+ocnImpAccum_So_s
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : g kg-1
+    standard_name    : ocnImpAccum_So_s
+
+ocnImpAccum_So_t
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : K
+    standard_name    : ocnImpAccum_So_t
+
+ocnImpAccum_So_u
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : m s-1
+    standard_name    : ocnImpAccum_So_u
+
+ocnImpAccum_So_v
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    units            : m s-1
+    standard_name    : ocnImpAccum_So_v
+
+ocnImpAccum_lon
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+ocnImpAccum_lat
+    dims             : ('time', 'ocnImpAccum_ny', 'ocnImpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+iceImp_Faii_evap
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImp_Faii_evap
+
+iceImp_Faii_lat
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Faii_lat
+
+iceImp_Faii_lwup
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Faii_lwup
+
+iceImp_Faii_sen
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Faii_sen
+
+iceImp_Faii_taux
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : N m-2
+    standard_name    : iceImp_Faii_taux
+
+iceImp_Faii_tauy
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : N m-2
+    standard_name    : iceImp_Faii_tauy
+
+iceImp_Fioi_melth
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Fioi_melth
+
+iceImp_Fioi_meltw
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImp_Fioi_meltw
+
+iceImp_Fioi_salt
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImp_Fioi_salt
+
+iceImp_Fioi_swpen_idf
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Fioi_swpen_idf
+
+iceImp_Fioi_swpen_idr
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Fioi_swpen_idr
+
+iceImp_Fioi_swpen_vdf
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Fioi_swpen_vdf
+
+iceImp_Fioi_swpen_vdr
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_Fioi_swpen_vdr
+
+iceImp_Fioi_taux
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : N m-2
+    standard_name    : iceImp_Fioi_taux
+
+iceImp_Fioi_tauy
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : N m-2
+    standard_name    : iceImp_Fioi_tauy
+
+iceImp_Si_anidf
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_anidf
+
+iceImp_Si_anidr
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_anidr
+
+iceImp_Si_avsdf
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_avsdf
+
+iceImp_Si_avsdr
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_avsdr
+
+iceImp_Si_ifrac
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_ifrac
+
+iceImp_Si_imask
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : 1
+    standard_name    : iceImp_Si_imask
+
+iceImp_Si_t
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : K
+    standard_name    : iceImp_Si_t
+
+iceImp_Si_vice
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : m
+    standard_name    : iceImp_Si_vice
+
+iceImp_Si_vsno
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : m
+    standard_name    : iceImp_Si_vsno
+
+iceImp_mean_sw_pen_to_ocn
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    units            : W m-2
+    standard_name    : iceImp_mean_sw_pen_to_ocn
+
+iceImp_lon
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+iceImp_lat
+    dims             : ('time', 'iceImp_ny', 'iceImp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+iceExp_Faxa_lwdn
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Faxa_lwdn
+
+iceExp_Faxa_rain
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceExp_Faxa_rain
+
+iceExp_Faxa_snow
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceExp_Faxa_snow
+
+iceExp_Faxa_swndf
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Faxa_swndf
+
+iceExp_Faxa_swndr
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Faxa_swndr
+
+iceExp_Faxa_swvdf
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Faxa_swvdf
+
+iceExp_Faxa_swvdr
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Faxa_swvdr
+
+iceExp_Fioo_q
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : W m-2
+    standard_name    : iceExp_Fioo_q
+
+iceExp_Sa_pbot
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : Pa
+    standard_name    : iceExp_Sa_pbot
+
+iceExp_Sa_shum
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : kg kg-1
+    standard_name    : iceExp_Sa_shum
+
+iceExp_Sa_tbot
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : K
+    standard_name    : iceExp_Sa_tbot
+
+iceExp_Sa_u
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m s-1
+    standard_name    : iceExp_Sa_u
+
+iceExp_Sa_v
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m s-1
+    standard_name    : iceExp_Sa_v
+
+iceExp_Sa_z
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m
+    standard_name    : iceExp_Sa_z
+
+iceExp_So_dhdx
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m m-1
+    standard_name    : iceExp_So_dhdx
+
+iceExp_So_dhdy
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m m-1
+    standard_name    : iceExp_So_dhdy
+
+iceExp_So_s
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : g kg-1
+    standard_name    : iceExp_So_s
+
+iceExp_So_t
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : K
+    standard_name    : iceExp_So_t
+
+iceExp_So_u
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m s-1
+    standard_name    : iceExp_So_u
+
+iceExp_So_v
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    units            : m s-1
+    standard_name    : iceExp_So_v
+
+iceExp_lon
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+iceExp_lat
+    dims             : ('time', 'iceExp_ny', 'iceExp_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+iceFrac_ifrac
+    dims             : ('time', 'iceFrac_ny', 'iceFrac_nx')
+    standard_name    : iceFrac_ifrac
+
+iceFrac_ofrac
+    dims             : ('time', 'iceFrac_ny', 'iceFrac_nx')
+    standard_name    : iceFrac_ofrac
+
+iceFrac_lon
+    dims             : ('time', 'iceFrac_ny', 'iceFrac_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+iceFrac_lat
+    dims             : ('time', 'iceFrac_ny', 'iceFrac_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+iceExpAccum_Faxa_lwdn
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Faxa_lwdn
+
+iceExpAccum_Faxa_rain
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceExpAccum_Faxa_rain
+
+iceExpAccum_Faxa_snow
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceExpAccum_Faxa_snow
+
+iceExpAccum_Faxa_swndf
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Faxa_swndf
+
+iceExpAccum_Faxa_swndr
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Faxa_swndr
+
+iceExpAccum_Faxa_swvdf
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Faxa_swvdf
+
+iceExpAccum_Faxa_swvdr
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Faxa_swvdr
+
+iceExpAccum_Fioo_q
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : W m-2
+    standard_name    : iceExpAccum_Fioo_q
+
+iceExpAccum_Sa_pbot
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : Pa
+    standard_name    : iceExpAccum_Sa_pbot
+
+iceExpAccum_Sa_shum
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : kg kg-1
+    standard_name    : iceExpAccum_Sa_shum
+
+iceExpAccum_Sa_tbot
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : K
+    standard_name    : iceExpAccum_Sa_tbot
+
+iceExpAccum_Sa_u
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m s-1
+    standard_name    : iceExpAccum_Sa_u
+
+iceExpAccum_Sa_v
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m s-1
+    standard_name    : iceExpAccum_Sa_v
+
+iceExpAccum_Sa_z
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m
+    standard_name    : iceExpAccum_Sa_z
+
+iceExpAccum_So_dhdx
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m m-1
+    standard_name    : iceExpAccum_So_dhdx
+
+iceExpAccum_So_dhdy
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m m-1
+    standard_name    : iceExpAccum_So_dhdy
+
+iceExpAccum_So_s
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : g kg-1
+    standard_name    : iceExpAccum_So_s
+
+iceExpAccum_So_t
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : K
+    standard_name    : iceExpAccum_So_t
+
+iceExpAccum_So_u
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m s-1
+    standard_name    : iceExpAccum_So_u
+
+iceExpAccum_So_v
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    units            : m s-1
+    standard_name    : iceExpAccum_So_v
+
+iceExpAccum_lon
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+iceExpAccum_lat
+    dims             : ('time', 'iceExpAccum_ny', 'iceExpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+
+iceImpAccum_Faii_evap
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImpAccum_Faii_evap
+
+iceImpAccum_Faii_lat
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Faii_lat
+
+iceImpAccum_Faii_lwup
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Faii_lwup
+
+iceImpAccum_Faii_sen
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Faii_sen
+
+iceImpAccum_Faii_taux
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : N m-2
+    standard_name    : iceImpAccum_Faii_taux
+
+iceImpAccum_Faii_tauy
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : N m-2
+    standard_name    : iceImpAccum_Faii_tauy
+
+iceImpAccum_Fioi_melth
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Fioi_melth
+
+iceImpAccum_Fioi_meltw
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImpAccum_Fioi_meltw
+
+iceImpAccum_Fioi_salt
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : kg m-2 s-1
+    standard_name    : iceImpAccum_Fioi_salt
+
+iceImpAccum_Fioi_swpen_idf
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Fioi_swpen_idf
+
+iceImpAccum_Fioi_swpen_idr
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Fioi_swpen_idr
+
+iceImpAccum_Fioi_swpen_vdf
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Fioi_swpen_vdf
+
+iceImpAccum_Fioi_swpen_vdr
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_Fioi_swpen_vdr
+
+iceImpAccum_Fioi_taux
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : N m-2
+    standard_name    : iceImpAccum_Fioi_taux
+
+iceImpAccum_Fioi_tauy
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : N m-2
+    standard_name    : iceImpAccum_Fioi_tauy
+
+iceImpAccum_Si_anidf
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_anidf
+
+iceImpAccum_Si_anidr
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_anidr
+
+iceImpAccum_Si_avsdf
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_avsdf
+
+iceImpAccum_Si_avsdr
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_avsdr
+
+iceImpAccum_Si_ifrac
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_ifrac
+
+iceImpAccum_Si_imask
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : 1
+    standard_name    : iceImpAccum_Si_imask
+
+iceImpAccum_Si_t
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : K
+    standard_name    : iceImpAccum_Si_t
+
+iceImpAccum_Si_vice
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : m
+    standard_name    : iceImpAccum_Si_vice
+
+iceImpAccum_Si_vsno
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : m
+    standard_name    : iceImpAccum_Si_vsno
+
+iceImpAccum_mean_sw_pen_to_ocn
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    units            : W m-2
+    standard_name    : iceImpAccum_mean_sw_pen_to_ocn
+
+iceImpAccum_lon
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    long_name        : longitude
+    units            : degrees_east
+    standard_name    : longitude
+
+iceImpAccum_lat
+    dims             : ('time', 'iceImpAccum_ny', 'iceImpAccum_nx')
+    long_name        : latitude
+    units            : degrees_north
+    standard_name    : latitude
+

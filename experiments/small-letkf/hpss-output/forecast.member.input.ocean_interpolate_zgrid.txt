@@ -1,0 +1,14 @@
+ --- Coordinates --- 
+zt
+    long_name        : Depth of Layer Center
+    units            : m
+    positive         : down
+    edges            : zw
+
+zw
+    units            : m
+    long_name        : Depth of edges
+    positive         : down
+
+
+ --- Data Variables --- 

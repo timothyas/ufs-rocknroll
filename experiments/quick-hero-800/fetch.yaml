@@ -1,0 +1,368 @@
+# $$$ YAML DOCUMENTATION BLOCK
+  
+# UFS-RNR :: parm/staging/fetch.RDHPCS-Hera.yaml
+
+# Email: henry.winterbottom@noaa.gov
+
+# DESCRIPTION:
+
+# This YAML formatted file contains the Unified Forecasting System
+# (UFS) Reforecast and Reanalysis (RNR) file fetching information for
+# the various UFS-RNR application inputs.
+
+#----
+
+# Atmosphere CIMSS ADT observation inputs staging settings.
+atmos_cimssadt:
+
+     # Define the world-wide web path for the archived CIMSS ADT
+     # observations; POSIX compliant time-stamp options are permitted.
+     archived_webpath: https://tropic.ssec.wisc.edu/real-time/adt/archive%Y/index.html
+
+     # Define the boolean variable specifying whether the CIMSS ADT
+     # observations to seek are archived (i.e., not real-time)
+     # observations.
+     archived: False
+
+     # Define the world-wide web path for the (near) real-time CIMSS
+     # ADT observations; POSIX compliant time-stamp options are
+     # permitted.
+     realtime_webpath: https://tropic.ssec.wisc.edu/real-time/adt/index.html
+
+     # Define the boolean variable specifying whether the CIMSS ADT
+     # observations to seek are (near) real-time (i.e., non-archived)
+     # observations.
+     realtime: True
+
+#----
+
+# Atmosphere forecast model application inputs staging settings.
+atmos_forecast:
+
+     # Define the boolean variable specifying whether the atmosphere
+     # forecast model input files for the UFS-RNR are pre-staged
+     # (i.e., already exist) on disk; if True, the local_datapath
+     # variable (below) must be defined and point to the top-level
+     # path for the staged initial condition files for the
+     # deterministic forecast (and ensemble if applicable).
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged atmosphere model application initial condition files
+     # reside; POSIX compliant time-stamp options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/initial-conditions
+     
+     # Specify whether the atmosphere forecast model input files exist
+     # within an Amazon Web Services (AWS) s3 bucket; if True, the
+     # s3_bucket variable (below) must be defined and point to the
+     # top-level path for the staged initial condition files for the
+     # deterministic forecast (and ensemble if applicable).
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged initial condition files for the deterministic
+     # forecast (and ensemble if applicable).
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket from which
+     # the files of interest will be collected; the respective grid
+     # resolution will be appended to this path; POSIX compliant
+     # time-stamp options are permitted.
+     s3_datapath: initial-conditions/ufsrnr.ufsp7c/atmos/gefsv12/%Y%m%d%H%M%S
+
+     # Extend ensemble size beyond available initial conditions by copying them over and over
+     # To do this, set "extend_ensemble_ics" to True (default's False) and specify the maximum
+     # number of available initial conditions in the database (max_ics_available; no default value)
+     # Note: must be set independently for each domain, i.e. atmos/ocean/ice
+     extend_ensemble_ics: True
+     max_ics_available: 80
+
+#----
+
+# Atmosphere data-assimilation (GSI) bias-correction coefficient
+# staging settings.
+atmos_gsibcc:
+
+     # Define the boolean variable specifying whether the atmosphere
+     # TCV files for the UFS-RNR data assimilation applications are
+     # pre-staged (i.e., already exist) on disk; if True, the
+     # local_datapath variable (below) must be defined and point to
+     # the top-level path for the staged observation files.
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged atmosphere observation files for the data
+     # assimilation applications reside; POSIX compliant time-stamp
+     # options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/observations/atmos/%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observation files exist within
+     # an Amazon Web Services (AWS) s3 bucket; if True, the
+     # s3_bucket variable (below) must be defined and point to the
+     # top-level path for the staged observation files for the data
+     # assimilation applications.
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged atmosphere observation files.
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket for the
+     # files of interest; the respective format_types, if any, will be
+     # appended to this path; POSIX compliant time-stamp options are
+     # permitted.
+     s3_datapath: observations/atmos/gefs_v12_biascc-md5/%Y/gdas.%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observations are in JEDI IODA
+     # format.
+     ioda_format: False
+
+     # Define the local filename string for the retrieved file; POSIX
+     # compliant time-stamp options are permitted.
+     local_filename: gdas1.t%Hz  
+
+#----
+
+# Atmosphere observation inputs staging settings.
+atmos_observations:
+
+     # Define the observation format types; these strings constitute
+     # the respective observation formats and the sub-directory paths
+     # beneath which the respective formatted observation types
+     # reside; comma-delimited.
+     format_types: bufr
+
+     # Define the boolean variable specifying whether the atmosphere
+     # observation files for the UFS-RNR data assimilation
+     # applications are pre-staged (i.e., already exist) on disk; if
+     # True, the local_datapath variable (below) must be defined and
+     # point to the top-level path for the observation files.
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged atmosphere observation files for the data
+     # assimilation applications reside; POSIX compliant time-stamp
+     # options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/observations/atmos/%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observation files exist within
+     # an Amazon Web Services (AWS) s3 bucket; if True, the
+     # s3_bucket variable (below) must be defined and point to the
+     # top-level path for the staged observation files for the data
+     # assimilation applications.
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged atmosphere observation files.
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket for the
+     # files of interest; the respective format_types, if any, will be
+     # appended to this path; POSIX compliant time-stamp options are
+     # permitted.
+     s3_datapath: observations/atmos/gefsv13_reanalysis-md5/%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observations are in JEDI IODA
+     # format.
+     ioda_format: False
+
+     # Define filename suffixes to be excluded (i.e., removed) from
+     # local archive; comma-delimited.
+     filename_suffix: .grib2, .index, .idx, .md5
+
+#----
+
+# Atmosphere tropical cyclone (TC) observation (TC-vitals; TCV) inputs
+# staging settings.
+atmos_tcvsyndat:
+
+     # Define the boolean variable specifying whether the atmosphere
+     # TCV files for the UFS-RNR data assimilation applications are
+     # pre-staged (i.e., already exist) on disk; if True, the
+     # local_datapath variable (below) must be defined and point to
+     # the top-level path for the staged observation files.
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged atmosphere observation files for the data
+     # assimilation applications reside; POSIX compliant time-stamp
+     # options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/observations/atmos/%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observation files exist within
+     # an Amazon Web Services (AWS) s3 bucket; if True, the
+     # s3_bucket variable (below) must be defined and point to the
+     # top-level path for the staged observation files for the data
+     # assimilation applications.
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged atmosphere observation files.
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket for the
+     # files of interest; the respective format_types, if any, will be
+     # appended to this path; POSIX compliant time-stamp options are
+     # permitted.
+     s3_datapath: observations/atmos/tropcyc/syndat/%Y/syndat.%Y%m%d%H%M%S
+
+     # Specify whether the atmosphere observations are in JEDI IODA
+     # format.
+     ioda_format: False
+
+     # Define the local filename string for the retrieved file; POSIX
+     # compliant time-stamp options are permitted.
+     local_filename: gdas1.t%Hz.syndata.tcvitals.tm00
+     
+#----
+
+# Ice forecast model application inputs staging settings.
+ice_forecast:
+     
+     # Define the boolean variable specifying whether the ice forecast
+     # model input files for the UFS-RNR are pre-staged (i.e., already
+     # exist) on disk; if True, the local_datapath variable (below)
+     # must be defined and point to the top-level path for the staged
+     # initial condition files for the deterministic forecast (and
+     # ensemble if applicable).
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged ice model application initial condition files
+     # reside; POSIX compliant time-stamp options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/initial-conditions
+     
+     # Specify whether the ice forecast model input files exist within
+     # an Amazon Web Services (AWS) s3 bucket; if True, the s3_bucket
+     # variable (below) must be defined and point to the top-level
+     # path for the staged initial condition files for the
+     # deterministic forecast (and ensemble if applicable).
+     s3_pre_staged: True
+          
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged initial condition files for the deterministic
+     # forecast (and ensemble if applicable).
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket from which
+     # the files of interest will be collected; the respective grid
+     # resolution will be appended to this path; POSIX compliant
+     # time-stamp options are permitted.
+     s3_datapath: initial-conditions/ufsrnr.ufsp7c/ice/cpc/%Y%m%d%H%M%S
+     
+#----
+
+# Ice observation inputs staging settings.
+ice_observations:
+
+     # Define the boolean variable specifying whether the ice
+     # observation files for the UFS-RNR data assimilation
+     # applications are pre-staged (i.e., already exist) on disk; if
+     # True, the local_datapath variable (below) must be defined and
+     # point to the top-level path for the staged observation files.
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged ice observation files for the data assimilation
+     # applications reside.
+     local_datapath: No
+
+     # Specify whether the ice observation files exist within an
+     # Amazon Web Services (AWS) s3 bucket; if True, the s3_bucket
+     # variable (below) must be defined and point to the top-level
+     # path for the staged observation files for the data assimilation
+     # applications.
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged ice observation files.
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket for the
+     # files of interest; the respective format_types, if any, will be
+     # appended to this path; POSIX compliant time-stamp options are
+     # permitted.
+     s3_datapath: observations/ocean/benchmark-3/%Y%m%d%H%M%S
+
+     # Specify whether the ocean observations are in JEDI IODA format.
+     ioda_format: True
+
+#----
+
+# Ocean forecast model application inputs staging settings.
+ocean_forecast:
+
+     # Define the boolean variable specifying whether the ocean
+     # forecast model input files for the UFS-RNR are pre-staged
+     # (i.e., already exist) on disk; if True, the local_datapath
+     # variable (below) must be defined and point to the top-level
+     # path for the staged initial condition files for the
+     # deterministic forecast (and ensemble if applicable).
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged ocean model application initial condition files
+     # reside; POSIX compliant time-stamp options are permitted.
+     local_datapath: /scratch2/BMC/gsienkf/UFS-RNR/initial-conditions
+     
+     # Specify whether the ocean forecast model input files exist
+     # within an Amazon Web Services (AWS) s3 bucket; if True, the
+     # s3_bucket variable (below) must be defined and point to the
+     # top-level path for the staged initial condition files for the
+     # deterministic forecast (and ensemble if applicable).
+     s3_pre_staged: True
+          
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged initial condition files for the deterministic
+     # forecast (and ensemble if applicable).
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket from which
+     # the files of interest will be collected; the respective grid
+     # resolution will be appended to this path; POSIX compliant
+     # time-stamp options are permitted.
+     s3_datapath: initial-conditions/ufsrnr.ufsp7c/ocean/oras5/%Y%m%d%H%M%S
+
+#----
+
+# Ocean observation inputs staging settings.
+ocean_observations:
+
+     # Define the observation format types; these strings constitute
+     # the respective observation formats and the sub-directory paths
+     # beneath which the respective formatted observation types
+     # reside; comma-delimited.
+     format_types: altimetry, insitu, smap, sst     
+
+     # Define the boolean variable specifying whether the ocean
+     # observation files for the UFS-RNR data assimilation
+     # applications are pre-staged (i.e., already exist) on disk; if
+     # True, the local_datapath variable (below) must be defined and
+     # point to the top-level path for the staged observation files.
+     local_pre_staged: False
+
+     # Define the top-level path, for the respective host, where the
+     # pre-staged ocean observation files for the data assimilation
+     # applications reside; POSIX compliant time-stamp options are
+     # permitted.
+     local_datapath: Null
+
+     # Specify whether the ocean observation files exist within an
+     # Amazon Web Services (AWS) s3 bucket; if True, the s3_bucket
+     # variable (below) must be defined and point to the top-level
+     # path for the staged observation files for the data assimilation
+     # applications.
+     s3_pre_staged: True
+
+     # Define the top-level path within the respective AWS s3 bucket
+     # for the staged ocean observation files.
+     s3_bucket: noaa-reanalyses-pds
+
+     # Define the top-level path within the AWS s3 bucket for the
+     # files of interest; the respective format_types, if any, will be
+     # appended to this path; POSIX compliant time-stamp options are
+     # permitted.
+     s3_datapath: observations/ocean/benchmark-3/%Y%m%d%H%M%S
+
+     # Specify whether the ocean observations are in JEDI IODA format.
+     ioda_format: True

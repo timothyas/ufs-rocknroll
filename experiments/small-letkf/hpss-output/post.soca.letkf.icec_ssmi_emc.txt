@@ -1,0 +1,48 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+record_number@MetaData
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@PreQC
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@EffectiveQC
+    dims             : ('nlocs',)
+
+latitude@MetaData
+    dims             : ('nlocs',)
+
+longitude@MetaData
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@ObsError
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@ObsValue
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@hofx0_1
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@hofx0_2
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@hofx0_3
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@hofx0_4
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@hofx0_5
+    dims             : ('nlocs',)
+
+sea_ice_area_fraction@ombg
+    dims             : ('nlocs',)
+
+variable_names@VarMetaData
+    dims             : ('nvars',)
+
+datetime@MetaData
+    dims             : ('nlocs',)
+

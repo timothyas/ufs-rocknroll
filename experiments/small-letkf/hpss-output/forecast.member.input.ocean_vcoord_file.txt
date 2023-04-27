@@ -1,0 +1,13 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+dz
+    dims             : ('layers',)
+    long_name        : z* coordinate level thickness
+    units            : m
+
+sigma2
+    dims             : ('interfaces',)
+    long_name        : Interface target potential density referenced to 2000 dbars
+    units            : kg/m3
+

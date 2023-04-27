@@ -1,0 +1,1057 @@
+ --- Coordinates --- 
+grid_xt
+    cartesian_axis   : X
+    long_name        : T-cell longitude
+    units            : degrees_E
+
+grid_yt
+    cartesian_axis   : Y
+    long_name        : T-cell latiitude
+    units            : degrees_N
+
+time
+    calendar_type    : JULIAN
+    cartesian_axis   : T
+    long_name        : time
+
+
+ --- Data Variables --- 
+lon
+    dims             : ('grid_yt', 'grid_xt')
+    long_name        : T-cell longitude
+    units            : degrees_E
+
+lat
+    dims             : ('grid_yt', 'grid_xt')
+    long_name        : T-cell latitude
+    units            : degrees_N
+
+acond
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Aerodynamic conductance
+    output_file      : phy
+    units            : m/s
+
+albdo_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface albedo
+    output_file      : phy
+    units            : %
+
+alnsf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : mean nir albedo with strong cosz dependency
+    output_file      : phy
+    units            : %
+
+alnwf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : mean nir albedo with weak cosz dependency
+    output_file      : phy
+    units            : %
+
+alvsf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : mean vis albedo with strong cosz dependency
+    output_file      : phy
+    units            : %
+
+alvwf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : mean vis albedo with weak cosz dependency
+    output_file      : phy
+    units            : %
+
+c0
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst coefficient1 to calculate d(tz)/d(ts)
+    output_file      : phy
+    units            : numerical
+
+cd
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst coefficient2 to calculate d(tz)/d(ts)
+    output_file      : phy
+    units            : n/a
+
+cduvb_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear sky UV-B Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+cnwat
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : canopy water (cnwat in gfs data)
+    output_file      : phy
+    units            : XXX
+
+cpofp
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Percent frozen precipitation
+    output_file      : phy
+    units            : %
+
+cprat_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : averaged surface convective precipitation rate
+    output_file      : phy
+    units            : kg/m**2/s
+
+cpratb_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : averaged bucket surface convective precipitation rate
+    output_file      : phy
+    units            : kg/m**2/s
+
+crain
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous categorical rain
+    output_file      : phy
+    units            : number
+
+csdlf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Downward Long Wave Flux
+    output_file      : phy
+    units            : W/m**2
+
+csdsf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Downward Short Wave Flux
+    output_file      : phy
+    units            : W/m**2
+
+csulf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Upward Long Wave Flux
+    output_file      : phy
+    units            : W/m**2
+
+csulftoa
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Upward Long Wave Flux at toa
+    output_file      : phy
+    units            : W/m**2
+
+csusf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Upward Short Wave Flux
+    output_file      : phy
+    units            : W/m**2
+
+csusftoa
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Clear Sky Upward Short Wave Flux at toa
+    output_file      : phy
+    units            : W/m**2
+
+cwork_aveclm
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : cloud work function (valid only with sas)
+    output_file      : phy
+    units            : J/kg
+
+dconv
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst thickness of free convection layer
+    output_file      : phy
+    units            : m
+
+dlwrf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface downward longwave flux
+    output_file      : phy
+    units            : W/m**2
+
+dlwrf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface downward longwave flux
+    output_file      : phy
+    units            : W/m**2
+
+dswrf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface downward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+dswrf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : averaged surface downward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+dswrf_avetoa
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : top of atmos downward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+dtcool
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst sub-layer cooling amount
+    output_file      : phy
+    units            : k
+
+duvb_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : UV-B Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+evbs_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Direct Evaporation from Bare Soil - GFS lsm
+    output_file      : phy
+    units            : W/m**2
+
+evcw_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Canopy water evaporation - GFS lsm
+    output_file      : phy
+    units            : W/m**2
+
+f10m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : 10-meter wind speed divided by lowest model wind speed
+    output_file      : phy
+    units            : N/A
+
+facsf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : fractional coverage with strong cosz dependency
+    output_file      : phy
+    units            : XXX
+
+facwf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : fractional coverage with weak cosz dependency
+    output_file      : phy
+    units            : XXX
+
+ffhh
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : fh parameter from PBL scheme
+    output_file      : phy
+    units            : XXX
+
+ffmm
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : fm parameter from PBL scheme
+    output_file      : phy
+    units            : XXX
+
+fldcp
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Field Capacity (volumetric)
+    output_file      : phy
+    units            : fraction
+
+fricv
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : uustar surface frictional wind
+    output_file      : phy
+    units            : XXX
+
+gflux
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface ground heat flux
+    output_file      : phy
+    units            : W/m**2
+
+gflux_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface ground heat flux
+    output_file      : phy
+    units            : W/m**2
+
+hgt_hyblev1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : layer 1 height
+    output_file      : phy
+    units            : m
+
+hpbl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface planetary boundary layer height
+    output_file      : phy
+    units            : m
+
+icec
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface ice concentration (ice=1; no ice=0)
+    output_file      : phy
+    units            : fraction
+
+icetk
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : sea ice thickness (icetk in gfs_data)
+    output_file      : phy
+    units            : XXX
+
+land
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : sea-land-ice mask (0-sea, 1-land, 2-ice)
+    output_file      : phy
+    units            : numerical
+
+lhtfl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface latent heat net flux
+    output_file      : phy
+    units            : W/m**2
+
+lhtfl_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface latent heat flux
+    output_file      : phy
+    units            : w/m**2
+
+nbdsf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Near IR Beam Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+nddsf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Near IR Diffuse Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+orog
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface geopotential height
+    output_file      : phy
+    units            : gpm
+
+pevpr
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface potential evaporation
+    output_file      : phy
+    units            : W/M**2
+
+pevpr_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : averaged potential evaporation rate
+    output_file      : phy
+    units            : W/M**2
+
+prate_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface precipitation rate
+    output_file      : phy
+    units            : kg/m**2/s
+
+prateb_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : bucket surface precipitation rate
+    output_file      : phy
+    units            : kg/m**2/s
+
+pres_avehcb
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure high cloud bottom level
+    output_file      : phy
+    units            : %
+
+pres_avehct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure high cloud top level
+    output_file      : phy
+    units            : %
+
+pres_avelcb
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure low cloud bottom level
+    output_file      : phy
+    units            : %
+
+pres_avelct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure low cloud top level
+    output_file      : phy
+    units            : %
+
+pres_avemcb
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure middle cloud bottom level
+    output_file      : phy
+    units            : %
+
+pres_avemct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure middle cloud top level
+    output_file      : phy
+    units            : %
+
+prescnvclb
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure at convective cloud bottom level
+    output_file      : phy
+    units            : pa
+
+prescnvclt
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure at convective cloud top level
+    output_file      : phy
+    units            : pa
+
+pressfc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface pressure
+    output_file      : phy
+    units            : Pa
+
+pwatclm
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : atmos column precipitable water
+    output_file      : phy
+    units            : kg/m**2
+
+qrain
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst sensible heat flux due to rainfall
+    output_file      : phy
+    units            : w/m2
+
+sbsno_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Sublimation (evaporation from snow) - GFS lsm
+    output_file      : phy
+    units            : W/m**2
+
+sfcr
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface roughness
+    output_file      : phy
+    units            : m
+
+sfexc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Exchange Coefficient
+    output_file      : phy
+    units            : kg/m2/s
+
+shdmax
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : maximum fractional coverage of green vegetation
+    output_file      : phy
+    units            : XXX
+
+shdmin
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : minimum fractional coverage of green vegetation
+    output_file      : phy
+    units            : XXX
+
+shtfl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface sensible heat net flux
+    output_file      : phy
+    units            : W/m**2
+
+shtfl_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface sensible heat flux
+    output_file      : phy
+    units            : w/m**2
+
+sltyp
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface slope type
+    output_file      : phy
+    units            : XXX
+
+snoalb
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : maximum snow albedo in fraction
+    output_file      : phy
+    units            : XXX
+
+snod
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface snow depth
+    output_file      : phy
+    units            : m
+
+snohf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Snow Phase Change Heat Flux - GFS lsm
+    output_file      : phy
+    units            : W/m**2
+
+snowc_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : snow cover - GFS lsm
+    output_file      : phy
+    units            : %
+
+soill1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : liquid soil mositure at layer-1
+    output_file      : phy
+    units            : xxx
+
+soill2
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : liquid soil mositure at layer-2
+    output_file      : phy
+    units            : xxx
+
+soill3
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : liquid soil mositure at layer-3
+    output_file      : phy
+    units            : xxx
+
+soill4
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : liquid soil mositure at layer-4
+    output_file      : phy
+    units            : xxx
+
+soilm
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : total column soil moisture content
+    output_file      : phy
+    units            : kg/m**2
+
+soilt1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : soil temperature unknown layer 1
+    output_file      : phy
+    units            : K
+
+soilt2
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : soil temperature unknown layer 2
+    output_file      : phy
+    units            : K
+
+soilt3
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : soil temperature unknown layer 3
+    output_file      : phy
+    units            : K
+
+soilt4
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : soil temperature unknown layer 4
+    output_file      : phy
+    units            : K
+
+soilw1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : volumetric soil moisture unknown layer 1
+    output_file      : phy
+    units            : fraction
+
+soilw2
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : volumetric soil moisture unknown layer 2
+    output_file      : phy
+    units            : fraction
+
+soilw3
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : volumetric soil moisture unknown layer 3
+    output_file      : phy
+    units            : fraction
+
+soilw4
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : volumetric soil moisture unknown layer 4
+    output_file      : phy
+    units            : fraction
+
+sotyp
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : soil type in integer 1-9
+    output_file      : phy
+    units            : number
+
+spfh2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : 2m specific humidity
+    output_file      : phy
+    units            : kg/kg
+
+spfh_hyblev1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : layer 1 specific humidity
+    output_file      : phy
+    units            : kg/kg
+
+spfhmax_max2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : maximum specific humidity
+    output_file      : phy
+    units            : kg/kg
+
+spfhmin_min2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : minimum specific humidity
+    output_file      : phy
+    units            : kg/kg
+
+ssrun_acc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface storm water runoff - GFS lsm
+    output_file      : phy
+    units            : kg/m**2
+
+sunsd_acc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Sunshine Duration
+    output_file      : phy
+    units            : s
+
+tcdc_avebndcl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : boundary layer cloud layer total cloud cover
+    output_file      : phy
+    units            : %
+
+tcdc_aveclm
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : atmos column total cloud cover
+    output_file      : phy
+    units            : %
+
+tcdc_avehcl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : high cloud level total cloud cover
+    output_file      : phy
+    units            : %
+
+tcdc_avelcl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : low cloud level total cloud cover
+    output_file      : phy
+    units            : %
+
+tcdc_avemcl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : mid cloud level total cloud cover
+    output_file      : phy
+    units            : %
+
+tcdccnvcl
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : convective cloud layer total cloud cover
+    output_file      : phy
+    units            : %
+
+tg3
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : deep soil temperature
+    output_file      : phy
+    units            : K
+
+tisfc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface temperature over ice fraction
+    output_file      : phy
+    units            : K
+
+tmax_max2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : max temperature at 2m height
+    output_file      : phy
+    units            : K
+
+tmin_min2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : min temperature at 2m height
+    output_file      : phy
+    units            : K
+
+tmp2m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : 2m temperature
+    output_file      : phy
+    units            : K
+
+tmp_avehct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : temperature high cloud top level
+    output_file      : phy
+    units            : K
+
+tmp_avelct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : temperature low cloud top level
+    output_file      : phy
+    units            : K
+
+tmp_avemct
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : temperature middle cloud top level
+    output_file      : phy
+    units            : K
+
+tmp_hyblev1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : layer 1 temperature
+    output_file      : phy
+    units            : K
+
+tmpsfc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface temperature
+    output_file      : phy
+    units            : K
+
+tprcp
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : total precipitation
+    output_file      : phy
+    units            : kg/m**2
+
+trans_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : transpiration - GFS lsm
+    output_file      : phy
+    units            : W/m**2
+
+tref
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst reference or foundation temperature
+    output_file      : phy
+    units            : K
+
+u-gwd_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface zonal gravity wave stress
+    output_file      : phy
+    units            : N/m**2
+
+uflx_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface zonal momentum flux
+    output_file      : phy
+    units            : N/m**2
+
+ugrd10m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : 10 meter u wind
+    output_file      : phy
+    units            : m/s
+
+ugrd_hyblev1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : layer 1 zonal wind
+    output_file      : phy
+    units            : m/s
+
+ulwrf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface upward longwave flux
+    output_file      : phy
+    units            : W/m**2
+
+ulwrf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface upward longwave flux
+    output_file      : phy
+    units            : W/m**2
+
+ulwrf_avetoa
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : top of atmos upward longwave flux
+    output_file      : phy
+    units            : W/m**2
+
+uswrf
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : instantaneous surface upward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+uswrf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : averaged surface upward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+uswrf_avetoa
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : top of atmos upward shortwave flux
+    output_file      : phy
+    units            : W/m**2
+
+v-gwd_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface meridional gravity wave stress
+    output_file      : phy
+    units            : N/m**2
+
+vbdsf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Visible Beam Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+vddsf_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : Visible Diffuse Downward Solar Flux
+    output_file      : phy
+    units            : W/m**2
+
+veg
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : vegetation fraction
+    output_file      : phy
+    units            : fraction
+
+vflx_ave
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface meridional momentum flux
+    output_file      : phy
+    units            : N/m**2
+
+vgrd10m
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : 10 meter v wind
+    output_file      : phy
+    units            : m/s
+
+vgrd_hyblev1
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : layer 1 meridional wind
+    output_file      : phy
+    units            : m/s
+
+vtype
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : vegetation type in integer 1-13
+    output_file      : phy
+    units            : number
+
+w0
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst coefficient3 to calculate d(tz)/d(ts)
+    output_file      : phy
+    units            : n/a
+
+watr_acc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : total water runoff
+    output_file      : phy
+    units            : kg/m**2
+
+wd
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst coefficient4 to calculate d(tz)/d(ts)
+    output_file      : phy
+    units            : n/a
+
+weasd
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface snow water equivalent
+    output_file      : phy
+    units            : kg/m**2
+
+wilt
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : wiltimg point (volumetric)
+    output_file      : phy
+    units            : Proportion
+
+xs
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst salinity content in diurnal thermocline layer
+    output_file      : phy
+    units            : n/a
+
+xt
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst heat content in diurnal thermocline layer
+    output_file      : phy
+    units            : k*m
+
+xtts
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst d(xt)/d(ts)
+    output_file      : phy
+    units            : m
+
+xu
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst u-current content in diurnal thermocline layer
+    output_file      : phy
+    units            : m2/s
+
+xv
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst v-current content in diurnal thermocline layer
+    output_file      : phy
+    units            : m2/s
+
+xz
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst diurnal thermocline layer thickness
+    output_file      : phy
+    units            : m
+
+xzts
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst d(xt)/d(ts)
+    output_file      : phy
+    units            : m/k
+
+zc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : nsst sub-layer cooling thickness
+    output_file      : phy
+    units            : m
+

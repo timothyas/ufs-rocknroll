@@ -1,0 +1,59 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+atm_mosaic_dir
+    dims             : ()
+    standard_name    : directory_storing_atmosphere_mosaic
+
+atm_mosaic_file
+    dims             : ()
+    standard_name    : atmosphere_mosaic_file_name
+
+atm_mosaic
+    dims             : ()
+    standard_name    : atmosphere_mosaic_name
+
+lnd_mosaic_dir
+    dims             : ()
+    standard_name    : directory_storing_land_mosaic
+
+lnd_mosaic_file
+    dims             : ()
+    standard_name    : land_mosaic_file_name
+
+lnd_mosaic
+    dims             : ()
+    standard_name    : land_mosaic_name
+
+ocn_mosaic_dir
+    dims             : ()
+    standard_name    : directory_storing_ocean_mosaic
+
+ocn_mosaic_file
+    dims             : ()
+    standard_name    : ocean_mosaic_file_name
+
+ocn_mosaic
+    dims             : ()
+    standard_name    : ocean_mosaic_name
+
+ocn_topog_dir
+    dims             : ()
+    standard_name    : directory_storing_ocean_topog
+
+ocn_topog_file
+    dims             : ()
+    standard_name    : ocean_topog_file_name
+
+aXo_file
+    dims             : ('nfile_aXo',)
+    standard_name    : atmXocn_exchange_grid_file
+
+aXl_file
+    dims             : ('nfile_aXl',)
+    standard_name    : atmXlnd_exchange_grid_file
+
+lXo_file
+    dims             : ('nfile_lXo',)
+    standard_name    : lndXocn_exchange_grid_file
+

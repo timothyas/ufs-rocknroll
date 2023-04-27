@@ -1,0 +1,23 @@
+ --- Coordinates --- 
+i
+    units            : degrees_east
+    cartesian_axis   : X
+
+j
+    units            : degrees_north
+    cartesian_axis   : Y
+
+time
+    cartesian_axis   : T
+    long_name        : Day of year
+    modulo           :  
+    calendar_type    : julian
+
+
+ --- Data Variables --- 
+SALT
+    dims             : ('time', 'j', 'i')
+    units            : psu
+    regrid_method    : conservative
+    coordinates      : lon lat
+

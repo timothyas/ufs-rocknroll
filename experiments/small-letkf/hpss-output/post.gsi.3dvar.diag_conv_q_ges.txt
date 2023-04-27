@@ -1,0 +1,78 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+Station_ID
+    dims             : ('nobs',)
+
+Observation_Class
+    dims             : ('nobs',)
+
+Observation_Type
+    dims             : ('nobs',)
+
+Observation_Subtype
+    dims             : ('nobs',)
+
+Latitude
+    dims             : ('nobs',)
+
+Longitude
+    dims             : ('nobs',)
+
+Station_Elevation
+    dims             : ('nobs',)
+
+Pressure
+    dims             : ('nobs',)
+
+Height
+    dims             : ('nobs',)
+
+Time
+    dims             : ('nobs',)
+
+Prep_QC_Mark
+    dims             : ('nobs',)
+
+Prep_Use_Flag
+    dims             : ('nobs',)
+
+Nonlinear_QC_Var_Jb
+    dims             : ('nobs',)
+
+Nonlinear_QC_Rel_Wgt
+    dims             : ('nobs',)
+
+Analysis_Use_Flag
+    dims             : ('nobs',)
+
+Errinv_Input
+    dims             : ('nobs',)
+
+Errinv_Adjust
+    dims             : ('nobs',)
+
+Errinv_Final
+    dims             : ('nobs',)
+
+Observation
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_adjusted
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_unadjusted
+    dims             : ('nobs',)
+
+Forecast_Saturation_Spec_Hum
+    dims             : ('nobs',)
+
+Observation_Operator_Jacobian_stind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_stind_arr_dim')
+
+Observation_Operator_Jacobian_endind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_endind_arr_dim')
+
+Observation_Operator_Jacobian_val
+    dims             : ('nobs', 'Observation_Operator_Jacobian_val_arr_dim')
+

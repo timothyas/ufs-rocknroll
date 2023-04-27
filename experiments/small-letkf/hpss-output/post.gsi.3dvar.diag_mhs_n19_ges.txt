@@ -1,0 +1,270 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+chaninfoidx
+    dims             : ('nchans',)
+
+frequency
+    dims             : ('nchans',)
+
+polarization
+    dims             : ('nchans',)
+
+wavenumber
+    dims             : ('nchans',)
+
+error_variance
+    dims             : ('nchans',)
+
+mean_lapse_rate
+    dims             : ('nchans',)
+
+use_flag
+    dims             : ('nchans',)
+
+sensor_chan
+    dims             : ('nchans',)
+
+satinfo_chan
+    dims             : ('nchans',)
+
+Channel_Index
+    dims             : ('nobs',)
+
+Observation_Class
+    dims             : ('nobs',)
+
+Latitude
+    dims             : ('nobs',)
+
+Longitude
+    dims             : ('nobs',)
+
+Elevation
+    dims             : ('nobs',)
+
+Obs_Time
+    dims             : ('nobs',)
+
+Scan_Position
+    dims             : ('nobs',)
+
+Sat_Zenith_Angle
+    dims             : ('nobs',)
+
+Sat_Azimuth_Angle
+    dims             : ('nobs',)
+
+Sol_Zenith_Angle
+    dims             : ('nobs',)
+
+Sol_Azimuth_Angle
+    dims             : ('nobs',)
+
+Sun_Glint_Angle
+    dims             : ('nobs',)
+
+Scan_Angle
+    dims             : ('nobs',)
+
+Water_Fraction
+    dims             : ('nobs',)
+
+Land_Fraction
+    dims             : ('nobs',)
+
+Ice_Fraction
+    dims             : ('nobs',)
+
+Snow_Fraction
+    dims             : ('nobs',)
+
+Water_Temperature
+    dims             : ('nobs',)
+
+Land_Temperature
+    dims             : ('nobs',)
+
+Ice_Temperature
+    dims             : ('nobs',)
+
+Snow_Temperature
+    dims             : ('nobs',)
+
+Soil_Temperature
+    dims             : ('nobs',)
+
+Soil_Moisture
+    dims             : ('nobs',)
+
+Land_Type_Index
+    dims             : ('nobs',)
+
+tsavg5
+    dims             : ('nobs',)
+
+sstcu
+    dims             : ('nobs',)
+
+sstph
+    dims             : ('nobs',)
+
+sstnv
+    dims             : ('nobs',)
+
+dta
+    dims             : ('nobs',)
+
+dqa
+    dims             : ('nobs',)
+
+dtp_avh
+    dims             : ('nobs',)
+
+Vegetation_Fraction
+    dims             : ('nobs',)
+
+Snow_Depth
+    dims             : ('nobs',)
+
+tpwc
+    dims             : ('nobs',)
+
+clw_guess_retrieval
+    dims             : ('nobs',)
+
+Sfc_Wind_Speed
+    dims             : ('nobs',)
+
+Cloud_Frac
+    dims             : ('nobs',)
+
+CTP
+    dims             : ('nobs',)
+
+CLW
+    dims             : ('nobs',)
+
+TPWC
+    dims             : ('nobs',)
+
+clw_obs
+    dims             : ('nobs',)
+
+clw_guess
+    dims             : ('nobs',)
+
+Foundation_Temperature
+    dims             : ('nobs',)
+
+SST_Warm_layer_dt
+    dims             : ('nobs',)
+
+SST_Cool_layer_tdrop
+    dims             : ('nobs',)
+
+SST_dTz_dTfound
+    dims             : ('nobs',)
+
+Observation
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_unadjusted
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_adjusted
+    dims             : ('nobs',)
+
+Inverse_Observation_Error
+    dims             : ('nobs',)
+
+Observation_scaled
+    dims             : ('nobs',)
+
+Obs_Minus_Forecast_adjusted_scaled
+    dims             : ('nobs',)
+
+Inverse_Observation_Error_scaled
+    dims             : ('nobs',)
+
+QC_Flag
+    dims             : ('nobs',)
+
+Emissivity
+    dims             : ('nobs',)
+
+Weighted_Lapse_Rate
+    dims             : ('nobs',)
+
+dTb_dTs
+    dims             : ('nobs',)
+
+BC_Constant
+    dims             : ('nobs',)
+
+BC_Scan_Angle
+    dims             : ('nobs',)
+
+BC_Cloud_Liquid_Water
+    dims             : ('nobs',)
+
+BC_Lapse_Rate_Squared
+    dims             : ('nobs',)
+
+BC_Lapse_Rate
+    dims             : ('nobs',)
+
+BC_Cosine_Latitude_times_Node
+    dims             : ('nobs',)
+
+BC_Sine_Latitude
+    dims             : ('nobs',)
+
+BC_Emissivity
+    dims             : ('nobs',)
+
+BC_Fixed_Scan_Position
+    dims             : ('nobs',)
+
+BCPred_Constant
+    dims             : ('nobs',)
+
+BCPred_Scan_Angle
+    dims             : ('nobs',)
+
+BCPred_Cloud_Liquid_Water
+    dims             : ('nobs',)
+
+BCPred_Lapse_Rate_Squared
+    dims             : ('nobs',)
+
+BCPred_Lapse_Rate
+    dims             : ('nobs',)
+
+BCPred_Cosine_Latitude_times_Node
+    dims             : ('nobs',)
+
+BCPred_Sine_Latitude
+    dims             : ('nobs',)
+
+BCPred_Emissivity
+    dims             : ('nobs',)
+
+Press_Max_Weight_Function
+    dims             : ('nobs',)
+
+Observation_Operator_Jacobian_stind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_stind_arr_dim')
+
+Observation_Operator_Jacobian_endind
+    dims             : ('nobs', 'Observation_Operator_Jacobian_endind_arr_dim')
+
+Observation_Operator_Jacobian_val
+    dims             : ('nobs', 'Observation_Operator_Jacobian_val_arr_dim')
+
+BC_angord
+    dims             : ('nobs', 'BC_angord_arr_dim')
+
+BCPred_angord
+    dims             : ('nobs', 'BCPred_angord_arr_dim')
+

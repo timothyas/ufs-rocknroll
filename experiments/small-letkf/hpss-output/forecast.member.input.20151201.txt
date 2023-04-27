@@ -1,0 +1,161 @@
+ --- Coordinates --- 
+xaxis_1
+    long_name        : xaxis_1
+    units            : none
+    cartesian_axis   : X
+
+yaxis_1
+    long_name        : yaxis_1
+    units            : none
+    cartesian_axis   : Y
+
+zaxis_1
+    long_name        : zaxis_1
+    units            : none
+    cartesian_axis   : Z
+
+Time
+    long_name        : Time
+    units            : time level
+    cartesian_axis   : T
+
+
+ --- Data Variables --- 
+cv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : cv
+    units            : none
+    checksum         : DA37B96C309B3E2D
+
+cvt
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : cvt
+    units            : none
+    checksum         : 63A81CC330659FBA
+
+cvb
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : cvb
+    units            : none
+    checksum         : F2188F0A4ABFDB2D
+
+phy_f2d_01
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f2d_01
+    units            : none
+    checksum         :                0
+
+totprcp_ave
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : totprcp_ave
+    units            : none
+    checksum         : E964F03244463DD9
+
+cnvprcp_ave
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : cnvprcp_ave
+    units            : none
+    checksum         : 99D6B670E849D6A9
+
+ca_condition
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : ca_condition
+    units            : none
+    checksum         : 696DBE950BA12911
+
+noahmp_2d_raincprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_raincprv
+    units            : none
+    checksum         : E6B892C6BA9F67AC
+
+noahmp_2d_rainncprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_rainncprv
+    units            : none
+    checksum         : 84083B947750FDF6
+
+noahmp_2d_iceprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_iceprv
+    units            : none
+    checksum         :   D981376C28BCCE
+
+noahmp_2d_snowprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_snowprv
+    units            : none
+    checksum         : C231D89C628383E4
+
+noahmp_2d_graupelprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_graupelprv
+    units            : none
+    checksum         : A75102E977BF9CB6
+
+noahmp_2d_draincprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_draincprv
+    units            : none
+    checksum         : 9B1F9BE6E71B4589
+
+noahmp_2d_drainncprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_drainncprv
+    units            : none
+    checksum         : 630A5A4F737FB489
+
+noahmp_2d_diceprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_diceprv
+    units            : none
+    checksum         : 52CE43AC57EDB3C8
+
+noahmp_2d_dsnowprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_dsnowprv
+    units            : none
+    checksum         : F437B49531B285E8
+
+noahmp_2d_dgraupelprv
+    dims             : ('Time', 'yaxis_1', 'xaxis_1')
+    long_name        : noahmp_2d_dgraupelprv
+    units            : none
+    checksum         : B80869905E8C32D6
+
+phy_f3d_01
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_01
+    units            : none
+    checksum         : 3E85C51D4B174161
+
+phy_f3d_02
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_02
+    units            : none
+    checksum         : 3651800280285D2F
+
+phy_f3d_03
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_03
+    units            : none
+    checksum         : 3CC0575295DD647E
+
+phy_f3d_04
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_04
+    units            : none
+    checksum         : 8C8A336F9E84E58E
+
+phy_f3d_05
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_05
+    units            : none
+    checksum         : 2E00000000000000
+
+phy_f3d_06
+    dims             : ('Time', 'zaxis_1', 'yaxis_1', 'xaxis_1')
+    long_name        : phy_f3d_06
+    units            : none
+    checksum         : 2489C2370E3B0F8A
+

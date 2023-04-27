@@ -1,0 +1,30 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+tile
+    dims             : ()
+
+y
+    dims             : ('nyp', 'nxp')
+    units            : degrees
+
+x
+    dims             : ('nyp', 'nxp')
+    units            : degrees
+
+dy
+    dims             : ('ny', 'nxp')
+    units            : meters
+
+dx
+    dims             : ('nyp', 'nx')
+    units            : meters
+
+area
+    dims             : ('ny', 'nx')
+    units            : m2
+
+angle_dx
+    dims             : ('nyp', 'nxp')
+    units            : degrees
+

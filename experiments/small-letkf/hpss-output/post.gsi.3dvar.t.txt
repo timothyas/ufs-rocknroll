@@ -1,0 +1,140 @@
+ --- Coordinates --- 
+plevs
+
+
+ --- Data Variables --- 
+t_asm_120_0000_bias
+    dims             : ('plevs',)
+
+t_asm_120_0000_count
+    dims             : ('plevs',)
+
+t_asm_120_0000_rms
+    dims             : ('plevs',)
+
+t_asm_130_0000_bias
+    dims             : ('plevs',)
+
+t_asm_130_0000_count
+    dims             : ('plevs',)
+
+t_asm_130_0000_rms
+    dims             : ('plevs',)
+
+t_asm_131_0000_bias
+    dims             : ('plevs',)
+
+t_asm_131_0000_count
+    dims             : ('plevs',)
+
+t_asm_131_0000_rms
+    dims             : ('plevs',)
+
+t_asm_133_0000_bias
+    dims             : ('plevs',)
+
+t_asm_133_0000_count
+    dims             : ('plevs',)
+
+t_asm_133_0000_rms
+    dims             : ('plevs',)
+
+t_asm_180_0000_bias
+    dims             : ('plevs',)
+
+t_asm_180_0000_count
+    dims             : ('plevs',)
+
+t_asm_180_0000_rms
+    dims             : ('plevs',)
+
+t_mon_120_0000_bias
+    dims             : ('plevs',)
+
+t_mon_120_0000_count
+    dims             : ('plevs',)
+
+t_mon_120_0000_rms
+    dims             : ('plevs',)
+
+t_mon_130_0000_bias
+    dims             : ('plevs',)
+
+t_mon_130_0000_count
+    dims             : ('plevs',)
+
+t_mon_130_0000_rms
+    dims             : ('plevs',)
+
+t_mon_131_0000_bias
+    dims             : ('plevs',)
+
+t_mon_131_0000_count
+    dims             : ('plevs',)
+
+t_mon_131_0000_rms
+    dims             : ('plevs',)
+
+t_mon_133_0000_bias
+    dims             : ('plevs',)
+
+t_mon_133_0000_count
+    dims             : ('plevs',)
+
+t_mon_133_0000_rms
+    dims             : ('plevs',)
+
+t_mon_180_0000_bias
+    dims             : ('plevs',)
+
+t_mon_180_0000_count
+    dims             : ('plevs',)
+
+t_mon_180_0000_rms
+    dims             : ('plevs',)
+
+t_rej_120_0000_bias
+    dims             : ('plevs',)
+
+t_rej_120_0000_count
+    dims             : ('plevs',)
+
+t_rej_120_0000_rms
+    dims             : ('plevs',)
+
+t_rej_130_0000_bias
+    dims             : ('plevs',)
+
+t_rej_130_0000_count
+    dims             : ('plevs',)
+
+t_rej_130_0000_rms
+    dims             : ('plevs',)
+
+t_rej_131_0000_bias
+    dims             : ('plevs',)
+
+t_rej_131_0000_count
+    dims             : ('plevs',)
+
+t_rej_131_0000_rms
+    dims             : ('plevs',)
+
+t_rej_133_0000_bias
+    dims             : ('plevs',)
+
+t_rej_133_0000_count
+    dims             : ('plevs',)
+
+t_rej_133_0000_rms
+    dims             : ('plevs',)
+
+t_rej_180_0000_bias
+    dims             : ('plevs',)
+
+t_rej_180_0000_count
+    dims             : ('plevs',)
+
+t_rej_180_0000_rms
+    dims             : ('plevs',)
+

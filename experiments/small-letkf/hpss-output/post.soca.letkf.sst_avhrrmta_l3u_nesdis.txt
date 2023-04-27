@@ -1,0 +1,54 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+sea_surface_skin_temperature@PreQC
+    dims             : ('nlocs',)
+
+sea_surface_temperature@PreQC
+    dims             : ('nlocs',)
+
+sea_surface_temperature@EffectiveQC
+    dims             : ('nlocs',)
+
+latitude@MetaData
+    dims             : ('nlocs',)
+
+longitude@MetaData
+    dims             : ('nlocs',)
+
+sea_surface_skin_temperature@ObsError
+    dims             : ('nlocs',)
+
+sea_surface_skin_temperature@ObsValue
+    dims             : ('nlocs',)
+
+sea_surface_temperature@ObsError
+    dims             : ('nlocs',)
+
+sea_surface_temperature@ObsValue
+    dims             : ('nlocs',)
+
+sea_surface_temperature@hofx0_1
+    dims             : ('nlocs',)
+
+sea_surface_temperature@hofx0_2
+    dims             : ('nlocs',)
+
+sea_surface_temperature@hofx0_3
+    dims             : ('nlocs',)
+
+sea_surface_temperature@hofx0_4
+    dims             : ('nlocs',)
+
+sea_surface_temperature@hofx0_5
+    dims             : ('nlocs',)
+
+sea_surface_temperature@ombg
+    dims             : ('nlocs',)
+
+variable_names@VarMetaData
+    dims             : ('nvars',)
+
+datetime@MetaData
+    dims             : ('nlocs',)
+

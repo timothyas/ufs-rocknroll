@@ -1,0 +1,145 @@
+ --- Coordinates --- 
+grid_xt
+    cartesian_axis   : X
+    long_name        : T-cell longitude
+    units            : degrees_E
+
+grid_yt
+    cartesian_axis   : Y
+    long_name        : T-cell latiitude
+    units            : degrees_N
+
+pfull
+    cartesian_axis   : Z
+    edges            : phalf
+    long_name        : ref full pressure level
+    positive         : down
+    units            : mb
+
+phalf
+    cartesian_axis   : Z
+    long_name        : ref half pressure level
+    positive         : down
+    units            : mb
+
+time
+    calendar_type    : JULIAN
+    cartesian_axis   : T
+    long_name        : time
+
+
+ --- Data Variables --- 
+lon
+    dims             : ('grid_yt', 'grid_xt')
+    long_name        : T-cell longitude
+    units            : degrees_E
+
+lat
+    dims             : ('grid_yt', 'grid_xt')
+    long_name        : T-cell latitude
+    units            : degrees_N
+
+clwmr
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : cloud water mixing ratio
+    output_file      : dyn
+    units            : kg/kg
+    max_abs_compression_error : 3.6903657019138336e-08
+    nbits            : 14
+
+delz
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : height thickness
+    output_file      : dyn
+    units            : m
+    max_abs_compression_error : 0.106689453125
+    nbits            : 14
+
+dpres
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : pressure thickness
+    output_file      : dyn
+    units            : pa
+    max_abs_compression_error : 0.0540771484375
+    nbits            : 14
+
+dzdt
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : vertical wind
+    output_file      : dyn
+    units            : m/sec
+    max_abs_compression_error : 9.04696062207222e-05
+    nbits            : 14
+
+hgtsfc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface geopotential height
+    output_file      : dyn
+    units            : gpm
+
+icmr
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : cloud ice mixing ratio
+    output_file      : dyn
+    units            : kg/kg
+    max_abs_compression_error : 4.3313775677233934e-08
+    nbits            : 14
+
+o3mr
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : ozone mixing ratio
+    output_file      : dyn
+    units            : kg/kg
+    max_abs_compression_error : 5.547917680814862e-10
+    nbits            : 14
+
+pressfc
+    dims             : ('time', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : surface pressure
+    output_file      : dyn
+    units            : pa
+
+spfh
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : specific humidity
+    output_file      : dyn
+    units            : kg/kg
+    max_abs_compression_error : 6.277114152908325e-07
+    nbits            : 14
+
+tmp
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : temperature
+    output_file      : dyn
+    units            : K
+    max_abs_compression_error : 0.003875732421875
+    nbits            : 14
+
+ugrd
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : zonal wind
+    output_file      : dyn
+    units            : m/sec
+    max_abs_compression_error : 0.00734710693359375
+    nbits            : 14
+
+vgrd
+    dims             : ('time', 'pfull', 'grid_yt', 'grid_xt')
+    cell_methods     : time: point
+    long_name        : meridional wind
+    output_file      : dyn
+    units            : m/sec
+    max_abs_compression_error : 0.0054454803466796875
+    nbits            : 14
+

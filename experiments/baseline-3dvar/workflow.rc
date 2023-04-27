@@ -1,0 +1,42 @@
+#!Jinja2
+
+[[dependencies]]
+
+	# Define the initial forecast cycle (e.g., cold-start) tasks.
+	[[[R1]]]
+		graph = """
+		    launch: fail => !launch
+		    launch: succeed => staging_fetch_atmosfcst_cntrl & staging_fetch_icefcst & staging_fetch_oceanfcst & staging_fetch_atmosobs & staging_fetch_atmosgsibcc & staging_fetch_atmostcvsyndat & staging_fetch_oceanobs
+		    staging_fetch_atmosfcst_cntrl: succeed & staging_fetch_icefcst: succeed & staging_fetch_oceanfcst: succeed & staging_fetch_atmosobs: succeed => bkgrd_forecast_cntrl
+		    bkgrd_forecast_cntrl: succeed & staging_fetch_atmosgsibcc: succeed & staging_fetch_atmostcvsyndat: succeed => gsi_3dvar_cntrl
+		    bkgrd_forecast_cntrl: succeed & staging_fetch_oceanobs: succeed => soca_3dvar
+		    gsi_3dvar_cntrl: succeed => gsi_post
+		    soca_3dvar: succeed => soca_post
+		    gsi_post: succeed => gsi_convdiags
+		    soca_post: succeed => soca_insitudiags
+		    gsi_convdiags: succeed & soca_insitudiags: succeed => archive_noaahpss
+            archive_noaahpss: succeed => cleanup
+		"""
+
+	# Define the warm-start (e.g., cycling) tasks.
+	[[[{{ CYCLE_INTERVAL }}]]]
+	    graph = """
+		    bkgrd_forecast_cntrl[-{{ CYCLE_INTERVAL }}]: succeed => launch
+		    launch: fail => !launch
+		    launch: succeed => staging_fetch_atmosobs & staging_fetch_atmostcvsyndat & staging_fetch_oceanobs
+		    gsi_3dvar_cntrl[-{{ CYCLE_INTERVAL }}]: succeed & soca_3dvar[-{{ CYCLE_INTERVAL }}]: succeed & staging_fetch_atmosobs: succeed => bkgrd_forecast_cntrl
+		    bkgrd_forecast_cntrl: succeed & staging_fetch_atmostcvsyndat: succeed => gsi_3dvar_cntrl
+		    bkgrd_forecast_cntrl: succeed & staging_fetch_oceanobs: succeed => soca_3dvar
+		    gsi_3dvar_cntrl: succeed => gsi_post
+		    soca_3dvar: succeed => soca_post
+		    gsi_post: succeed => gsi_convdiags
+		    soca_post: succeed => soca_insitudiags
+		    gsi_convdiags: succeed & soca_insitudiags: succeed => archive_noaahpss
+            archive_noaahpss: succeed => cleanup
+		"""
+
+    # Following the final forecast, warm-start cycle
+    [[[R1/$]]]
+        graph = """
+            cleanup: succeed => finish
+        """

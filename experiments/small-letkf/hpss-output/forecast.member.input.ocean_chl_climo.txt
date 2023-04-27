@@ -1,0 +1,19 @@
+ --- Coordinates --- 
+TIME
+    cartesian_axis   : T
+    modulo           :  
+
+LAT
+    units            : degrees_north
+    cartesian_axis   : Y
+
+LON
+    units            : degrees_east
+    cartesian_axis   : X
+
+
+ --- Data Variables --- 
+chl_a
+    dims             : ('TIME', 'LAT', 'LON')
+    units            : mg/m^3
+

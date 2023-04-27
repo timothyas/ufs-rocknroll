@@ -1,0 +1,8 @@
+ --- Coordinates --- 
+
+ --- Data Variables --- 
+dz
+    dims             : ('nz',)
+    long_name        : z coordinate level thickness
+    units            : m
+
