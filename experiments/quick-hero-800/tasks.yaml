@@ -268,6 +268,28 @@ gsi_enkf:
      cpus-per-task: 40
      time: '59:00'
      exclusive: ''
+
+# The enkf executable runs better with fewer processes (slurm tasks), more threads
+# while the subsequent ensemble mean calculation requires one process per member
+gsi_enkfonly:
+    account: gsienkf
+    nodes: 100
+    ntasks: 100
+    partition: hera
+    ntasks-per-node: 1
+    cpus-per-tasks: 40
+    time: '59:00'
+    exclusive: ''
+
+gsi_enkfmean:
+    account: gsienkf
+    nodes: 80
+    ntasks: 800
+    partition: hera
+    ntasks-per-node: 10
+    cpus-per-tasks: 4
+    time: '59:00'
+    exclusive: ''
      
 # Execute the GSI global_cycle application.
 gsi_globalcycle:
@@ -304,8 +326,8 @@ gsi_hox_ensmean:
 # Compute the hybrid-gain analysis using the GSI applications.
 gsi_hybgain:
      account: gsienkf
-     nodes: 40
-     ntasks: 800
+     nodes: 4
+     ntasks: 80
      cpus-per-task: 2
      ntasks-per-node: 20
      partition: hera

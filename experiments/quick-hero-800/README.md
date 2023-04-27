@@ -41,8 +41,15 @@ i.e.,
   both for 3dvar increment and enkf increment (need to verify that it's
   computing and not looking for precomputed file)
 
-- For GSI, is the forecast going for 9 hours, and then we only use the 6th hour?
-  Seems very inefficient if I'm interpreting that correctly.
+- `gsi_enkf` has a few subtasks that do well with different configurations.
+    1. The `gsi_enkf` executable, better to use 1 MPI task per node, 40 cpus
+       per task and as many threads as possible. Note, using hyperthreading
+       (i.e. `OMP_NUM_THREADS=80`) will require python changes b/c UFSRNR looks
+       for the cpuspertask and sets that to omp threads.
+       -> Note: Used Jeff's script to create 6 eigenvectors, worked with 100
+          nodes, haven't tried anything leaner
+    2. The `ensemble mean` part wants at least one MPI process per ensemble
+       member, so this task should be split.
 
 - Are the GSI convdiags only using 3DVar?
 

@@ -1,0 +1,87 @@
+# GSI ENKF application general settings.
+enkf_general:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files.
+     scrub: True
+     
+     # Define the path to the enkf.nml template file.
+     enkf_nml_tmpl: !ENV ${PARMrnr}/gsi/enkf.nml.tmpl
+
+     # Define the path to the YAML-formatted file containing the GSI
+     # ENKF fixed (e.g., static) files for the GSI ENKF application.
+     fixed_file_yaml: !ENV ${PARMrnr}/gsi/fix_enkf.yaml
+
+     # Specify whether to define the GSI conventional observation
+     # information file (e.g., convinfo) from a pre-compiled SQLite3
+     # database file; this will override any convinfo-type file in the
+     # specified fixed files (see fixed_file_yaml, above); this is a
+     # boolean valued variable.
+     use_database_convinfo: False
+
+     # Specify whether to define the GSI ozone observation information
+     # file (e.g., ozinfo) from a pre-compiled SQLite3 database file;
+     # this will override any ozinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_ozinfo: False
+
+     # Specify whether to define the GSI satellite information file
+     # (e.g., satinfo) from a pre-compiled SQLite3 database file; this
+     # will override any satinfo-type file in the specified fixed
+     # files (see fixed_file_yaml, above); this is a boolean valued
+     # variable.
+     use_database_satinfo: False     
+
+#----
+
+# GSI ENKF application namelist parameter settings; a comprehensive
+# description of all namelist variables can be found:
+# http://www.dtcenter.org/community-code/ensemble-kalman-filter-system-enkf/documentation
+enkf_nml_params:
+
+     imp_physics: 11
+     letkf_bruteforce_search: False
+     numiter: 0
+     zhuberleft: 1.e10
+     zhuberright: 1.e10
+     iassim_order: 0
+     covinflatemax: 1.e2
+     covinflatemin: 1.0                                            
+     analpertwtnh: 0.85
+     analpertwtsh: 0.85
+     analpertwttr: 0.85
+     analpertwtnh_rtpp: 0.0
+     analpertwtsh_rtpp: 0.0
+     analpertwttr_rtpp: 0.0
+     pseudo_rh: True
+     corrlengthnh: 1250
+     corrlengthtr: 1250
+     corrlengthsh: 1250
+     lnsigcutoffnh: 1.5
+     lnsigcutofftr: 1.5
+     lnsigcutoffsh: 1.5
+     lnsigcutoffpsnh: 1.5
+     lnsigcutoffpstr: 1.5
+     lnsigcutoffpssh: 1.5
+     lnsigcutoffsatnh: 1.5 
+     lnsigcutoffsattr: 1.5  
+     lnsigcutoffsatsh: 1.5      
+     letkf_flag: True
+     denkf: True
+     getkf: True
+     getkf_inflation: False
+     modelspace_vloc: False
+     letkf_novlocal: True
+     nobsl_max: 10000
+     paoverpb_thresh: 0.998
+     saterrfact: 1.0
+     deterministic: True
+     sortinc: True
+     reducedgrid: False
+     univaroz: False
+     smoothparm: 35
+     readin_localization: False
+     lobsdiag_forenkf: True
+     use_correlated_oberrs: False

@@ -44,7 +44,7 @@ data_assimilation:
 
           # Define the ENKF configuration file; this is a YAML
           # formatted file.
-          enkf_config: !ENV ${PARMrnr}/gsi/enkf.C96.yaml
+          enkf_config: !ENV ${rocknroll}/experiments/quick-hero-800/enkf.yaml
      
           # Define the GSI configuration file; this is a YAML
           # formatted file.
