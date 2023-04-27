@@ -1,48 +1,5 @@
 #!Jinja2
 
-# =========================================================================
-
-# $$$ CYLC SUITE DOCUMENTATION BLOCK
-
-# UFS-RNR :: cylc/runtime/runtime.UFSRNRv2.ufsp7c.rc
-
-# Email: henry.winterbottom@noaa.gov
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see
-# <http://www.gnu.org/licenses/>.
-
-# =========================================================================
-
-# Description
-# -----------
-# This Jinja2 formatted file contains the available Cylc workflow
-# runtime applications for UFS-RNR version 2.
-
-# Author
-# ------
-# Henry R. Winterbottom
-
-# Date
-# ----
-# 07 February 2022
-
-# History
-# -------
-# 2022-02-07: Henry Winterbottom -- Original version.
-
-# ----
-
 # Generate the CICE (ice model) forecast initial conditions; this
 # application is performed using a Singularity image container file.
 [[app_cice_remapper]]
@@ -532,6 +489,42 @@
         [[[environment]]]
 		OMP_NUM_THREADS = {{ gsi_enkf_nthreads }}
                 TOTALTASKSrnr = {{ gsi_enkf_ntasks }}
+		ENSMEMrnr = -99
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# Only run gsi_enkf.x executable, requires thread-based parallelism
+[[gsi_enkfonly]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_ENKFONLY
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/gsi_enkfonly.task' %}
+        [[[environment]]]
+		OMP_NUM_THREADS = 80
+                TOTALTASKSrnr = {{ gsi_enkfonly_ntasks }}
+		ENSMEMrnr = -99
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# Only run gsi_enkf.x executable, requires process-based parallelism
+[[gsi_enkfmean]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_ENKFMEAN
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/gsi_enkfmean.task' %}
+        [[[environment]]]
+		OMP_NUM_THREADS = 80
+                TOTALTASKSrnr = {{ gsi_enkfmean_ntasks }}
 		ENSMEMrnr = -99
 		NENSMEMrnr = {{ N_MEMBERS }}
         [[[events]]]  
