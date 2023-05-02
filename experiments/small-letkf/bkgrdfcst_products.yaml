@@ -1,0 +1,262 @@
+# Define the key and value pairs for the ancillary file names, within
+# the previous cycle forecast directory, that are required to cycle
+# the UFS-RNR forecast; if the respective files have a time-dependency
+# associated with them, the timestamp attribute(s) are to be specified
+# by the standard POSIX time and date conventions. Further, if the key
+# corresponds to a generic file path, the value entry may be left
+# empty and will be interpreted as NoneType by the workflow. In this
+# instance, the contents of the previous cycle forecast directory will
+# be used to find file names that match and are subsequently copied to
+# the current cycle's forecast directory.
+com:
+     cice5_model.res.nc: cice5_model.res.nc
+     dynf000.nc: sfg_f000.nc
+     dynf001.nc: sfg_f001.nc
+     dynf002.nc: sfg_f002.nc
+     dynf003.nc: sfg_f003.nc
+     dynf004.nc: sfg_f004.nc
+     dynf005.nc: sfg_f005.nc
+     dynf006.nc: sfg_f006.nc
+     dynf007.nc: sfg_f007.nc
+     dynf008.nc: sfg_f008.nc
+     dynf009.nc: sfg_f009.nc
+     dynf000.nemsio: sfg_f000.nemsio
+     dynf001.nemsio: sfg_f001.nemsio
+     dynf002.nemsio: sfg_f002.nemsio
+     dynf003.nemsio: sfg_f003.nemsio
+     dynf004.nemsio: sfg_f004.nemsio
+     dynf005.nemsio: sfg_f005.nemsio
+     dynf006.nemsio: sfg_f006.nemsio
+     dynf007.nemsio: sfg_f007.nemsio
+     dynf008.nemsio: sfg_f008.nemsio
+     dynf009.nemsio: sfg_f009.nemsio 
+     ice.restart_file: ice.restart_file
+     phyf000.nc: sfc_f000.nc
+     phyf001.nc: sfc_f001.nc
+     phyf002.nc: sfc_f002.nc
+     phyf003.nc: sfc_f003.nc
+     phyf004.nc: sfc_f004.nc
+     phyf005.nc: sfc_f005.nc
+     phyf006.nc: sfc_f006.nc
+     phyf007.nc: sfc_f007.nc
+     phyf008.nc: sfc_f008.nc
+     phyf009.nc: sfc_f009.nc
+     phyf000.nemsio: sfc_f000.nemsio
+     phyf001.nemsio: sfc_f001.nemsio
+     phyf002.nemsio: sfc_f002.nemsio
+     phyf003.nemsio: sfc_f003.nemsio
+     phyf004.nemsio: sfc_f004.nemsio
+     phyf005.nemsio: sfc_f005.nemsio
+     phyf006.nemsio: sfc_f006.nemsio
+     phyf007.nemsio: sfc_f007.nemsio
+     phyf008.nemsio: sfc_f008.nemsio
+     phyf009.nemsio: sfc_f009.nemsio
+     rpointer.cpl: rpointer.cpl
+     SST_%Y_%m_%d.nc: SST_%Y_%m_%d.nc
+     CICE_grid.nc: CICE_grid.nc
+     CICE_kmt.nc: CICE_kmt.nc
+     CICE_mesh.nc: CICE_mesh.nc
+     INPUT/C96_grid.tile1.nc: INPUT/C96_grid.tile1.nc
+     INPUT/C96_grid.tile2.nc: INPUT/C96_grid.tile2.nc
+     INPUT/C96_grid.tile3.nc: INPUT/C96_grid.tile3.nc
+     INPUT/C96_grid.tile4.nc: INPUT/C96_grid.tile4.nc
+     INPUT/C96_grid.tile5.nc: INPUT/C96_grid.tile5.nc
+     INPUT/C96_grid.tile6.nc: INPUT/C96_grid.tile6.nc
+     INPUT/C96_mosaic.nc: INPUT/C96_mosaic.nc
+     INPUT/C48_grid.tile1.nc: INPUT/C48_grid.tile1.nc
+     INPUT/C48_grid.tile2.nc: INPUT/C48_grid.tile2.nc
+     INPUT/C48_grid.tile3.nc: INPUT/C48_grid.tile3.nc
+     INPUT/C48_grid.tile4.nc: INPUT/C48_grid.tile4.nc
+     INPUT/C48_grid.tile5.nc: INPUT/C48_grid.tile5.nc
+     INPUT/C48_grid.tile6.nc: INPUT/C48_grid.tile6.nc
+     INPUT/C48_mosaic.nc: INPUT/C48_mosaic.nc
+     INPUT/geothermal_davies2013_v1.nc: INPUT/geothermal_davies2013_v1.nc
+     INPUT/grid_spec.nc: INPUT/grid_spec.nc
+     MOM6_mesh.nc: MOM6_mesh.nc
+     INPUT/MOM6_IC_TS.nc: INPUT/MOM6_IC_TS.nc
+     INPUT/MOM_input: INPUT/MOM_input
+     INPUT/MOM_layout: INPUT/MOM_layout
+     INPUT/MOM_override: INPUT/MOM_override
+     INPUT/ocean_channels.nc: INPUT/ocean_channels.nc
+     INPUT/ocean_chl_climo.nc: INPUT/ocean_chl_climo.nc
+     INPUT/ocean_hgrid.nc: INPUT/ocean_hgrid.nc
+     INPUT/ocean_interpolate_zgrid.nc: INPUT/ocean_interpolate_zgrid.nc
+     INPUT/ocean_layer_coord.nc: INPUT/ocean_layer_coord.nc
+     INPUT/ocean_mosaic.nc: INPUT/ocean_mosaic.nc
+     INPUT/ocean_tides.nc: INPUT/ocean_tides.nc
+     INPUT/ocean_topo_edits.nc: INPUT/ocean_topo_edits.nc
+     INPUT/ocean_topography.nc: INPUT/ocean_topography.nc
+     INPUT/ocean_vcoord_file.nc: INPUT/ocean_vcoord_file.nc
+     INPUT/ocean_salt_restore.nc: INPUT/ocean_salt_restore.nc
+     INPUT/ocean_zstar_coord.nc: INPUT/ocean_zstar_coord.nc
+     INPUT/KH_background_2d.nc: INPUT/KH_background_2d.nc
+     RESTART/%Y%m%d.%H%M%S.coupler.res: INPUT/%Y%m%d.%H%M%S.coupler.res
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile1.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile2.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile3.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile4.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile5.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile6.nc: INPUT/%Y%m%d.%H%M%S.fv_core.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile1.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile2.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile3.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile4.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile5.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile6.nc: INPUT/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile1.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile2.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile3.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile4.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile5.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile6.nc: INPUT/%Y%m%d.%H%M%S.fv_tracer.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile1.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile2.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile3.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile4.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile5.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile6.nc: INPUT/%Y%m%d.%H%M%S.phy_data.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile1.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile2.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile3.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile4.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile5.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile6.nc: INPUT/%Y%m%d.%H%M%S.sfc_data.tile6.nc
+     RESTART/ca_data.tile1.nc: INPUT/ca_data.tile1.nc
+     RESTART/ca_data.tile2.nc: INPUT/ca_data.tile2.nc
+     RESTART/ca_data.tile3.nc: INPUT/ca_data.tile3.nc
+     RESTART/ca_data.tile4.nc: INPUT/ca_data.tile4.nc
+     RESTART/ca_data.tile5.nc: INPUT/ca_data.tile5.nc
+     RESTART/ca_data.tile6.nc: INPUT/ca_data.tile6.nc
+     RESTART/phy_data.tile1.nc: INPUT_NODA/phy_data.tile1.nc
+     RESTART/phy_data.tile2.nc: INPUT_NODA/phy_data.tile2.nc
+     RESTART/phy_data.tile3.nc: INPUT_NODA/phy_data.tile3.nc
+     RESTART/phy_data.tile4.nc: INPUT_NODA/phy_data.tile4.nc
+     RESTART/phy_data.tile5.nc: INPUT_NODA/phy_data.tile5.nc
+     RESTART/phy_data.tile6.nc: INPUT_NODA/phy_data.tile6.nc
+     RESTART/sfc_data.tile1.nc: INPUT_NODA/sfc_data.tile1.nc
+     RESTART/sfc_data.tile2.nc: INPUT_NODA/sfc_data.tile2.nc
+     RESTART/sfc_data.tile3.nc: INPUT_NODA/sfc_data.tile3.nc
+     RESTART/sfc_data.tile4.nc: INPUT_NODA/sfc_data.tile4.nc
+     RESTART/sfc_data.tile5.nc: INPUT_NODA/sfc_data.tile5.nc
+     RESTART/sfc_data.tile6.nc: INPUT_NODA/sfc_data.tile6.nc
+     RESTART/iced.%Y-%m-%d-<total_seconds_of_day>.nc: RESTART/iced.%Y-%m-%d-<total_seconds_of_day>.nc
+     RESTART/MOM.res.nc: INPUT/MOM.res.nc
+     RESTART/MOM.res_1.nc: INPUT/MOM.res_1.nc
+     RESTART/MOM.res_2.nc: INPUT/MOM.res_2.nc
+     RESTART/MOM.res_3.nc: INPUT/MOM.res_3.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S.nc: INPUT/MOM.res.%Y-%m-%d-%H-%M-%S.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_1.nc: INPUT/MOM.res.%Y-%m-%d-%H-%M-%S_1.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_2.nc: INPUT/MOM.res.%Y-%m-%d-%H-%M-%S_2.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_3.nc: INPUT/MOM.res.%Y-%m-%d-%H-%M-%S_3.nc    
+
+#----
+
+# Define the key and value pairs for the ancillary file names, within
+# the current cycle forecast directory, that are required by
+# downstream applications within the UFS-RNR workflow; if the
+# respective files have a time-dependency associated with them, the
+# timestamp attribute(s) are to be specified by the standard POSIX
+# time and date conventions. Further, if the key corresponds to a
+# generic file path, the value entry may be left empty and will be
+# interpreted as NoneType by the workflow. In this instance, the
+# contents of the previous cycle forecast directory will be used to
+# find file names that match and are subsequently copied to the
+# current cycle's intercom path.
+intercom:
+     dynf000.nc: bkgrd/dynf000.nc
+     dynf001.nc: bkgrd/dynf001.nc
+     dynf002.nc: bkgrd/dynf002.nc
+     dynf003.nc: bkgrd/dynf003.nc
+     dynf004.nc: bkgrd/dynf004.nc
+     dynf005.nc: bkgrd/dynf005.nc
+     dynf006.nc: bkgrd/dynf006.nc
+     dynf007.nc: bkgrd/dynf007.nc
+     dynf008.nc: bkgrd/dynf008.nc
+     dynf009.nc: bkgrd/dynf009.nc
+     dynf000.nemsio: bkgrd/dynf000.nemsio
+     dynf001.nemsio: bkgrd/dynf001.nemsio
+     dynf002.nemsio: bkgrd/dynf002.nemsio
+     dynf003.nemsio: bkgrd/dynf003.nemsio
+     dynf004.nemsio: bkgrd/dynf004.nemsio
+     dynf005.nemsio: bkgrd/dynf005.nemsio
+     dynf006.nemsio: bkgrd/dynf006.nemsio
+     dynf007.nemsio: bkgrd/dynf007.nemsio
+     dynf008.nemsio: bkgrd/dynf008.nemsio
+     dynf009.nemsio: bkgrd/dynf009.nemsio    
+     phyf000.nc: bkgrd/phyf000.nc
+     phyf001.nc: bkgrd/phyf001.nc
+     phyf002.nc: bkgrd/phyf002.nc
+     phyf003.nc: bkgrd/phyf003.nc
+     phyf004.nc: bkgrd/phyf004.nc
+     phyf005.nc: bkgrd/phyf005.nc
+     phyf006.nc: bkgrd/phyf006.nc
+     phyf007.nc: bkgrd/phyf007.nc
+     phyf008.nc: bkgrd/phyf008.nc
+     phyf009.nc: bkgrd/phyf009.nc     
+     phyf000.nemsio: bkgrd/phyf000.nemsio
+     phyf001.nemsio: bkgrd/phyf001.nemsio
+     phyf002.nemsio: bkgrd/phyf002.nemsio
+     phyf003.nemsio: bkgrd/phyf003.nemsio
+     phyf004.nemsio: bkgrd/phyf004.nemsio
+     phyf005.nemsio: bkgrd/phyf005.nemsio
+     phyf006.nemsio: bkgrd/phyf006.nemsio
+     phyf007.nemsio: bkgrd/phyf007.nemsio
+     phyf008.nemsio: bkgrd/phyf008.nemsio
+     phyf009.nemsio: bkgrd/phyf009.nemsio 
+     RESTART/%Y%m%d.%H%M%S.coupler.res: bkgrd/%Y%m%d.%H%M%S.coupler.res
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile1.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile2.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile3.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile4.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile5.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_core.res.tile6.nc: bkgrd/%Y%m%d.%H%M%S.fv_core.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile1.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile2.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile3.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile4.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile5.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile6.nc: bkgrd/%Y%m%d.%H%M%S.fv_srf_wnd.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile1.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile2.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile3.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile4.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile5.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.fv_tracer.res.tile6.nc: bkgrd/%Y%m%d.%H%M%S.fv_tracer.res.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile1.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile2.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile3.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile4.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile5.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.phy_data.tile6.nc: bkgrd/%Y%m%d.%H%M%S.phy_data.tile6.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile1.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile1.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile2.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile2.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile3.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile3.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile4.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile4.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile5.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile5.nc
+     RESTART/%Y%m%d.%H%M%S.sfc_data.tile6.nc: bkgrd/%Y%m%d.%H%M%S.sfc_data.tile6.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S.nc: bkgrd/MOM.res.%Y-%m-%d-%H-%M-%S.nc     
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_1.nc: bkgrd/MOM.res.%Y-%m-%d-%H-%M-%S_1.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_2.nc: bkgrd/MOM.res.%Y-%m-%d-%H-%M-%S_2.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S_3.nc: bkgrd/MOM.res.%Y-%m-%d-%H-%M-%S_3.nc
+     RESTART/iced.%Y-%m-%d-<total_seconds_of_day>.nc: bkgrd/CICE.res.%Y-%m-%d-%H-%M-%S.nc
+
+products:
+     # Atmosphere, Gaussian Grid
+     # 3D
+     dynf000.nc: sfg_f000.nc
+     dynf003.nc: sfg_f003.nc
+     dynf006.nc: sfg_f006.nc
+     dynf009.nc: sfg_f009.nc
+     # Surface
+     phyf000.nc: sfc_f000.nc
+     phyf003.nc: sfc_f003.nc
+     phyf006.nc: sfc_f006.nc
+     phyf009.nc: sfc_f009.nc
+     # Ocean/ice
+     RESTART/iced.%Y-%m-%d-<total_seconds_of_day>.nc: cice.%Y-%m-%d-%H-%M-%S.nc
+     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S.nc: MOM.%Y-%m-%d-%H-%M-%S.nc
+     # Unsure about these
+     # where does this come from?
+     SST_%Y_%m_%d.nc: SST_%Y_%m_%d.nc

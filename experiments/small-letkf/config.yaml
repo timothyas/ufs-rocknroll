@@ -46,17 +46,17 @@ cycle_start: 2015-12-01_00:00:00
 
 # Define the last forecast cycle; this timestamp is to be formatted as
 # (assuming the UNIX POSIX convention) %Y-%m-%d_%H:%M:%S.
-cycle_stop: 2015-12-01_12:00:00
+cycle_stop: 2015-12-02_06:00:00
 
 # Define the forecast cycle interval; units are seconds.
 cycle_interval: 21600
 
 # Define the total number of ensemble members (for ensemble
 # applications only).
-ensmems: 5
+ensmems: 3
 
 # Define an (unique) experiment name for the UFS-RNR experiment.
-experiment_name: small-letkf
+experiment_name: small-letkf-fcstdiags
 
 # Define the path to the platform configuration file.
 platform_config: !ENV ${HOMErnr}/cylc/platforms/platform.UFS-RNR.RDHPCS-Hera.yaml

@@ -32,7 +32,7 @@ ufs_rnr:
 
      # Define the atmosphere model configuration file; this is a YAML
      # formatted file.
-     atmos_config: !ENV ${PARMrnr}/atmos/atmos.C96_L127.coupled.ensemble.yaml
+     atmos_config: !ENV ${rocknroll}/experiments/small-letkf/atmos.yaml
 
      # Define the YAML-formatted file containing the atmosphere model
      # inputs for both cold- and warm-start applications to be
@@ -119,7 +119,7 @@ ufs_rnr:
 archive_config: !ENV ${PARMrnr}/archive/archive_config.yaml
 
 # Workflow Singularity container applications configurations.
-containers: !ENV ${rocknroll}/experiments/small-letkf/containers.yaml
+containers: !ENV ${PARMrnr}/ufs_rnr/containers.letkf.yaml
 
 # Workflow data-assimilation configurations.
 data_assimilation: !ENV ${PARMrnr}/experiments/data_assimilation/coupled.LETKF_gsi.LETKF_soca.yaml

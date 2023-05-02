@@ -1,7 +1,7 @@
 # Generate the CICE (ice model) forecast initial conditions; this
 # application is performed using a Singularity image container file.
 app_cice_remapper:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -12,7 +12,7 @@ app_cice_remapper:
 # Generate the MOM6 (ocean model) forecast initial conditions; this
 # application is performed using a Singularity image container file.
 app_mom6_remapper:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -24,7 +24,7 @@ app_mom6_remapper:
 # ORAS5 analysis; this application is performed using a Singularity
 # image container file.
 app_oras5_remapper:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -34,7 +34,7 @@ app_oras5_remapper:
 
 # Archive the forcast cycle /com files to the AWS s3 bucket
 archive_awscom:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
@@ -44,7 +44,7 @@ archive_awscom:
 # Archive the post-processed files to the AWS s3 bucket.
 archive_awspost:
      ntasks: 1
-     account: gsienkf
+     account: rda-ddm
      partition: service
      time: '59:00'
      mem: 32G
@@ -54,7 +54,7 @@ archive_awspost:
 # s3 bucket.
 archive_awsprod:
      ntasks: 1
-     account: gsienkf
+     account: rda-ddm
      partition: service
      time: '59:00'
      mem: 32G
@@ -64,7 +64,7 @@ archive_awsprod:
 # s3 bucket for the respective ensemble members.
 ARCHIVE_AWSPROD_ENS:
      ntasks: 1
-     account: gsienkf
+     account: rda-ddm
      partition: service
      time: '59:00'
      mem: 32G
@@ -72,7 +72,7 @@ ARCHIVE_AWSPROD_ENS:
 
 # Archive the necessary UFS-RNR files to the NOAA HPSS.
 archive_noaahpss:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
@@ -82,7 +82,7 @@ archive_noaahpss:
 # Recenter the ensemble perturbations relative to the control
 # analysis.
 atmos_ensperts_recenter:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 5
      partition: hera
@@ -93,7 +93,7 @@ atmos_ensperts_recenter:
 # Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
 # control member.
 atmos_gdas_cntrl_inputs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
@@ -101,21 +101,21 @@ atmos_gdas_cntrl_inputs:
 # Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
 # respective ensemble members.
 ATMOS_GDAS_ENS_INPUTS:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
 
 # Collect (GEFS) atmosphere model inputs from the NOAA HPSS.
 atmos_gefs_cntrl_inputs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
 
 # Compute the UFS FV3 computational grids.
 atmos_grids:
-     account: gsienkf
+     account: rda-ddm
      nodes: 6
      ntasks: 6
      partition: hera
@@ -125,7 +125,7 @@ atmos_grids:
 # Generate the atmosphere model forecast initial conditions
 # for the control member.
 atmos_initconds_cntrl:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 36
      partition: hera
@@ -134,7 +134,7 @@ atmos_initconds_cntrl:
 # Generate the atmosphere model forecast initial conditions for the
 # respective ensemble members.
 ATMOS_INITCONDS_ENS:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 36
      partition: hera
@@ -143,7 +143,7 @@ ATMOS_INITCONDS_ENS:
      
 # Execute the background forecast for the control member.
 bkgrd_forecast_cntrl:
-     account: gsienkf
+     account: rda-ddm
      nodes: 8
      ntasks: 208
      partition: hera
@@ -154,7 +154,7 @@ bkgrd_forecast_cntrl:
 
 # Execute the ensemble member background forecasts.
 BKGRD_FORECAST_ENS:
-     account: gsienkf
+     account: rda-ddm
      nodes: 8
      ntasks: 208
      partition: hera
@@ -166,28 +166,28 @@ BKGRD_FORECAST_ENS:
 # Collect CICE control member forecast model inputs from the NOAA
 # HPSS.
 cice_cntrl_inputs_noaahpss:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
 
 # Clean-up no longer needed UFS-RNR files and cycles.
 cleanup:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
 
 # Generate Cylc workflow images.
 cylc_graph:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '10:00'
 
 # UFS satellite observation database applications.
 database_satellites:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: hera
      time: '10:00'
@@ -195,21 +195,21 @@ database_satellites:
 # Archive all log, cylc, and no-scrub path files and remove any
 # remaining, no longer required, files.
 finish:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '25:00'
 
 # Collects GDAS atmosphere observations from the NOAA HPSS.
 gdas_bufr_inputs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
 
 # Execute the GSI 3DVAR application for the control member.
 gsi_3dvar_cntrl:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 20
      ntasks-per-node: 20
@@ -220,7 +220,7 @@ gsi_3dvar_cntrl:
 # Execute the GSI 3DVAR application for an ensemble of members; this
 # is typically used for LETKF and hybrid-gain experiments.
 gsi_3dvar_ens:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 20
      ntasks-per-node: 20
@@ -231,7 +231,7 @@ gsi_3dvar_ens:
 # Generate the GSI conventional observation innovation statistics
 # diagnostics.
 gsi_convdiags:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -241,7 +241,7 @@ gsi_convdiags:
 
 # Execute the GSI ENKF (e.g., LETKF) application.
 gsi_enkf:
-     account: gsienkf
+     account: rda-ddm
      nodes: 10
      ntasks: 100
      partition: hera
@@ -252,14 +252,14 @@ gsi_enkf:
      
 # Execute the GSI global_cycle application.
 gsi_globalcycle:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 6
      partition: hera
      time: '15:00'
 
 # Execute the ensemble member GSI global_cycle applications.
 GSI_GLOBALCYCLE_ENS:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 6
      partition: hera
      time: '15:00'
@@ -267,7 +267,7 @@ GSI_GLOBALCYCLE_ENS:
 # Compute the forward operators for each ensemble member using the
 # GSI.
 GSI_HOX_ENS:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 5
      partition: hera
@@ -276,7 +276,7 @@ GSI_HOX_ENS:
 # Compute the UFS forward operators for the ensemble mean using the
 # GSI.
 gsi_hox_ensmean:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 5
      partition: hera
@@ -284,9 +284,9 @@ gsi_hox_ensmean:
 
 # Compute the hybrid-gain analysis using the GSI applications.
 gsi_hybgain:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
-     ntasks: 5
+     ntasks: 3
      cpus-per-task: 2
      ntasks-per-node: 20
      partition: hera
@@ -294,15 +294,15 @@ gsi_hybgain:
 
 # UFS GSI observer applications.
 gsi_observer:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
-     ntasks: 5
+     ntasks: 3
      partition: hera
      time: '40:00'
      
 # UFS GSI observation verification application.
 gsi_obsverif:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -312,7 +312,7 @@ gsi_obsverif:
      
 # Post-process the GSI application output files.
 gsi_post:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -323,7 +323,7 @@ gsi_post:
 # Define the launcher task; this is required of all UFS-RNR
 # applications.
 launch:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '15:00'
@@ -331,7 +331,7 @@ launch:
 # Collect MOM6 control member forecast model inputs from the NOAA
 # HPSS.
 mom6_cntrl_inputs_noaahpss:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
@@ -339,14 +339,14 @@ mom6_cntrl_inputs_noaahpss:
 # Collect CIMSS ADT derived observations and write TC-vitals formatted
 # files.
 obsprep_atmos_cimssadttcv:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '19:00'
 
 # Update the GDAS/GEFS Atmosphere observation BUFR-formatted file(s).
 obsprep_atmos_bufrupdate:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      cpus-per-task: 2
      partition: hera
@@ -357,7 +357,7 @@ obsprep_atmos_bufrupdate:
      
 # Atmosphere data-assimilation (JEDI FV3) observation pre-processing.
 obsprep_atmos_ioda:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      cpus-per-task: 2
      partition: hera
@@ -365,7 +365,7 @@ obsprep_atmos_ioda:
 
 # Ocean data-assimilation (JEDI SOCA) observation pre-processing.
 obsprep_ocean_ioda:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      cpus-per-task: 2
      partition: hera
@@ -374,7 +374,7 @@ obsprep_ocean_ioda:
 # UFS control (deterministic) forecast ocean initial condition
 # creation and generation applications.
 ocean_cntrl_initconds:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 5
      partition: hera
@@ -383,7 +383,7 @@ ocean_cntrl_initconds:
 # Generate the ice and ocean model ensemble members using the SOCA
 # ensemble perturbations application.
 ocean_ens_initconds_socaensperts:
-     account: gsienkf
+     account: rda-ddm
      nodes: 5
      ntasks: 5
      partition: hera
@@ -394,7 +394,7 @@ ocean_ens_initconds_socaensperts:
 
 # Execute the ensemble member production forecasts.
 PROD_FORECAST_ENS:
-     account: gsienkf
+     account: rda-ddm
      nodes: 8
      ntasks: 208
      partition: hera
@@ -405,9 +405,9 @@ PROD_FORECAST_ENS:
 
 # Execute the SOCA 3DVAR application.
 soca_3dvar:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
-     ntasks: 5
+     ntasks: 3
      cpus-per-task: 2
      ntasks-per-node: 20
      partition: hera
@@ -416,7 +416,7 @@ soca_3dvar:
 
 # Execute the SOCA ensemble member checkpoint_model application.
 SOCA_CHECKPOINT_MODEL_ENS:
-     account: gsienkf
+     account: rda-ddm
      nodes: 1
      ntasks: 1
      partition: hera
@@ -426,7 +426,7 @@ SOCA_CHECKPOINT_MODEL_ENS:
 # Generate the SOCA insitu observation innovation statistics
 # diagnostics.
 soca_insitudiags:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -436,7 +436,7 @@ soca_insitudiags:
      
 # Execute the SOCA LETKF observer application.
 soca_letkf_observer:
-     account: gsienkf
+     account: rda-ddm
      nodes: 10
      ntasks: 400
      ntasks-per-node: 40
@@ -447,7 +447,7 @@ soca_letkf_observer:
 
 # Execute the SOCA LETKF solver application.
 soca_letkf_solver:
-     account: gsienkf
+     account: rda-ddm
      nodes: 30
      ntasks: 180
      ntasks-per-node: 6
@@ -458,7 +458,7 @@ soca_letkf_solver:
 
 # Post-process the SOCA application output files.
 soca_post:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      nodes: 1
      mem: 32G
@@ -469,7 +469,7 @@ soca_post:
 # Collect CIMSS ADT formatted observation files from the world-wide
 # web.
 staging_fetch_atmoscimssadt:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00' 
@@ -477,7 +477,7 @@ staging_fetch_atmoscimssadt:
 # Collect the atmosphere model initial conditions files for
 # the control member forecast application.
 staging_fetch_atmosfcst_cntrl:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
@@ -485,7 +485,7 @@ staging_fetch_atmosfcst_cntrl:
 # Collect the ensemble of atmosphere model initial conditions files
 # for the forecast application.
 STAGING_FETCH_ATMOSFCST_ENS:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
@@ -493,14 +493,14 @@ STAGING_FETCH_ATMOSFCST_ENS:
 # Collect the atmosphere GSI application bias-correction coefficient
 # files.
 staging_fetch_atmosgsibcc:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
      
 # Collect the atmosphere observation files for the GSI application.
 staging_fetch_atmosobs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
@@ -508,7 +508,7 @@ staging_fetch_atmosobs:
 # Collect the atmosphere tropical cyclone (TC) SYNDAT (TC-vitals)
 # observation files for the GSI application.
 staging_fetch_atmostcvsyndat:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
@@ -516,7 +516,7 @@ staging_fetch_atmostcvsyndat:
 # Collect the ice model initial conditions files for the forecast
 # application.
 staging_fetch_icefcst:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
@@ -524,14 +524,14 @@ staging_fetch_icefcst:
 # Collect the ocean model initial conditions files for the forecast
 # application.
 staging_fetch_oceanfcst:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '29:00'
 
 # Collect the ocean observation files for the SOCA application.
 staging_fetch_oceanobs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '19:00'
@@ -539,7 +539,7 @@ staging_fetch_oceanobs:
 # Stage the atmosphere model forecast initial conditions on AWS in a
 # s3 bucket.
 staging_store_atmosfcst_cntrl:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '9:00'
@@ -547,14 +547,14 @@ staging_store_atmosfcst_cntrl:
 # Stage the atmosphere ensemble member forecast initial conditions on
 # AWS in a s3 bucket.
 STAGING_STORE_ATMOSFCST_ENS:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '9:00'
      
 # Stage the atmosphere observation files on AWS in a s3 bucket.
 staging_store_atmosobs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '1:59:00'
@@ -562,7 +562,7 @@ staging_store_atmosobs:
 # Create a local tarball file and stage within the specified AWS s3
 # bucket.
 staging_store_awsfix:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '1:59:00'
@@ -570,7 +570,7 @@ staging_store_awsfix:
 # Compute the GSI conventional observation statistics and stage the
 # files accordingly.
 staging_store_convdiags:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '5:00'
@@ -578,7 +578,7 @@ staging_store_convdiags:
 # Remap an ice analysis variable to a destination ocean grid
 # projection.
 staging_store_iceanalyremap:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '20:00'
@@ -586,7 +586,7 @@ staging_store_iceanalyremap:
 # Stage the ice model forecast initial conditions on AWS in a s3
 # bucket.
 staging_store_icefcst:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '9:00'
@@ -594,7 +594,7 @@ staging_store_icefcst:
 # Compute the SOCA insitu observation statistics and stage the files
 # accordingly.
 staging_store_insitudiags:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '5:00'
@@ -602,7 +602,7 @@ staging_store_insitudiags:
 # Stage the ocean model forecast initial conditions on AWS in a s3
 # bucket.
 staging_store_oceanfcst:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '9:00'
@@ -610,7 +610,7 @@ staging_store_oceanfcst:
 # Remap an ocean analysis variable to a destination ocean grid
 # projection.
 staging_store_ocnanalyremap:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '20:00'
@@ -618,7 +618,7 @@ staging_store_ocnanalyremap:
 # Stage the local pre-processed SOCA observation files in the
 # respective AWS s3 bucket.
 staging_store_socaobs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '5:00'
@@ -626,7 +626,7 @@ staging_store_socaobs:
 # UFS ocean component model input files (e.g., observations) collected
 # from the world-wide web (WWW).
 www_ocean_inputs:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '59:00'
@@ -634,14 +634,14 @@ www_ocean_inputs:
 # Collect atmosphere observations from a specified AWS s3 bucket using
 # the UFS fetching applications (ufs_apps).
 UFS_APPS_FETCH_ATMOS_AWSS3:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '20:00'
 
 # Launch the UFS applications (ufs_apps).
 ufs_apps_launch:
-     account: gsienkf
+     account: rda-ddm
      ntasks: 1
      partition: service
      time: '5:00'
