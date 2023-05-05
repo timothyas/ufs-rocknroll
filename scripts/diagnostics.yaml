@@ -1,0 +1,22 @@
+mom:
+    - Temp
+    - Salt
+    - h
+    - u
+    - v
+    - sfc
+    - MLD
+    - MEKE
+
+fv3:
+    - delz
+    - dpres
+    - spfh
+    - tmp
+    - ugrd
+    - vgrd
+
+cice:
+    - uvel
+    - vvel
+
