@@ -197,7 +197,7 @@ class MOMDataset(EnsembleDataset):
 
 
     def get_ncfilename(self, cycle):
-        return "ocn.nc"
+        return "mom.nc"
 
 
     def open_ensemble_dataset(self, cycle, **kwargs):

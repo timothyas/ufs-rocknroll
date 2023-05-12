@@ -255,8 +255,5 @@ products:
      phyf006.nc: sfc_f006.nc
      phyf009.nc: sfc_f009.nc
      # Ocean/ice
-     RESTART/iced.%Y-%m-%d-<total_seconds_of_day>.nc: cice.%Y-%m-%d-%H-%M-%S.nc
-     RESTART/MOM.res.%Y-%m-%d-%H-%M-%S.nc: MOM.%Y-%m-%d-%H-%M-%S.nc
-     # Unsure about these
-     # where does this come from?
-     SST_%Y_%m_%d.nc: SST_%Y_%m_%d.nc
+     history/iceh_inst.%Y-%m-%d-<total_seconds_of_day>.nc: cice.%Y-%m-%dT%H-%M-%S.nc
+     mom.nc: mom.nc

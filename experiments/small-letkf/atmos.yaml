@@ -30,7 +30,7 @@ atmos_general:
      vcoord_filepath: !ENV ${HOMErnr}/fix/fv3/fix_am/global_hyblev.l128.txt
 
      # Define the path to the model_configure template file.
-     model_configure_tmpl: !ENV ${PARMrnr}/ufs_rnr/model_configure.tmpl
+     model_configure_tmpl: !ENV ${rocknroll}/experiments/small-letkf/model_configure.tmpl
 
      # Define the path to the YAML-formatted file containing the
      # products to be delivered.
@@ -44,7 +44,7 @@ atmos_general:
      # Define the UFS-RNR I/O diagnostic table template file (i.e.,
      # diag_table); this file is used by the UFS-RNR for run-time
      # output.
-     diag_table_tmpl: !ENV ${PARMrnr}/ufs_rnr/diag_table.tmpl
+     diag_table_tmpl: !ENV ${rocknroll}/experiments/small-letkf/diag_table.tmpl
 
      # Define the UFS-RNR I/O field table template file (i.e.,
      # field_table); this file is used by the UFS-RNR for run-time

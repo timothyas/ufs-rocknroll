@@ -162,6 +162,7 @@ BKGRD_FORECAST_ENS:
      cpus-per-task: 1
      ntasks-per-node: 26
      time: '29:00'
+     qos: debug
 
 # Collect CICE control member forecast model inputs from the NOAA
 # HPSS.
@@ -286,7 +287,7 @@ gsi_hox_ensmean:
 gsi_hybgain:
      account: rda-ddm
      nodes: 1
-     ntasks: 3
+     ntasks: 2
      cpus-per-task: 2
      ntasks-per-node: 20
      partition: hera
@@ -296,7 +297,7 @@ gsi_hybgain:
 gsi_observer:
      account: rda-ddm
      nodes: 1
-     ntasks: 3
+     ntasks: 2
      partition: hera
      time: '40:00'
      
@@ -389,8 +390,9 @@ ocean_ens_initconds_socaensperts:
      partition: hera
      cpus-per-task: 8
      ntasks-per-node: 1
-     time: '59:00'
+     time: '29:00'
      exclusive: ''
+     qos: debug
 
 # Execute the ensemble member production forecasts.
 PROD_FORECAST_ENS:
@@ -407,7 +409,7 @@ PROD_FORECAST_ENS:
 soca_3dvar:
      account: rda-ddm
      nodes: 1
-     ntasks: 3
+     ntasks: 2
      cpus-per-task: 2
      ntasks-per-node: 20
      partition: hera
