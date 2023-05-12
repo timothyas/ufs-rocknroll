@@ -1,22 +1,162 @@
 mom:
-    - Temp
-    - Salt
-    - h
-    - u
-    - v
-    - sfc
-    - MLD
-    - MEKE
+    coords:
+        - xh
+        - xq
+        - yh
+        - yq
+        - z_l
+        - geolon_c
+        - geolat_c
+        - geolon_u
+        - geolat_u
+        - geolon_v
+        - geolat_v
+        - wet_c
+        - wet_u
+        - wet_v
+        - sin_rot
+        - cos_rot
+
+    data_vars:
+        - uo
+        - vo
+        - so
+        - temp
+        - SSH
+        - MLD_003
+        - MLD_125
+        # These are more questionable
+        #- frazil
+        #- ePBL
+        #- taux
+        #- tauy
+        #- latent
+        #- sensible
+        #- SW
+        #- LW
+        #- evap
+        #- lprec
+        #- lrunoff
+        #- fprec
+        #- LwLatSens
+        #- Heat_PmE
 
 fv3:
-    - delz
-    - dpres
-    - spfh
-    - tmp
-    - ugrd
-    - vgrd
+    coords:
+        - phalf
+        - pfull
+        - grid_xt 
+        - grid_yt
+        - ak
+        - bk
+        # lon and lat can easily be recreated with numpy.meshgrid
+        #- lon
+        #- lat
+
+    data_vars:
+        - delz
+        - dpres
+        - spfh
+        - tmp
+        - ugrd
+        - vgrd
+        - pressfc
 
 cice:
-    - uvel
-    - vvel
+    coords:
+        - TLON
+        - TLAT
+        - ULON
+        - ULAT
+        - NCAT
+        - tmask
+        - blkmask
+        - tarea
+        - uarea
+        - ANGLE
+        - ANGLET
+        - VGRDa
+        - VGRDi
+        - VGRDs
 
+    data_vars:
+        - uvel
+        - vvel
+        - hi
+        - hs
+        - iage
+        - aicen
+        - vicen
+        - snowfracn
+        - Tinz
+        - Sinz
+        - Tsnz
+
+        # Unsure about these, ordering by highly subjective (i.e., suspect) priority
+        #- Tsfc
+        #- scale_factor
+        #- coszen
+        #- congel
+        #- frazil
+        #- snoice
+        #- dsnow
+        #- meltt
+        #- melts
+        #- meltb
+        #- meltl
+        #- frzmlt
+        #- strength
+        #- mlt_onset
+        #- frz_onset
+        #- apond
+        #- hpond
+        #- ipond
+        #- apeff
+
+        # since we're getting  snapshots, we shouldn't need this ice per time fraction
+        #- ice_present 
+        ## Variables that we have a finer breakdown (e.g., by category)
+        #- aice
+        #- sice
+        #
+        ## Atm / Ocn related variables
+        ## Atm State
+        #- uatm
+        #- vatm
+        #- evap
+        #- Tair
+        #- Tref
+        #- Qref
+        #- snow
+        #- rain
+        ## Fluxes
+        #- fswdn
+        #- flwdn
+        #- fswabs
+        #- flat
+        #- fsens
+        #- flwup
+        #- strairx
+        #- strairy
+        ## Albedo
+        #- albsni
+        #- alvdr
+        #- alidr
+        #- alvdf
+        #- alidf
+        #- albice
+        #- albsno
+        #- albpnd
+        ## Ocn State
+        #- sst
+        #- sss
+        #- uocn
+        #- vocn
+        ##Ocn Fluxes
+        #- fresh
+        #- fsalt
+        #- fbot
+        #- fhocn
+        #- fswthru
+        #- strocnx
+        #- strocny
