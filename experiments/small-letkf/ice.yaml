@@ -1,0 +1,103 @@
+# Ice model general settings.
+ice_general:
+
+     # Define the basename for the ice model (CICE5) initial
+     # conditions file; this is only used for cold-start applications.
+     initconds_basename: cice5.ic.nc
+
+     # Deterministic forecast settings.
+     deterministic:
+
+          # Define the ice model time step.
+          dt: 900
+
+          # Define the path to the ice_in template file.
+          input_nml_tmpl: !ENV ${rocknroll}/experiments/small-letkf/ice_in.tmpl
+
+          # Specify whether the ice initial conditions are specified;
+          # if False, the ocean model initial conditions will initial
+          # the ice-model.
+          initconds_specified: False 
+          
+     # Ensemble forecast settings.
+     ensemble:
+
+          # Define the ice model time step.
+          dt: 900
+
+          # Define the path to the ice_in template file.
+          input_nml_tmpl: !ENV ${rocknroll}/experiments/small-letkf/ice_in.tmpl
+
+          # Specify whether the ice initial conditions are specified;
+          # if False, the ocean model initial conditions will initial
+          # the ice-model.
+          initconds_specified: False 
+          
+#----
+
+# Ice model grid settings.
+ice_grid:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files.
+     scrub: True
+     
+     # Define the top-level directory corresponding to the ice model
+     # grid configuration and attribute files; if this path does not
+     # exist, it will be created by the UFS-RNR grids task; if a user
+     # is executing a UFS-RNR experiment using previously generated
+     # grid files, the UFS-RNR expects to find this path and
+     # sub-directories corresponding to the supported resolutions of
+     # 1.0-, 0.5-, and 0.25-degree (CICE1p0, CICE0p5, and CICE0p25,
+     # respectively) for the UFS-RNR ice model.
+     grid_path: !ENV ${HOMErnr}/fix/grids/ice
+
+     # Deterministic forecast ice model grid settings.
+     deterministic:
+
+          # The nominal resolution.
+          resolution: 1.0
+
+     # Ensemble forecast ice model grid settings.
+     ensemble:
+
+          # The nominal resolution.
+          resolution: 1.0
+     
+     # Define the path to the YAML-formatted file containing the ice
+     # model (CICE) grid attribute files.
+     fix_grid_yaml: !ENV ${PARMrnr}/ice/fix_cice_grid.yaml
+
+#----
+
+# Ice model input settings.
+ice_inputs:
+
+     # Define the input and output (e.g., linked) filename
+     # conventions.
+     io_file_info:
+          
+          # Define the basename file naming convention for the CICE
+          # restart files.
+          input_name: cice5_model_0.25.res
+
+          # Define the basename file prefix naming convention for the
+          # CICE restart files to be linked in order to generate CICE
+          # initial condition files.
+          link_prefix: CICE.res
+
+          # Define the basename file suffix naming convention for the
+          # CICE restart files to be linked in order to generate CICE
+          # initial condition files.
+          link_suffix: .nc
+
+#----
+
+# Ice observation pre-processing settings.
+ice_obsprep:
+
+     # Specify whether to scrub (i.e., remove) the associated
+     # application files and working directory following delivery of
+     # the application product files.
+     scrub: True

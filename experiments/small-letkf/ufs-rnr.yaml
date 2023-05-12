@@ -1,17 +1,3 @@
-# $$$ YAML DOCUMENTATION BLOCK
-  
-# UFS-RNR :: parm/experiments/ufs-rnr.LETKF.C96L127_1p0.coupled.yaml
-
-# Email: henry.winterbottom@noaa.gov
-
-# DESCRIPTION:
-
-# This YAML formatted file contains the Unified Forecasting System
-# (UFS) Reforecast and Reanalysis (RNR) global experiment
-# configuration.
-
-#----
-
 # Configuration options for the UFS-RNR experiment.
 ufs_rnr:
      
@@ -46,7 +32,7 @@ ufs_rnr:
    
      # Define the ice model configuration file; this is a YAML
      # formatted file.
-     ice_config: !ENV ${PARMrnr}/ice/ice.yaml
+     ice_config: !ENV ${rocknroll}/experiments/small-letkf/ice.yaml
 
      # Define the YAML-formatted file containing the ice model inputs
      # for cold-start applications to be collected from the NOAA HPSS.
@@ -71,7 +57,7 @@ ufs_rnr:
 
      # Define the production forecast configuration file; this is a
      # YAML formatted file.
-     production_config: !ENV ${PARMrnr}/production/production.C96L127.yaml
+     production_config: !ENV ${rocknroll}/experiments/small-letkf/production.yaml
 
      # Define the NCEP products suite configuration file; this is a
      # YAML formatted file.
