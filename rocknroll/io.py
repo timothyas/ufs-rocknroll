@@ -8,7 +8,7 @@ import xarray as xr
 from datetime import datetime, timedelta
 from cftime import DatetimeJulian
 
-"""Decisions to be made:
+"""Decisions to be made and TODO:
 
     - Save as float32?
     - snapshots not averages
@@ -16,6 +16,8 @@ from cftime import DatetimeJulian
     - Make consistent dimension names across files
     - fields to be saved:
         -> FV3 missing surface
+        -> why is surface pressure in 3D dataset different from 2D (dynamics vs physics?)
+    - finishe the cleanup task in ufs_rnr
 """
 
 
@@ -63,7 +65,7 @@ class EnsembleDataset():
 
 
     def get_mean_path(self, cycle):
-        return join(self.products_dir, "ensemble-mean", cycle, self.zarr_name)
+        return join(self.products_dir, "ensemble-avg", cycle, self.zarr_name)
 
 
     def get_std_path(self, cycle):
@@ -171,6 +173,8 @@ class EnsembleDataset():
         store = NestedDirectoryStore(path=path)
         xds.to_zarr(store, mode="w")
         print(f"Stored ensemble {reduction} dataset at {path}")
+
+
 
 
 class MOMDataset(EnsembleDataset):
