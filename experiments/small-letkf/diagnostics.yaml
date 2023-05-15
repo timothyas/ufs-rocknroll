@@ -1,4 +1,4 @@
-mom:
+MOMDataset:
     coords:
         - xh
         - xq
@@ -41,7 +41,7 @@ mom:
         #- LwLatSens
         #- Heat_PmE
 
-fv3:
+FV3Dataset:
     coords:
         - phalf
         - pfull
@@ -62,7 +62,7 @@ fv3:
         - vgrd
         - pressfc
 
-cice:
+CICEDataset:
     coords:
         - TLON
         - TLAT

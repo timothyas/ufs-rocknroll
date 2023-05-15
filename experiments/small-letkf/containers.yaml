@@ -1,0 +1,91 @@
+# Define the path to the analysis remapping application Singularity
+# image.
+analysis_remapper_sif: !ENV ${EXECrnr}/ufsrnr_analysisremapper.sif
+
+# Define the path to the analysis remapping application configuration;
+# this is a YAML-formatted file.
+analysis_remapper_config: !ENV ${PARMrnr}/apps/analysis_remapper.C961p0.yaml 
+
+#----
+
+# Define the path to the Cylc database-parsing application Singularity
+# image.
+cylc_db_parse_sif: !ENV ${EXECrnr}/ufsrnr_cylc_db_parse.sif
+
+#----
+
+# Define the path to the Cylc graph application Singularity image.
+cylc_graph_sif: !ENV ${EXECrnr}/ufsrnr_cylcgraph.sif
+
+#----
+     
+# Define the path to the CICE remapping application Singularity image.
+cice_remapper_sif: !ENV ${EXECrnr}/ufsrnr_initconds_remapper.sif
+
+# Define the path to the CICE remapping application configuration;
+# this is a YAML-formatted file.
+cice_remapper_config: !ENV ${PARMrnr}/apps/cice_remapper.esmf.yaml 
+
+#----
+
+# Define the path to the GSI conventional observation innovation
+# statistics diagnostics application Singularity image.
+gsi_convdiags_sif: !ENV ${EXECrnr}/ufsrnr_gsiconvdiags.sif
+
+# Define the path to the GSI conventional observation innovation
+# statistics diagnostics application configuration; this is a
+# YAML-formatted file.
+gsi_convdiags_config: !ENV ${PARMrnr}/diagnostics/gsi/gsi_convdiags.letkf_hybrid_gain.yaml 
+
+#----
+
+# Define the path to the GSI observation verification diagnostics
+# application Singularity image.
+gsi_obsverif_sif: !ENV ${EXECrnr}/ufsrnr_gsiobsverif.sif
+
+# Define the path to the GSI observation verification diagnostics
+# application configuration; this is a YAML-formatted file.
+gsi_obsverif_config: !ENV ${PARMrnr}/diagnostics/gsi/gsi_obsverif.yaml 
+
+#----
+     
+# Define the path to the MOM6 restart to initial condition file(s)
+# application Singularity image.
+mom6_rstrt2ic_sif: !ENV ${EXECrnr}/ufsrnr_mom6rstrt2ic.sif
+
+# Define the path to the MOM6 restart to initial condition file(s)
+# application configuration; this is a YAML-formatted file.
+mom6_rstrt2ic_config: !ENV ${PARMrnr}/apps/mom6_rstrt2ic.yaml 
+
+#----
+     
+# Define the path to the MOM6 remapping application Singularity image.
+mom6_remapper_sif: !ENV ${EXECrnr}/ufsrnr_initconds_remapper.sif
+
+# Define the path to the MOM6 remapping application configuration;
+# this is a YAML-formatted file.
+mom6_remapper_config: !ENV ${PARMrnr}/apps/mom6_remapper.esmf.yaml 
+
+#----
+     
+# Define the path to the ORAS5 remapping application Singularity image.
+oras5_remapper_sif: !ENV ${EXECrnr}/ufsrnr_initconds_remapper.sif
+
+# Define the path to the MOM6 remapping application configuration;
+# this is a YAML-formatted file.
+oras5_remapper_config: !ENV ${PARMrnr}/apps/oras5_remapper.esmf.yaml 
+
+#----
+
+# Define the path to the SOCA insitu observation innovation statistics
+# diagnostics application Singularity image.
+soca_insitudiags_sif: !ENV ${EXECrnr}/ufsrnr_socainsitudiags.sif
+
+# Define the path to the SOCA insitu observation innovation statistics
+# diagnostics application configuration; this is a YAML-formatted
+# file.
+soca_insitudiags_config: !ENV ${PARMrnr}/diagnostics/soca/soca_insitudiags.letkf.yaml 
+
+
+# Just copying the style that comes before me here...
+large_ensemble_sif: /scratch2/RDARCH/rda-ddm/containers/ddc_latest.sif

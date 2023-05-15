@@ -105,7 +105,7 @@ ufs_rnr:
 archive_config: !ENV ${PARMrnr}/archive/archive_config.yaml
 
 # Workflow Singularity container applications configurations.
-containers: !ENV ${PARMrnr}/ufs_rnr/containers.letkf.yaml
+containers: !ENV ${rocknroll}/experiments/small-letkf/containers.yaml
 
 # Workflow data-assimilation configurations.
 data_assimilation: !ENV ${PARMrnr}/experiments/data_assimilation/coupled.LETKF_gsi.LETKF_soca.yaml
@@ -115,3 +115,5 @@ database: !ENV ${PARMrnr}/ufs_rnr/database.yaml
 
 # Workflow executable paths.
 executables: !ENV ${PARMrnr}/ufs_rnr/executables.yaml
+
+output_datasets: !ENV ${rocknroll}/experiments/small-letkf/diagnostics.yaml
