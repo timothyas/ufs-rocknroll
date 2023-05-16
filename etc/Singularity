@@ -25,7 +25,10 @@ From: ubuntu:22.04
         python3-wheel \
         build-essential \
         manpages-dev \
-        gfortran
+        # Necessary for pycurl, which UFSRNR needs
+        libcurl4-gnutls-dev \
+        librtmp-dev
+
 
     # Cleanup
     apt-get clean
@@ -43,7 +46,7 @@ From: ubuntu:22.04
     python3.10 -m pip install --upgrade jupyterlab notebook ipython ipykernel
 
     # Needed by UFS RNR
-    python3.10 -m pip install --upgrade boto3 croniter
+    python3.10 -m pip install --upgrade pycurl boto3 croniter
 
     # soft link python -> python3.10
     ln -s /usr/bin/python3.10 /usr/bin/python
