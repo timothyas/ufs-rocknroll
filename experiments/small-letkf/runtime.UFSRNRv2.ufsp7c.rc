@@ -1184,14 +1184,14 @@
             mail to = "{{ EMAILrnr }}"
             mail events = {{ MAILEVENTSrnr }}
 
-[[zarrchive_noaahpss_diagnostics]]
+[[zarrchive_noaahpss]]
     script = sh ${HOMErnr}/jobs/JRNR_ZARRCHIVE_NOAAHPSS
     [[[job]]]
 		batch system = {{ SCHEDULER }}
         [[[directives]]]
-		    {% include 'directives/zarrchive_noaahpss_diagnostics.task' %}
+		    {% include 'directives/zarrchive_noaahpss.task' %}
         [[[environment]]]
-            TOTALTASKSrnr = {{ zarrchive_noaahpss_diagnostics_ntasks }}
+            TOTALTASKSrnr = {{ zarrchive_noaahpss_ntasks }}
 		    NENSMEMrnr = {{ N_MEMBERS }}
         [[[events]]]  
             mail from = "{{ EMAILrnr }}"

@@ -647,3 +647,18 @@ ufs_apps_launch:
      ntasks: 1
      partition: service
      time: '5:00'
+
+large_ensemble_diagnostics:
+    account: rda-ddm
+    ntasks: 1
+    partition: hera
+    time: '29:00'
+    exclusive: ''
+
+zarrchive_noaahpss:
+     account: rda-ddm
+     ntasks: 1
+     partition: service
+     time: '59:00'
+     mem: 32G
+     exclusive: ''
