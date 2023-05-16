@@ -17,8 +17,8 @@ From: ubuntu:22.04
         bzip2 \
         curl \
         git \
-        python3.10 \
-        python3.10-dev \
+        python3.11 \
+        python3.11-dev \
         python3-pip \
         python3-setuptools \
         python3-virtualenv \
@@ -35,18 +35,18 @@ From: ubuntu:22.04
     rm -rf /var/lib/apt/lists/*
 
     # --- python packages pip
-    python3.10 -m pip install --upgrade pip 
-    python3.10 -m pip install --upgrade setuptools
-    python3.10 -m pip install --upgrade numpy scipy pandas
-    python3.10 -m pip install --upgrade xarray dask[complete] netcdf4 zarr bottleneck h5netcdf fsspec cftime pydap nc-time-axis
-    python3.10 -m pip install --upgrade dask-jobqueue dask_mpi
-    python3.10 -m pip install --upgrade matplotlib seaborn cmocean
+    python3.11 -m pip install --upgrade pip 
+    python3.11 -m pip install --upgrade setuptools
+    python3.11 -m pip install --upgrade numpy scipy pandas
+    python3.11 -m pip install --upgrade xarray dask[complete] netcdf4 zarr bottleneck h5netcdf fsspec cftime pydap nc-time-axis
+    python3.11 -m pip install --upgrade dask-jobqueue dask_mpi
+    python3.11 -m pip install --upgrade matplotlib seaborn cmocean
 
     # jupyter, ipython, etc
-    python3.10 -m pip install --upgrade jupyterlab notebook ipython ipykernel
+    python3.11 -m pip install --upgrade jupyterlab notebook ipython ipykernel
 
     # Needed by UFS RNR
-    python3.10 -m pip install --upgrade pycurl boto3 croniter
+    python3.11 -m pip install --upgrade pycurl boto3 croniter
 
-    # soft link python -> python3.10
-    ln -s /usr/bin/python3.10 /usr/bin/python
+    # soft link python -> python3.11
+    ln -s /usr/bin/python3.11 /usr/bin/python
