@@ -25,7 +25,6 @@ From: ubuntu:22.04
         python3-wheel \
         build-essential \
         manpages-dev \
-        # Necessary for pycurl, which UFSRNR needs
         libcurl4-gnutls-dev \
         librtmp-dev
 
