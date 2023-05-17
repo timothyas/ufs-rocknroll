@@ -648,7 +648,7 @@ ufs_apps_launch:
      partition: service
      time: '5:00'
 
-large_ensemble_diagnostics:
+xarray_diagnostics:
     account: rda-ddm
     ntasks: 1
     partition: hera

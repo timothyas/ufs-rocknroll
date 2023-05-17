@@ -88,4 +88,5 @@ soca_insitudiags_config: !ENV ${PARMrnr}/diagnostics/soca/soca_insitudiags.letkf
 
 
 # Just copying the style that comes before me here...
-large_ensemble_sif: /scratch2/RDARCH/rda-ddm/containers/ddc_latest.sif
+xarray_diagnostics_sif: !ENV ${EXECrnr}/ufsrnr_xarray_diagnostics.sif
+xarray_diagnostics_config: !ENV ${rocknroll}/experiments/small-letkf/xarray_diagnostics.yaml

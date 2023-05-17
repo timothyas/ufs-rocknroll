@@ -1170,14 +1170,14 @@
              mail to = "{{ EMAILrnr }}"
              mail events = {{ MAILEVENTSrnr }}
 
-[[large_ensemble_diagnostics]]
-    script = sh ${HOMErnr}/jobs/JRNR_LARGE_ENSEMBLE_DIAGNOSTICS
+[[xarray_diagnostics]]
+    script = sh ${HOMErnr}/jobs/JRNR_XARRAY_DIAGNOSTICS
     [[[job]]]
 		batch system = {{ SCHEDULER }}
         [[[directives]]]
-		    {% include 'directives/large_ensemble_diagnostics.task' %}
+		    {% include 'directives/xarray_diagnostics.task' %}
         [[[environment]]]
-            TOTALTASKSrnr = {{ large_ensemble_diagnostics_ntasks }}
+            TOTALTASKSrnr = {{ xarray_diagnostics_ntasks }}
 		    NENSMEMrnr = {{ N_MEMBERS }}
         [[[events]]]  
             mail from = "{{ EMAILrnr }}"
