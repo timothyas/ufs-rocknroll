@@ -34,3 +34,18 @@ i.e.,
 ### Final
 
 <img src="small-letkf.graph.final.png" width=1000>
+
+## Steps
+
+1. Add `rocknroll` environment varialbe to `~/.bashrc`
+    ```bash
+    export rocknroll=/path/to/this/repo
+    ```
+2. Copy the file `runtime.UFSRNRv2.ufsp7c.rc` to `UFS-RNR/cylc/runtime/`
+
+3. Run it
+    ```bash
+    cd /path/to/UFS-RNR/cylc
+    python cylc_run_ufsrnr.py --yaml $rocknroll/experiments/small-letkf/config.yaml
+    ```
+
