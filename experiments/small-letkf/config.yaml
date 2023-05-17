@@ -11,11 +11,11 @@ MAILEVENTSrnr: failed, finished
 # Define the top-level directory for the UFS-RNR; this is the
 # top-level directory beneath which all parm/, sorc/, scripts/, ush/,
 # etc., directories live.
-HOMErnr: /scratch2/BMC/gsienkf/${USER}/UFS-RNR
+HOMErnr: ${SCRATCH}/UFS-RNR
 
 # Define the top-level directory where the UFS-RNR experiment is to be
 # run.
-WORKrnr: /scratch2/BMC/gsienkf/${USER}/work
+WORKrnr: ${SCRATCH}/work
 
 # Define the path to a user specified Cylc workflow suite; if this
 # variable remains commented out, this script assumes that a Cylc
@@ -33,7 +33,7 @@ YAMLrnr: !ENV ${rocknroll}/experiments/small-letkf/ufs-rnr.yaml
 # UFS-RNR experiment are to be placed that are not to be scrubbed;
 # these types of files might be diagnostics, output/production files,
 # etc.,
-NOSCRUBrnr: /scratch2/BMC/gsienkf/${USER}/noscrub
+NOSCRUBrnr: ${SCRATCH}/noscrub
 
 # Define the owner of the Singularity permissions for the respective
 # platform; if not user/owner permissions are required, this may be
@@ -46,14 +46,14 @@ cycle_start: 2015-12-01_00:00:00
 
 # Define the last forecast cycle; this timestamp is to be formatted as
 # (assuming the UNIX POSIX convention) %Y-%m-%d_%H:%M:%S.
-cycle_stop: 2015-12-01_12:00:00
+cycle_stop: 2015-12-02_06:00:00
 
 # Define the forecast cycle interval; units are seconds.
 cycle_interval: 21600
 
 # Define the total number of ensemble members (for ensemble
 # applications only).
-ensmems: 5
+ensmems: 2
 
 # Define an (unique) experiment name for the UFS-RNR experiment.
 experiment_name: small-letkf

@@ -1,0 +1,51 @@
+# Note: docker bootstrap works, "library" does not ...
+# it never recognizes python3-pip/setuptools/virtualenv/wheel.
+Bootstrap: docker
+From: ubuntu:22.04
+
+%environment
+
+%post
+    # --- Install some basics
+    apt-get update -y --fix-missing
+    apt-get install -y software-properties-common
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        gnupg \
+        wget \
+        bzip2 \
+        curl \
+        git \
+        python3.10 \
+        python3.10-dev \
+        python3-pip \
+        python3-setuptools \
+        python3-virtualenv \
+        python3-wheel \
+        build-essential \
+        manpages-dev \
+        libcurl4-gnutls-dev \
+        librtmp-dev
+
+
+    # Cleanup
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+    # --- python packages pip
+    python3.10 -m pip install --upgrade pip 
+    python3.10 -m pip install --upgrade setuptools
+    python3.10 -m pip install --upgrade numpy scipy pandas
+    python3.10 -m pip install --upgrade xarray dask[complete] netcdf4 zarr bottleneck h5netcdf fsspec cftime pydap nc-time-axis
+    python3.10 -m pip install --upgrade dask-jobqueue dask_mpi
+    python3.10 -m pip install --upgrade matplotlib seaborn cmocean
+
+    # jupyter, ipython, etc
+    python3.10 -m pip install --upgrade jupyterlab notebook ipython ipykernel
+
+    # Needed by UFS RNR
+    python3.10 -m pip install --upgrade pycurl boto3 croniter
+
+    # soft link python -> python3.10
+    ln -s /usr/bin/python3.10 /usr/bin/python

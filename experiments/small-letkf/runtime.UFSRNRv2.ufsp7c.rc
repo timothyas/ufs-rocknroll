@@ -1,0 +1,1199 @@
+#!Jinja2
+
+# Generate the CICE (ice model) forecast initial conditions; this
+# application is performed using a Singularity image container file.
+[[app_cice_remapper]]
+	script = sh ${HOMErnr}/jobs/JRNR_APPS_CICEREMAPPER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/app_cice_remapper.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ app_cice_remapper_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the MOM6 (ocean model) forecast initial conditions; this
+# application is performed using a Singularity image container file.
+[[app_mom6_remapper]]
+	script = sh ${HOMErnr}/jobs/JRNR_APPS_MOM6REMAPPER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/app_mom6_remapper.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ app_mom6_remapper_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the MOM6 (ocean model) forecast initial conditions using an
+# ORAS5 analysis; this application is performed using a Singularity
+# image container file.
+[[app_oras5_remapper]]
+	script = sh ${HOMErnr}/jobs/JRNR_APPS_ORAS5REMAPPER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/app_oras5_remapper.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ app_oras5_remapper_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Archive the forcast cycle /com files to the AWS s3 bucket.
+[[archive_awscom]]
+	script = sh ${HOMErnr}/jobs/JRNR_ARCHIVE_AWSS3COM
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/archive_awscom.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ archive_awscom_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Archive the post-processed files to the AWS s3 bucket.
+[[archive_awspost]]
+	script = sh ${HOMErnr}/jobs/JRNR_ARCHIVE_AWSS3POST
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/archive_awspost.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ archive_awspost_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Archive the production files (e.g., forecast input files) to the AWS
+# s3 bucket.
+[[archive_awsprod]]
+	script = sh ${HOMErnr}/jobs/JRNR_ARCHIVE_AWSS3PROD
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/archive_awsprod.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ archive_awsprod_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Archive the production files (e.g., forecast input files) to the AWS
+# s3 bucket for the respective ensemble members.
+[[ARCHIVE_AWSPROD_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_atmos_gdas_inputs]]
+  	     inherit = ARCHIVE_AWSPROD_ENS
+	     script = sh ${HOMErnr}/jobs/JRNR_ARCHIVE_AWSS3PROD
+	     [[[job]]]   
+	     	 batch system = {{ SCHEDULER }}
+       	     [[[directives]]]
+                 {% include 'directives/ARCHIVE_AWSPROD_ENS.task' %}
+             [[[environment]]]
+                 TOTALTASKSrnr = {{ ARCHIVE_AWSPROD_ENS_ntasks }}
+		 ENSMEMrnr = {{ I }}
+             [[[events]]]  
+             	 mail from = "{{ EMAILrnr }}"
+                 mail to = "{{ EMAILrnr }}"
+                 mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Archive the necessary UFS-RNR files to the NOAA HPSS.
+[[archive_noaahpss]]
+	script = sh ${HOMErnr}/jobs/JRNR_ARCHIVE_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/archive_noaahpss.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ archive_noaahpss_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Recenter the ensemble perturbations relative to the control
+# analysis.
+[[atmos_ensperts_recenter]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_ENSPERTS_RECENTER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/atmos_ensperts_recenter.task' %}
+	[[[environment]]]
+		OMP_NUM_THREADS = {{ atmos_ensperts_recenter_nthreads }}
+		TOTALTASKSrnr = {{ atmos_ensperts_recenter_ntasks }}
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
+# control member.	
+[[atmos_gdas_cntrl_inputs]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_GDASINPUTS_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/atmos_gdas_cntrl_inputs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ atmos_gdas_cntrl_inputs_ntasks }}
+		CNTRLrnr = 1
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect (GDAS) atmosphere model inputs from the NOAA HPSS for the
+# respective ensemble members.
+[[ATMOS_GDAS_ENS_INPUTS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_atmos_gdas_inputs]]
+	    inherit = ATMOS_GDAS_ENS_INPUTS
+	    script = sh ${HOMErnr}/jobs/JRNR_ATMOS_GDASINPUTS_NOAAHPSS
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+	    [[[directives]]]
+		{% include 'directives/ATMOS_GDAS_ENS_INPUTS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ ATMOS_GDAS_ENS_INPUTS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Collect (GEFS) atmosphere model inputs from the NOAA HPSS.
+[[atmos_gefs_cntrl_inputs]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_GEFSINPUTS_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/atmos_gefs_cntrl_inputs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ atmos_gefs_cntrl_inputs_ntasks }}
+		CNTRLrnr = 1
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+
+# ----
+
+# Compute the UFS FV3 computational grids.
+[[atmos_grids]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_GRIDS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/atmos_grids.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ atmos_grids_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the atmosphere model forecast initial conditions
+# for the control member.
+[[atmos_initconds_cntrl]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_INITCONDS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/atmos_initconds_cntrl.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ atmos_initconds_cntrl_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the atmosphere model forecast initial conditions for the
+# respective ensemble members.
+[[ATMOS_INITCONDS_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_atmos_initconds]]
+   	    inherit = ATMOS_INITCONDS_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_ATMOS_INITCONDS
+	    [[[job]]]
+	    	batch system = {{ SCHEDULER }}
+	    [[[directives]]]
+		{% include 'directives/ATMOS_INITCONDS_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ ATMOS_INITCONDS_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Execute the background forecast for the control member.
+[[bkgrd_forecast_cntrl]]
+	script = sh ${HOMErnr}/jobs/JRNR_BKGRD_FORECAST
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+	[[[directives]]]
+                {% include 'directives/bkgrd_forecast_cntrl.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ bkgrd_forecast_cntrl_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the ensemble member background forecasts.
+[[BKGRD_FORECAST_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_bkgrd_forecast]]
+	    inherit = BKGRD_FORECAST_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_BKGRD_FORECAST
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+	    [[[directives]]]
+		{% include 'directives/BKGRD_FORECAST_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ BKGRD_FORECAST_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Collect CICE control member forecast model inputs from the NOAA
+# HPSS.
+[[cice_cntrl_inputs_noaahpss]]
+	script = sh ${HOMErnr}/jobs/JRNR_ICE_CICEINPUTS_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/cice_cntrl_inputs_noaahpss.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ cice_cntrl_inputs_noaahpss_ntasks }}
+		CNTRLrnr = 1
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Clean-up no longer needed UFS-RNR files and cycles.
+[[cleanup]]
+	script = sh ${HOMErnr}/jobs/JRNR_CLEANUP
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/cleanup.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ cleanup_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate Cylc workflow images.
+[[cylc_graph]]
+	script = sh ${HOMErnr}/jobs/JRNR_CYLC_GRAPH
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+                {% include 'directives/cylc_graph.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ cylc_graph_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Archive all log, cylc, and no-scrub path files and remove any
+# remaining, no longer required, files.
+[[finish]]
+	script = sh ${HOMErnr}/jobs/JRNR_FINISHER
+	[[[job]]]
+                batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/finish.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ finish_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collects GDAS atmosphere observations from the NOAA HPSS.
+[[gdas_bufr_inputs]]
+	script = sh ${HOMErnr}/jobs/JRNR_ATMOS_GDASINPUTS_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/gdas_bufr_inputs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gdas_bufr_inputs_ntasks }}
+		BUFRrnr = 1
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the GSI 3DVAR application for the control member.
+[[gsi_3dvar_cntrl]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_3DVAR
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_3dvar_cntrl.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_3dvar_cntrl_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the GSI 3DVAR application for an ensemble of members; this
+# is typically used for LETKF and hybrid-gain experiments.
+[[gsi_3dvar_ens]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_3DVAR
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_3dvar_ens.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_3dvar_ens_ntasks }}
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the GSI conventional observation innovation statistics
+# diagnostics.	
+[[gsi_convdiags]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_CONVDIAGS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_convdiags.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_convdiags_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the GSI ENKF (e.g., LETKF) application.
+[[gsi_enkf]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_ENKF
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/gsi_enkf.task' %}
+        [[[environment]]]
+		OMP_NUM_THREADS = {{ gsi_enkf_nthreads }}
+                TOTALTASKSrnr = {{ gsi_enkf_ntasks }}
+		ENSMEMrnr = -99
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the GSI global_cycle application.
+[[gsi_globalcycle]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_GLOBALCYCLE
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_globalcycle.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_globalcycle_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the ensemble member GSI global_cycle applications.
+[[GSI_GLOBALCYCLE_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_global_cycle]]
+	    inherit = GSI_GLOBALCYCLE_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_GSI_GLOBALCYCLE
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+	    [[[directives]]]
+		{% include 'directives/GSI_GLOBALCYCLE_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ GSI_GLOBALCYCLE_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Compute the forward operators for each ensemble member using the
+# GSI.
+[[GSI_HOX_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_gsi_hox]]
+	    inherit = GSI_HOX_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_GSI_HOX
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+	    [[[directives]]]
+                {% include 'directives/GSI_HOX_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ GSI_HOX_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Compute the UFS forward operators for the ensemble mean using the
+# GSI.
+[[gsi_hox_ensmean]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_HOX
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_hox_ensmean.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_hox_ensmean_ntasks }}
+		ENSMEMrnr = -99
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Compute the hybrid-gain analysis using the GSI applications.
+[[gsi_hybgain]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_HYBGAIN
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/gsi_hybgain.task' %}
+        [[[environment]]]
+		OMP_NUM_THREADS = {{ gsi_hybgain_nthreads }}
+                TOTALTASKSrnr = {{ gsi_hybgain_ntasks }}    
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Post-process the GSI application output files.
+[[gsi_post]]
+	script = sh ${HOMErnr}/jobs/JRNR_GSI_POST
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/gsi_post.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ gsi_post_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Define the launcher task; this is required of all UFS-RNR
+# applications.
+[[launch]]
+	script = sh ${HOMErnr}/jobs/JRNR_LAUNCHER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+                {% include 'directives/launch.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ launch_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect MOM6 control member forecast model inputs from the NOAA
+# HPSS.
+[[mom6_cntrl_inputs_noaahpss]]
+	script = sh ${HOMErnr}/jobs/JRNR_OCEAN_MOM6INPUTS_NOAAHPSS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/mom6_cntrl_inputs_noaahpss.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ mom6_cntrl_inputs_noaahpss_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect CIMSS ADT derived observations and write TC-vitals formatted
+# files.
+[[obsprep_atmos_cimssadttcv]]
+	script = sh ${HOMErnr}/jobs/JRNR_OBSPREP_ATMOSCIMSSADTTCV
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/obsprep_atmos_cimssadttcv.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ obsprep_atmos_cimssadttcv_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Update the GDAS/GEFS Atmosphere observation BUFR-formatted file(s).
+[[obsprep_atmos_bufrupdate]]
+	script = sh ${HOMErnr}/jobs/JRNR_OBSPREP_ATMOSBUFRUPDATE
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/obsprep_atmos_bufrupdate.task' %}
+        [[[environment]]]
+		OMP_NUM_THREADS = {{ obsprep_atmos_bufrupdate_nthreads }}
+                TOTALTASKSrnr = {{ obsprep_atmos_bufrupdate_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Generate the ice and ocean model ensemble members using the SOCA
+# ensemble perturbations application.
+[[ocean_ens_initconds_socaensperts]]
+	script = sh ${HOMErnr}/jobs/JRNR_OCEAN_ENS_INITCONDS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/ocean_ens_initconds_socaensperts.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ ocean_ens_initconds_socaensperts_ntasks }}
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the ensemble member production forecasts.
+[[PROD_FORECAST_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_prod_forecast]]
+	    inherit = PROD_FORECAST_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_PROD_FORECAST
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+	    [[[directives]]]
+		{% include 'directives/PROD_FORECAST_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ PROD_FORECAST_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Execute the SOCA 3DVAR application.
+[[soca_3dvar]]
+	script = sh ${HOMErnr}/jobs/JRNR_SOCA_3DVAR
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/soca_3dvar.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ soca_3dvar_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the SOCA ensemble member checkpoint_model application.
+[[SOCA_CHECKPOINT_MODEL_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_soca_checkpoint_model]]
+	    inherit = SOCA_CHECKPOINT_MODEL_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_SOCA_LETKF_CHECKPOINT_MODEL
+	    [[[job]]]
+		    batch system = {{ SCHEDULER }}
+		    execution retry delays = {{ EXEC_RETRIES }}
+	    [[[directives]]]
+		    {% include 'directives/SOCA_CHECKPOINT_MODEL_ENS.task' %}
+            [[[environment]]]
+		    TOTALTASKSrnr = {{ SOCA_CHECKPOINT_MODEL_ENS_ntasks }}
+		    ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Generate the SOCA insitu observation innovation statistics
+# diagnostics.
+[[soca_insitudiags]]
+	script = sh ${HOMErnr}/jobs/JRNR_SOCA_INSITUDIAGS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/soca_insitudiags.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ soca_insitudiags_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the SOCA LETKF observer application.
+[[soca_letkf_observer]]
+	script = sh ${HOMErnr}/jobs/JRNR_SOCA_LETKF_OBSERVER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/soca_letkf_observer.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ soca_letkf_observer_ntasks }}
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Execute the SOCA LETKF solver application.
+[[soca_letkf_solver]]
+	script = sh ${HOMErnr}/jobs/JRNR_SOCA_LETKF_SOLVER
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+		{% include 'directives/soca_letkf_solver.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ soca_letkf_solver_ntasks }}
+		NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Post-process the SOCA application output files.
+[[soca_post]]
+	script = sh ${HOMErnr}/jobs/JRNR_SOCA_POST
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+		execution retry delays = {{ EXEC_RETRIES }}
+        [[[directives]]]
+                {% include 'directives/soca_post.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ soca_post_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the atmosphere model initial conditions files for
+# the control member forecast application.
+[[staging_fetch_atmosfcst_cntrl]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ATMOSFCST 
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_atmosfcst_cntrl.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_atmosfcst_cntrl_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the ensemble of atmosphere model initial conditions files
+# for the forecast application.
+[[STAGING_FETCH_ATMOSFCST_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_atmos_initconds]]
+  	   inherit = STAGING_FETCH_ATMOSFCST_ENS
+	   script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ATMOSFCST
+	   [[[job]]]
+		batch system = {{ SCHEDULER }}
+	   [[[directives]]]
+		{% include 'directives/STAGING_FETCH_ATMOSFCST_ENS.task' %}
+	   [[[environment]]]
+		TOTALTASKSrnr = {{ STAGING_FETCH_ATMOSFCST_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+           [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Collect the GSI application bias-correction coefficient files.
+[[staging_fetch_atmosgsibcc]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ATMOSGSIBCC
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_atmosgsibcc.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_atmosgsibcc_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the atmosphere observation files for the GSI application.
+[[staging_fetch_atmosobs]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ATMOSOBS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_atmosobs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_atmosobs_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the atmosphere tropical cyclone (TC) SYNDAT (TC-vitals)
+# observation files for the GSI application.
+[[staging_fetch_atmostcvsyndat]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ATMOSTCVSYNDAT
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_atmostcvsyndat.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_atmostcvsyndat_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the ice model initial conditions files for the forecast
+# application.
+[[staging_fetch_icefcst]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_ICEFCST 
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_icefcst.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_icefcst_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the ocean model initial conditions files for the forecast
+# application.
+[[staging_fetch_oceanfcst]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_OCEANFCST 
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_oceanfcst.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_oceanfcst_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect the ocean observation files for the SOCA application.
+[[staging_fetch_oceanobs]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_FETCH_OCEANOBS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_fetch_oceanobs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_fetch_oceanobs_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Stage the atmosphere model forecast initial conditions on AWS in a
+# s3 bucket.
+[[staging_store_atmosfcst_cntrl]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_ATMOSFCST
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/staging_store_atmosfcst_cntrl.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ staging_store_atmosfcst_cntrl_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Stage the atmosphere ensemble member forecast initial conditions on
+# AWS in a s3 bucket.
+[[STAGING_STORE_ATMOSFCST_ENS]]
+{% for I in range (0, N_MEMBERS) %}
+  [[mem_{{ I }}_atmos_initconds_stage]]
+	    inherit = STAGING_STORE_ATMOSFCST_ENS
+	    script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_ATMOSFCST
+	    [[[job]]]
+		batch system = {{ SCHEDULER }}
+	    [[[directives]]]
+                {% include 'directives/STAGING_STORE_ATMOSFCST_ENS.task' %}
+	    [[[environment]]]
+		TOTALTASKSrnr = {{ STAGING_STORE_ATMOSFCST_ENS_ntasks }}
+		ENSMEMrnr = {{ I }}
+            [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Stage the atmosphere observation files on AWS in a s3 bucket.
+[[staging_store_atmosobs]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_ATMOSOBS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_store_atmosobs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_store_atmosobs_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Create a local tarball file and stage within the specified AWS s3
+# bucket.
+[[staging_store_awsfix]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_AWSFIX
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_store_awsfix.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_store_awsfix_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Compute the GSI conventional observation statistics and stage the
+# files accordingly.
+[[staging_store_convdiags]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_CONVDIAGS
+	[[[job]]]		
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/staging_store_convdiags.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ staging_store_convdiags_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Remap an ice analysis variable to a destination ocean grid
+# projection.
+[[staging_store_iceanalyremap]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_ICEANALYREMAP
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/staging_store_iceanalyremap.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_store_iceanalyremap_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Stage the ice model forecast initial conditions on AWS in a s3
+# bucket.
+[[staging_store_icefcst]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_ICEFCST
+	[[[job]]]	
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/staging_store_icefcst.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ staging_store_icefcst_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Compute the SOCA insitu observation statistics and stage the files
+# accordingly.
+[[staging_store_insitudiags]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_INSITUDIAGS
+	[[[job]]]		
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]
+		{% include 'directives/staging_store_insitudiags.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ staging_store_insitudiags_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Stage the ocean model forecast initial conditions on AWS in a s3
+# bucket.	
+[[staging_store_oceanfcst]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_OCEANFCST
+	[[[job]]]		
+		batch system = {{ SCHEDULER }}
+	[[[directives]]]  
+		{% include 'directives/staging_store_oceanfcst.task' %}
+	[[[environment]]]
+		TOTALTASKSrnr = {{ staging_store_oceanfcst_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Remap an ocean analysis variable to a destination ocean grid
+# projection.
+[[staging_store_ocnanalyremap]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_OCNANALYREMAP
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+                {% include 'directives/staging_store_ocnanalyremap.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_store_ocnanalyremap_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Stage the local pre-processed SOCA observation files in the
+# respective AWS s3 bucket.
+[[staging_store_socaobs]]
+	script = sh ${HOMErnr}/jobs/JRNR_STAGING_STORE_SOCAOBS
+	[[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		{% include 'directives/staging_store_socaobs.task' %}
+        [[[environment]]]
+                TOTALTASKSrnr = {{ staging_store_socaobs_ntasks }}
+        [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+
+# ----
+
+# Collect observations using the UFS applications (ufs_apps) sources.
+[[UFS_APPS_FETCH_ATMOS_AWSS3]]
+{% for obs_type in ATMOS_OBS_TYPES %}
+  [[ufs_apps_fetch_{{ obs_type }}]]
+  	   inherit = UFS_APPS_FETCH_ATMOS_AWSS3
+	   script = sh ${HOMErnr}/ufs_apps/jobs/JUFS_FETCH_AWSS3
+	   [[[job]]]
+		batch system = {{ SCHEDULER }}
+	   [[[directives]]]
+		{% include 'directives/UFS_APPS_FETCH_ATMOS_AWSS3.task' %}
+	   [[[environment]]]
+		NTASKS = {{ UFS_APPS_FETCH_ATMOS_AWSS3_ntasks }}
+		YAMLufs = ${HOMErnr}/ufs_apps/parm/ufs.reanalysis.yaml
+		FETCH_TYPE = {{ obs_type }}
+           [[[events]]]  
+             	mail from = "{{ EMAILrnr }}"
+                mail to = "{{ EMAILrnr }}"
+                mail events = {{ MAILEVENTSrnr }}
+{% endfor %}
+
+# ----
+
+# Configure the runtime path and configure the experiment using the
+# UFS applications (ufs_apps) sources.
+[[ufs_apps_launch]]
+	script = sh ${HOMEufs}/jobs/ufs/JUFS_LAUNCH
+	[[[job]]]		
+  	     batch system = {{ SCHEDULER }}
+	[[[directives]]]
+             {% include 'directives/ufs_apps_launch.task' %}
+	[[[environment]]]
+             NTASKS = {{ ufs_apps_launch_ntasks }}
+	     YAMLufs = ${HOMEufs}/parm/ufs.reanalysis.yaml
+        [[[events]]]  
+             mail from = "{{ EMAILrnr }}"
+             mail to = "{{ EMAILrnr }}"
+             mail events = {{ MAILEVENTSrnr }}
+
+[[xarray_diagnostics]]
+    script = sh ${HOMErnr}/jobs/JRNR_XARRAY_DIAGNOSTICS
+    [[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		    {% include 'directives/xarray_diagnostics.task' %}
+        [[[environment]]]
+            TOTALTASKSrnr = {{ xarray_diagnostics_ntasks }}
+		    NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+            mail from = "{{ EMAILrnr }}"
+            mail to = "{{ EMAILrnr }}"
+            mail events = {{ MAILEVENTSrnr }}
+
+[[zarrchive_noaahpss]]
+    script = sh ${HOMErnr}/jobs/JRNR_ZARRCHIVE_NOAAHPSS
+    [[[job]]]
+		batch system = {{ SCHEDULER }}
+        [[[directives]]]
+		    {% include 'directives/zarrchive_noaahpss.task' %}
+        [[[environment]]]
+            TOTALTASKSrnr = {{ zarrchive_noaahpss_ntasks }}
+		    NENSMEMrnr = {{ N_MEMBERS }}
+        [[[events]]]  
+            mail from = "{{ EMAILrnr }}"
+            mail to = "{{ EMAILrnr }}"
+            mail events = {{ MAILEVENTSrnr }}

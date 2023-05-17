@@ -1,17 +1,3 @@
-# $$$ YAML DOCUMENTATION BLOCK
-  
-# UFS-RNR :: parm/ufs_rnr/containers.yaml
-
-# Email: henry.winterbottom@noaa.gov
-
-# DESCRIPTION:
-
-# This YAML formatted file contains the Unified Forecasting System
-# (UFS) Reforecast and Reanalysis (RNR) available Singularity
-# container application configurations.
-
-#----
-
 # Define the path to the analysis remapping application Singularity
 # image.
 analysis_remapper_sif: !ENV ${EXECrnr}/ufsrnr_analysisremapper.sif
@@ -49,8 +35,6 @@ gsi_convdiags_sif: !ENV ${EXECrnr}/ufsrnr_gsiconvdiags.sif
 # Define the path to the GSI conventional observation innovation
 # statistics diagnostics application configuration; this is a
 # YAML-formatted file.
-# Note: This one doesn't matter, the 3dvar and letkf hybrid diagnostics are the same...
-# but I'll change it anyway I guess
 gsi_convdiags_config: !ENV ${PARMrnr}/diagnostics/gsi/gsi_convdiags.letkf_hybrid_gain.yaml 
 
 #----
@@ -101,3 +85,8 @@ soca_insitudiags_sif: !ENV ${EXECrnr}/ufsrnr_socainsitudiags.sif
 # diagnostics application configuration; this is a YAML-formatted
 # file.
 soca_insitudiags_config: !ENV ${PARMrnr}/diagnostics/soca/soca_insitudiags.letkf.yaml 
+
+
+# Just copying the style that comes before me here...
+xarray_diagnostics_sif: !ENV ${EXECrnr}/ufsrnr_xarray_diagnostics.sif
+xarray_diagnostics_config: !ENV ${rocknroll}/experiments/small-letkf/xarray_diagnostics.yaml

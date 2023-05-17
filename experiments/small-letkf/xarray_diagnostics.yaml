@@ -1,0 +1,215 @@
+MOMDataset:
+
+    chunks_in:
+        time        : 1
+        layer       : 5
+        interface   : 5
+        yh          : -1
+        xh          : -1
+        yq          : -1
+        xq          : -1
+
+    chunks_out:
+        time        : 1
+        member      : 50
+        layer       : 5
+        interface   : 5
+        yh          : 30
+        xh          : 30
+        yq          : 30
+        xq          : 30
+
+    coords:
+        - xh
+        - xq
+        - yh
+        - yq
+        - z_l
+        - geolon_c
+        - geolat_c
+        - geolon_u
+        - geolat_u
+        - geolon_v
+        - geolat_v
+        - wet_c
+        - wet_u
+        - wet_v
+        - sin_rot
+        - cos_rot
+
+    data_vars:
+        - uo
+        - vo
+        - so
+        - temp
+        - SSH
+        - MLD_003
+        - MLD_125
+        # These are more questionable
+        #- frazil
+        #- ePBL
+        #- taux
+        #- tauy
+        #- latent
+        #- sensible
+        #- SW
+        #- LW
+        #- evap
+        #- lprec
+        #- lrunoff
+        #- fprec
+        #- LwLatSens
+        #- Heat_PmE
+
+FV3Dataset:
+
+    chunks_in:
+        time        : 1
+        pfull       : 5
+        grid_yt     : -1
+        grid_xt     : -1
+
+    chunks_out:
+        time        : 1
+        member      : 50
+        pfull       : 5
+        grid_yt     : 30
+        grid_xt     : 30
+
+    coords:
+        - phalf
+        - pfull
+        - grid_xt 
+        - grid_yt
+        - ak
+        - bk
+        # lon and lat can easily be recreated with numpy.meshgrid
+        #- lon
+        #- lat
+
+    data_vars:
+        - delz
+        - dpres
+        - spfh
+        - tmp
+        - ugrd
+        - vgrd
+        - pressfc
+
+CICEDataset:
+
+    chunks_in:
+        time        : 1
+        nc          : 1
+        nkice       : 1
+        nkaer       : 1
+        nksnow      : 1
+        nj          : -1
+        ni          : -1
+
+    chunks_out:
+        time        : 1
+        member      : 50
+        NCAT        : 5
+        VGRDi       : 7
+        VGRDa       : 5
+        nj          : 30
+        ni          : 30
+
+    coords:
+        - TLON
+        - TLAT
+        - ULON
+        - ULAT
+        - NCAT
+        - tmask
+        - blkmask
+        - tarea
+        - uarea
+        - ANGLE
+        - ANGLET
+        - VGRDa
+        - VGRDi
+        - VGRDs
+
+    data_vars:
+        - uvel
+        - vvel
+        - hi
+        - hs
+        - iage
+        - aicen
+        - vicen
+        - snowfracn
+        - Tinz
+        - Sinz
+        - Tsnz
+
+        # Unsure about these, ordering by highly subjective (i.e., suspect) priority
+        #- Tsfc
+        #- scale_factor
+        #- coszen
+        #- congel
+        #- frazil
+        #- snoice
+        #- dsnow
+        #- meltt
+        #- melts
+        #- meltb
+        #- meltl
+        #- frzmlt
+        #- strength
+        #- mlt_onset
+        #- frz_onset
+        #- apond
+        #- hpond
+        #- ipond
+        #- apeff
+
+        # since we're getting  snapshots, we shouldn't need this ice per time fraction
+        #- ice_present 
+        ## Variables that we have a finer breakdown (e.g., by category)
+        #- aice
+        #- sice
+        #
+        ## Atm / Ocn related variables
+        ## Atm State
+        #- uatm
+        #- vatm
+        #- evap
+        #- Tair
+        #- Tref
+        #- Qref
+        #- snow
+        #- rain
+        ## Fluxes
+        #- fswdn
+        #- flwdn
+        #- fswabs
+        #- flat
+        #- fsens
+        #- flwup
+        #- strairx
+        #- strairy
+        ## Albedo
+        #- albsni
+        #- alvdr
+        #- alidr
+        #- alvdf
+        #- alidf
+        #- albice
+        #- albsno
+        #- albpnd
+        ## Ocn State
+        #- sst
+        #- sss
+        #- uocn
+        #- vocn
+        ##Ocn Fluxes
+        #- fresh
+        #- fsalt
+        #- fbot
+        #- fhocn
+        #- fswthru
+        #- strocnx
+        #- strocny

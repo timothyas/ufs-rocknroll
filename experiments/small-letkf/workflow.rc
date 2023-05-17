@@ -19,8 +19,9 @@
 		      soca_letkf_solver: succeed => SOCA_CHECKPOINT_MODEL_ENS & soca_post
 		      gsi_post: succeed => gsi_convdiags
 		      soca_post: succeed => soca_insitudiags
-		      gsi_convdiags: succeed & soca_insitudiags: succeed & SOCA_CHECKPOINT_MODEL_ENS: succeed-all => archive_noaahpss
-		      archive_noaahpss: succeed & cylc_graph: succeed => cleanup
+              BKGRD_FORECAST_ENS: succeed-all => xarray_diagnostics
+		      gsi_convdiags: succeed & soca_insitudiags: succeed & SOCA_CHECKPOINT_MODEL_ENS: succeed-all & xarray_diagnostics => zarrchive_noaahpss
+		      zarrchive_noaahpss: succeed & cylc_graph: succeed => cleanup
 		"""
 
 	# Define the warm-start (e.g., cycling) tasks.
@@ -38,15 +39,18 @@
 		      soca_letkf_solver: succeed => SOCA_CHECKPOINT_MODEL_ENS & soca_post
 		      gsi_post: succeed => gsi_convdiags
 		      soca_post: succeed => soca_insitudiags
-		      gsi_convdiags: succeed & soca_insitudiags: succeed & SOCA_CHECKPOINT_MODEL_ENS: succeed-all => archive_noaahpss
-		      archive_noaahpss: succeed => cleanup
+              BKGRD_FORECAST_ENS: succeed-all => xarray_diagnostics
+		      gsi_convdiags: succeed & soca_insitudiags: succeed & SOCA_CHECKPOINT_MODEL_ENS: succeed-all & xarray_diagnostics => zarrchive_noaahpss
+		      zarrchive_noaahpss: succeed => cleanup
 		"""
 
         # Define tasks to completed following the final forecast
         # warm-start cycle.
 	[[[R1/$]]]
 		graph = """
-		      archive_noaahpss: succeed => PROD_FORECAST_ENS
+		      zarrchive_noaahpss: succeed => PROD_FORECAST_ENS
+              BKGRD_FORECAST_ENS: succeed-all => xarray_diagnostics
+              xarray_diagnostics: succeed => zarrchive_noaahpss
 		      BKGRD_FORECAST_ENS: succeed-all & PROD_FORECAST_ENS: succeed-all => cleanup
 		      cleanup: succeed => finish 
 		"""
