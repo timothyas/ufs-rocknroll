@@ -76,9 +76,17 @@ i.e.,
 2. Modify `tasks.yaml` to use the right account, e.g. `gsienkf` whereas I'm
    using `rda-ddm`
 
-3. Copy the file `runtime.UFSRNRv2.ufsp7c.rc` to `UFS-RNR/cylc/runtime/`
+3. Checkout my fork and branch of UFS-RNR,
+   [hero-stuff](https://github.com/timothyas/UFS-RNR/tree/feature/hero-stuff)
 
-4. Run it
+4. Copy the file `runtime.UFSRNRv2.ufsp7c.rc` to `UFS-RNR/cylc/runtime/`
+
+5. Copy the `xarray_diagnostics` container over:
+    ```bash
+    $ cp /scratch2/RDARCH/rda-ddm/Tim.Smith/UFS-RNR/exec/ufsrnr_xarray_diagnostics.sif /path/to/UFS-RNR/exec
+    ```
+
+6. Run it
     ```bash
     cd /path/to/UFS-RNR/cylc
     python cylc_run_ufsrnr.py --yaml $rocknroll/experiments/small-letkf/config.yaml
