@@ -15,12 +15,17 @@ i.e.,
 - LETKF
 - RDHPCS-Hera
 
-## Noticed issues
 
-- `soca_ensperts` could be more efficient. Two parts:
-    1. Init static b and compute perturbations, no problem (although unclear if
+## Added tasks
+
+The added tasks generally split single tasks into more subtasks in order to take
+advantage of different regimes of parallelism.
+
+- `ocean_ens_initconds_socaensperts` is now split into two parts:
+    1. `ocean_ens_pertconds_socaensperts`: Init static b and compute perturbations, no problem (although unclear if
        this really needs 800 tasks over 200 nodes..
-    2. Checkpoint model. Now this part chokes with 800 tasks, so drop down to
+    2. `ocean_ens_ckptconds_socaensperts`: Checkpoint model (i.e., save output in format for MOM).
+       Now this part chokes with 800 tasks, so drop down to
        just one node and run serially. This could be parallelized.
 
 - Actually, it is not necessary to split `gsi_3dvar` into the two parts below.
@@ -41,18 +46,51 @@ i.e.,
   both for 3dvar increment and enkf increment (need to verify that it's
   computing and not looking for precomputed file)
 
-- `gsi_enkf` has a few subtasks that do well with different configurations.
-    1. The `gsi_enkf` executable, better to use 1 MPI task per node, 40 cpus
+- `gsi_enkf` is split into two parts.
+    1. `gsi_enkfonly`: runs the `gsi_enkf` executable, better to use more shared/thread-based parallelism
+       e.g., 1 MPI task per node, 40 cpus
        per task and as many threads as possible. Note, using hyperthreading
        (i.e. `OMP_NUM_THREADS=80`) will require python changes b/c UFSRNR looks
        for the cpuspertask and sets that to omp threads.
-       -> Note: Used Jeff's script to create 6 eigenvectors, worked with 100
-          nodes, haven't tried anything leaner
-    2. The `ensemble mean` part wants at least one MPI process per ensemble
-       member, so this task should be split.
+       Right now, I am setting the `OMP_NUM_THREADS` manually inside of the
+       `runtime*.rc` file.
+       -> Note: Additionally, we will want to use Jeff's script to create 6 eigenvectors, for
+          localization with additional pseudo ensemble members. See
+          [../../scripts/create_vlocal_eig.py](../../scripts/create_vlocal_eig.py)
+          and [../../scripts/global_hyblev.l128.txt](../../scripts/global_hyblev.l128.txt)
+          which can be used like
+          ```bash
+          $ python create_vlocal_eig.py 64 98 global_hyblev.l128.txt
+          ```
+          to create 6 eigenvectors, reducing the memory footprint by ~50% over
+          original setup
+        -> Note: we don't want to do `modelspace_vloc=.FALSE.` in the namelist,
+           because this means we will just do localization in observation space
+           (it doesn't turn off localization completely). According to Jeff,
+           Obs space localization will not use the radiance data as effectively.
+    2. `gsi_enkfmean`: The `ensemble mean` part wants at least one MPI process per ensemble
+       member, so this task uses a more distributed parallelism structure.
 
-- Are the GSI convdiags only using 3DVar?
+## Steps
 
-### Note:
-need to put the runtime.rc into the `cylc/runtime` directory... this is hard
-coded unfortunately
+1. Add `rocknroll` environment varialbe to `~/.bashrc`
+    ```bash
+    export rocknroll=/path/to/this/repo
+    ```
+   This is used within the yaml files to point to yaml files inside of this
+   directory, and one can run `grep rocknroll *.yaml` to find all the
+   modifications.
+
+2. Modify `tasks.yaml` to use the right account, e.g. `gsienkf` whereas I'm
+   using `rda-ddm`
+
+3. Checkout my fork and branch of UFS-RNR,
+   [hero-stuff](https://github.com/timothyas/UFS-RNR/tree/feature/hero-stuff)
+
+4. Copy the file `runtime.UFSRNRv2.ufsp7c.rc` to `UFS-RNR/cylc/runtime/`
+
+5. Run it
+    ```bash
+    cd /path/to/UFS-RNR/cylc
+    python cylc_run_ufsrnr.py --yaml $rocknroll/experiments/quick-hero-800/config.yaml
+    ```
