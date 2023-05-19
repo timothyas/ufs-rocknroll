@@ -2,6 +2,15 @@
 
 Tracking all outputs, figuring out what we have and what we need
 
+
+## FV3
+
+- difference between `hs` (stored in dyn, 3D file) and `hgtsfc` (stored in phy,
+  2D file)
+- grab land mask... does this change with time?
+- 
+
+
 ## TODO
 
 - [ ] When `gsi_enkf` finishes, find ensemble spread diagnostic (we have this

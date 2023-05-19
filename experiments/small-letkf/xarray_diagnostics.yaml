@@ -44,7 +44,7 @@ MOMDataset:
         - temp
         - SSH
         - MLD_003
-        - MLD_125
+        - MLD_0125
         # These are more questionable
         #- frazil
         #- ePBL
@@ -79,7 +79,7 @@ FV3Dataset:
     coords:
         - phalf
         - pfull
-        - grid_xt 
+        - grid_xt
         - grid_yt
         - ak
         - bk
@@ -95,6 +95,39 @@ FV3Dataset:
         - ugrd
         - vgrd
         - pressfc
+        - rainwat
+        - snowwat
+        - graupel
+        - o3mr
+        - hgtsfc
+        - sgs_tke
+        - cld_amt
+        - dlwrf
+        - dswrf
+        - hpbl
+        - lhtfl
+        - shtfl
+        - soilm
+        - tcdccnvcl
+        - ugrd10m
+        - vgrd10m
+        - tprcp
+        - weasd
+        - spfh2m
+        - tmp2m
+        - tmpsfc
+        - land
+        - veg
+        - sltyp
+        - icec
+        - icetk
+        - snoalb
+        - snod
+        - tg3
+        - cpofp
+        - gflux
+        - watr_acc
+
 
 CICEDataset:
 
@@ -133,13 +166,14 @@ CICEDataset:
         - VGRDs
 
     data_vars:
-        - uvel
-        - vvel
         - hi
         - hs
+        - uvel
+        - vvel
         - iage
         - aicen
         - vicen
+        - vsnon
         - snowfracn
         - Tinz
         - Sinz
@@ -167,7 +201,7 @@ CICEDataset:
         #- apeff
 
         # since we're getting  snapshots, we shouldn't need this ice per time fraction
-        #- ice_present 
+        #- ice_present
         ## Variables that we have a finer breakdown (e.g., by category)
         #- aice
         #- sice
