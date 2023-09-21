@@ -11,11 +11,11 @@ MAILEVENTSrnr: failed, finished
 # Define the top-level directory for the UFS-RNR; this is the
 # top-level directory beneath which all parm/, sorc/, scripts/, ush/,
 # etc., directories live.
-HOMErnr: /scratch2/BMC/gsienkf/${USER}/UFS-RNR
+HOMErnr: ${SCRATCH}/UFS-RNR
 
 # Define the top-level directory where the UFS-RNR experiment is to be
 # run.
-WORKrnr: /scratch2/BMC/gsienkf/${USER}/work
+WORKrnr: ${SCRATCH}/work
 
 # Define the path to a user specified Cylc workflow suite; if this
 # variable remains commented out, this script assumes that a Cylc
@@ -33,7 +33,7 @@ YAMLrnr: !ENV ${HOMErnr}/parm/experiments/ufs-rnr.3DVAR.C96L127_1p0.coupled.yaml
 # UFS-RNR experiment are to be placed that are not to be scrubbed;
 # these types of files might be diagnostics, output/production files,
 # etc.,
-NOSCRUBrnr: /scratch2/BMC/gsienkf/${USER}/noscrub
+NOSCRUBrnr: ${SCRATCH}/noscrub
 
 # Define the owner of the Singularity permissions for the respective
 # platform; if not user/owner permissions are required, this may be
