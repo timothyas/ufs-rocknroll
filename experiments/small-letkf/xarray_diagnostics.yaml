@@ -1,4 +1,8 @@
 MOMDataset:
+    filenames_in:
+        - mom.nc
+
+    zarr_name       : mom.zarr
 
     chunks_in:
         time        : 1
@@ -43,25 +47,18 @@ MOMDataset:
         - so
         - temp
         - SSH
+        #
+        # TODO: pick one of these
+        #
         - MLD_003
         - MLD_0125
-        # These are more questionable
-        #- frazil
-        #- ePBL
-        #- taux
-        #- tauy
-        #- latent
-        #- sensible
-        #- SW
-        #- LW
-        #- evap
-        #- lprec
-        #- lrunoff
-        #- fprec
-        #- LwLatSens
-        #- Heat_PmE
 
 FV3Dataset:
+    filenames_in:
+        - dynf*.nc
+        - phyf*.nc
+
+    zarr_name       : fv3.zarr
 
     chunks_in:
         time        : 1
@@ -83,7 +80,7 @@ FV3Dataset:
         - grid_yt
         - ak
         - bk
-        # lon and lat can easily be recreated with numpy.meshgrid
+        # lon and lat can easily be recreated with numpy.meshgrid with grid_xt/yt
         #- lon
         #- lat
 
@@ -130,6 +127,12 @@ FV3Dataset:
 
 
 CICEDataset:
+
+    filenames_in:
+        #- history/iceh_inst.%Y-%m-%d-<total_seconds_of_day>.nc
+        - history/iceh_*.*.nc
+
+    zarr_name       : cice.zarr
 
     chunks_in:
         time        : 1
