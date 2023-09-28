@@ -3,11 +3,11 @@ MOMDataset:
         - mom.nc
 
     zarr_name       : mom.zarr
+    fhr             : ["6h", "12h"]
 
     chunks_in:
-        time        : 1
-        layer       : 5
-        interface   : 5
+        z_l         : 5
+        z_i         : 5
         yh          : -1
         xh          : -1
         yq          : -1
@@ -16,8 +16,8 @@ MOMDataset:
     chunks_out:
         time        : 1
         member      : 50
-        layer       : 5
-        interface   : 5
+        z_l         : 5
+        z_i         : 5
         yh          : 30
         xh          : 30
         yq          : 30
@@ -59,6 +59,7 @@ FV3Dataset:
         - phyf*.nc
 
     zarr_name       : fv3.zarr
+    fhr             : ["6h", "12h"]
 
     chunks_in:
         time        : 1
@@ -85,45 +86,45 @@ FV3Dataset:
         #- lat
 
     data_vars:
-        - delz
-        - dpres
-        - spfh
+        #- delz
+        #- dpres
+        #- spfh
         - tmp
         - ugrd
         - vgrd
         - pressfc
-        - rainwat
-        - snowwat
-        - graupel
-        - o3mr
-        - hgtsfc
-        - sgs_tke
-        - cld_amt
-        - dlwrf
-        - dswrf
-        - hpbl
-        - lhtfl
-        - shtfl
-        - soilm
-        - tcdccnvcl
-        - ugrd10m
-        - vgrd10m
-        - tprcp
-        - weasd
-        - spfh2m
+          #        - rainwat
+          #        - snowwat
+          #        - graupel
+          #        - o3mr
+          #        - hgtsfc
+          #        - sgs_tke
+          #        - cld_amt
+          #        - dlwrf
+          #        - dswrf
+          #        - hpbl
+          #        - lhtfl
+          #        - shtfl
+          #        - soilm
+          #        - tcdccnvcl
+          #        - ugrd10m
+          #        - vgrd10m
+          #        - tprcp
+          #        - weasd
+          #        - spfh2m
         - tmp2m
-        - tmpsfc
-        - land
-        - veg
-        - sltyp
-        - icec
-        - icetk
-        - snoalb
-        - snod
-        - tg3
-        - cpofp
-        - gflux
-        - watr_acc
+          #        - tmpsfc
+          #        - land
+          #        - veg
+          #        - sltyp
+          #        - icec
+          #        - icetk
+          #        - snoalb
+          #        - snod
+          #        - tg3
+          #        - cpofp
+          #        - gflux
+          #        - watr_acc
 
 
 CICEDataset:
@@ -133,9 +134,9 @@ CICEDataset:
         - history/iceh_*.*.nc
 
     zarr_name       : cice.zarr
+    fhr             : ["6h", "12h"]
 
     chunks_in:
-        time        : 1
         nc          : 1
         nkice       : 1
         nkaer       : 1
@@ -149,6 +150,7 @@ CICEDataset:
         NCAT        : 5
         VGRDi       : 7
         VGRDa       : 5
+        VGRDs       : 5
         nj          : 30
         ni          : 30
 
@@ -181,6 +183,7 @@ CICEDataset:
         - Tinz
         - Sinz
         - Tsnz
+
 
         # Unsure about these, ordering by highly subjective (i.e., suspect) priority
         #- Tsfc
