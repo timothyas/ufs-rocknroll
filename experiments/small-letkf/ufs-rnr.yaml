@@ -1,6 +1,6 @@
 # Configuration options for the UFS-RNR experiment.
 ufs_rnr:
-     
+
      # Define the UFS-RNR domain configuration; the available options
      # are:
 
@@ -29,14 +29,14 @@ ufs_rnr:
      # application inputs that are archived on the respective UFS-RNR
      # experiment platform.
      atmos_local_inputs: !ENV ${PARMrnr}/atmos/inputs_local.RDHPCS-Hera.yaml
-   
+
      # Define the ice model configuration file; this is a YAML
      # formatted file.
      ice_config: !ENV ${rocknroll}/experiments/small-letkf/ice.yaml
 
      # Define the YAML-formatted file containing the ice model inputs
      # for cold-start applications to be collected from the NOAA HPSS.
-     ice_hpss_inputs: !ENV ${PARMrnr}/ice/inputs_noaahpss.yaml      
+     ice_hpss_inputs: !ENV ${PARMrnr}/ice/inputs_noaahpss.yaml
 
      # Define the YAML-formatted file containing the ice model inputs
      # for both cold- and warm-start applications.
@@ -50,7 +50,7 @@ ufs_rnr:
      # inputs for cold-start applications to be collected from the
      # NOAA HPSS.
      ocean_hpss_inputs: !ENV ${PARMrnr}/ocean/inputs_noaahpss.yaml
-     
+
      # Define the YAML-formatted file containing the ocean model
      # inputs for both cold- and warm-start applications.
      ocean_www_inputs: !ENV ${PARMrnr}/ocean/inputs_www.yaml
@@ -61,8 +61,8 @@ ufs_rnr:
 
      # Define the NCEP products suite configuration file; this is a
      # YAML formatted file.
-     ncepprods_config: !ENV ${PARMrnr}/ncep_products/ncepprods.yaml 
-     
+     ncepprods_config: !ENV ${PARMrnr}/ncep_products/ncepprods.yaml
+
      # Define the staging application fetch configuration file; this
      # is a YAML formatted file.
      fetch_config: !ENV ${PARMrnr}/staging/fetch.gefsv12.RDHPCS-Hera.yaml
@@ -115,5 +115,3 @@ database: !ENV ${PARMrnr}/ufs_rnr/database.yaml
 
 # Workflow executable paths.
 executables: !ENV ${PARMrnr}/ufs_rnr/executables.yaml
-
-output_datasets: !ENV ${rocknroll}/experiments/small-letkf/diagnostics.yaml

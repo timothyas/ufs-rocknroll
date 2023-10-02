@@ -47,10 +47,6 @@ MOMDataset:
         - so
         - temp
         - SSH
-        #
-        # TODO: pick one of these
-        #
-        - MLD_003
         - MLD_0125
 
 FV3Dataset:
@@ -59,7 +55,7 @@ FV3Dataset:
         - phyf*.nc
 
     zarr_name       : fv3.zarr
-    fhr             : ["6h", "12h"]
+    fhr             : ["0h", "6h", "12h"]
 
     chunks_in:
         time        : 1
@@ -81,60 +77,46 @@ FV3Dataset:
         - grid_yt
         - ak
         - bk
-        # lon and lat can easily be recreated with numpy.meshgrid with grid_xt/yt
-        #- lon
-        #- lat
 
     data_vars:
-        #- delz
-        #- dpres
-        #- spfh
+        - delz
+        - dpres
+        - spfh
         - tmp
         - ugrd
         - vgrd
         - pressfc
-          #        - rainwat
-          #        - snowwat
-          #        - graupel
-          #        - o3mr
-          #        - hgtsfc
-          #        - sgs_tke
-          #        - cld_amt
-          #        - dlwrf
-          #        - dswrf
-          #        - hpbl
-          #        - lhtfl
-          #        - shtfl
-          #        - soilm
-          #        - tcdccnvcl
-          #        - ugrd10m
-          #        - vgrd10m
-          #        - tprcp
-          #        - weasd
-          #        - spfh2m
+        - clwmr
+        - icmr
+          # can't find graupel, rain water mixing ratio, or snow water mixing ratio
+        - o3mr
+        - ugrd10m
+        - vgrd10m
+        - spfh2m
         - tmp2m
-          #        - tmpsfc
-          #        - land
-          #        - veg
-          #        - sltyp
-          #        - icec
-          #        - icetk
-          #        - snoalb
-          #        - snod
-          #        - tg3
-          #        - cpofp
-          #        - gflux
-          #        - watr_acc
+        - vtype
+        - sotyp
+        - veg
+        - land
+        - soill1
+        - soill2
+        - soill3
+        - soill4
+        - soill1
+        - soilt2
+        - soilt3
+        - soilt4
+        - snod
+        - prateb_ave
 
 
 CICEDataset:
 
     filenames_in:
-        #- history/iceh_inst.%Y-%m-%d-<total_seconds_of_day>.nc
         - history/iceh_*.*.nc
 
     zarr_name       : cice.zarr
-    fhr             : ["6h", "12h"]
+    fhr             : ["0h", "6h", "12h"]
 
     chunks_in:
         nc          : 1
@@ -183,73 +165,3 @@ CICEDataset:
         - Tinz
         - Sinz
         - Tsnz
-
-
-        # Unsure about these, ordering by highly subjective (i.e., suspect) priority
-        #- Tsfc
-        #- scale_factor
-        #- coszen
-        #- congel
-        #- frazil
-        #- snoice
-        #- dsnow
-        #- meltt
-        #- melts
-        #- meltb
-        #- meltl
-        #- frzmlt
-        #- strength
-        #- mlt_onset
-        #- frz_onset
-        #- apond
-        #- hpond
-        #- ipond
-        #- apeff
-
-        # since we're getting  snapshots, we shouldn't need this ice per time fraction
-        #- ice_present
-        ## Variables that we have a finer breakdown (e.g., by category)
-        #- aice
-        #- sice
-        #
-        ## Atm / Ocn related variables
-        ## Atm State
-        #- uatm
-        #- vatm
-        #- evap
-        #- Tair
-        #- Tref
-        #- Qref
-        #- snow
-        #- rain
-        ## Fluxes
-        #- fswdn
-        #- flwdn
-        #- fswabs
-        #- flat
-        #- fsens
-        #- flwup
-        #- strairx
-        #- strairy
-        ## Albedo
-        #- albsni
-        #- alvdr
-        #- alidr
-        #- alvdf
-        #- alidf
-        #- albice
-        #- albsno
-        #- albpnd
-        ## Ocn State
-        #- sst
-        #- sss
-        #- uocn
-        #- vocn
-        ##Ocn Fluxes
-        #- fresh
-        #- fsalt
-        #- fbot
-        #- fhocn
-        #- fswthru
-        #- strocnx
-        #- strocny
