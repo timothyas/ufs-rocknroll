@@ -55,7 +55,7 @@ FV3Dataset:
         - phyf*.nc
 
     zarr_name       : fv3.zarr
-    fhr             : ["0h", "6h", "12h"]
+    fhr             : ["6h", "12h"]
 
     chunks_in:
         time        : 1
@@ -116,7 +116,7 @@ CICEDataset:
         - history/iceh_*.*.nc
 
     zarr_name       : cice.zarr
-    fhr             : ["0h", "6h", "12h"]
+    fhr             : ["6h", "12h"]
 
     chunks_in:
         nc          : 1

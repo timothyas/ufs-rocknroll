@@ -1,13 +1,13 @@
 # Atmosphere model general settings.
 atmos_general:
-     
+
      # Define the calendar type for the FV3 simulation; currently
      # supported options are:
 
      # 0; no-calendar
 
      # 1; thirty-day months
-          
+
      # 2; julian
 
      # 3; gregorian
@@ -34,7 +34,7 @@ atmos_general:
 
      # Define the path to the YAML-formatted file containing the
      # products to be delivered.
-     bkgrdfcst_products_yaml: !ENV ${rocknroll}/experiments/small-letkf/bkgrdfcst_products.yaml
+     bkgrdfcst_products_yaml: !ENV ${PARMrnr}/ufs_rnr/products/bkgrd_forecast.C96.yaml
 
      # Define the UFS-RNR I/O data table template file (i.e.,
      # data_table); this file is used by the UFS-RNR for run-time
@@ -60,13 +60,13 @@ atmos_general:
 
      # Deterministic forecast general settings.
      deterministic:
-     
+
           # Define the time-step for the UFS; units are seconds.
           dt_atmos: 900
 
           # Specify whether to turn on cellular autonoma methods.
           do_ca: True
-          
+
           # Define the atmosphere model coupling interval; used only
           # if the UFS is implementing the coupled-modeling system;
           # units are seconds.
@@ -119,31 +119,31 @@ atmos_general:
 
      # Ensemble forecast general settings.
      ensemble:
-          
+
           # Specify whether to turn on incremental analysis update
           # (IAU) for the respective ensemble members.
           do_iau: False
 
           # Specify whether to turn on cellular autonoma methods.
           do_ca: True
-          
+
           # Specify whether to turn on stochastic physics
           # perturbations for the respective ensemble members.
           do_stochy: True
-          
+
           # Define the number of iterations; this is required of the
           # stochastic physics to define the random number generator
           # seeds for the respective stochastic physics methods.
           niter: 1
-          
+
           # Define the time-step for the UFS; units are seconds.
           dt_atmos: 900
-          
+
           # Define the atmosphere model coupling interval; used only
           # if the UFS is implementing the coupled-modeling system;
           # units are seconds.
           coupling_interval_sec: 900
-          
+
           # Define the path to the input.nml template file.
           input_nml_tmpl: !ENV ${PARMrnr}/atmos/input.nml.tmpl
 
@@ -207,7 +207,7 @@ atmos_general:
                use_zmtnblck: True
                stochini: False
                new_lscale: True
-          
+
 #----
 
 # Atmosphere model grid settings.
@@ -230,7 +230,7 @@ atmos_grid:
 
      # Define the total number of (un-staggered) vertical levels.
      nlevs: 127
-     
+
      # The available options are for the cubed-sphere resolution are
      # as follows:
 
@@ -241,7 +241,7 @@ atmos_grid:
      # C192: ~0.5 degree
      # C384: ~0.25 degree
      # C768: ~0.125 degree
-     
+
      # Deterministic forecast atmosphere model grid settings:
      deterministic:
 
@@ -292,7 +292,7 @@ atmos_ics:
      # condition files from GEFS or reanalysis ensembles; this follows
      # from the ensemble perturbation recentering and interpolation
      # methodology;
-          
+
      # restart; this option is generally used when generating initial
      # condition files from a GDAS archive;
      file_type: nemsio
@@ -315,7 +315,7 @@ atmos_ics:
 
           # Define the input tracer variable names.
           tracer_inputs: sphum, liq_wat, o3mr, ice_wat, rainwat, snowwat, graupel
-          
+
      # Deterministic forecast atmosphere model settings.
      deterministic:
 
@@ -324,7 +324,7 @@ atmos_ics:
 
      # Ensemble member forecast atmosphere model settings.
      ensemble:
-               
+
           # The cubed-sphere resolution.
           resolution: C384
 
