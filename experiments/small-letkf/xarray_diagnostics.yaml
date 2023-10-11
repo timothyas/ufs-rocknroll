@@ -1,3 +1,60 @@
+FV3Dataset:
+    filenames_in:
+        - dynf*.nc
+        - phyf*.nc
+
+    zarr_name       : fv3.zarr
+    fhr             : ["3h", "6h", "12h"]
+
+    chunks_in:
+        time        : 1
+        pfull       : 5
+        grid_yt     : -1
+        grid_xt     : -1
+
+    chunks_out:
+        time        : 1
+        member      : 50
+        pfull       : 5
+        grid_yt     : 30
+        grid_xt     : 30
+
+    coords:
+        - phalf
+        - pfull
+        - grid_xt
+        - grid_yt
+        - ak
+        - bk
+
+    data_vars:
+        - tmp
+        - ugrd
+        - vgrd
+        - dpres
+        - delz
+        - spfh
+        - o3mr
+        - soilt1
+        - soilt2
+        - soilt3
+        - soilt4
+        - soill1
+        - soill2
+        - soill3
+        - soill4
+        - soilw1
+        - soilw2
+        - soilw3
+        - soilw4
+        - snod
+        - prateb_ave
+        - pressfc
+        - weasd
+        - f10m
+        - sfcr
+        - land
+
 MOMDataset:
     filenames_in:
         - mom.nc
@@ -44,71 +101,10 @@ MOMDataset:
     data_vars:
         - uo
         - vo
-        - so
         - temp
+        - so
         - SSH
         - MLD_0125
-
-FV3Dataset:
-    filenames_in:
-        - dynf*.nc
-        - phyf*.nc
-
-    zarr_name       : fv3.zarr
-    fhr             : ["6h", "12h"]
-
-    chunks_in:
-        time        : 1
-        pfull       : 5
-        grid_yt     : -1
-        grid_xt     : -1
-
-    chunks_out:
-        time        : 1
-        member      : 50
-        pfull       : 5
-        grid_yt     : 30
-        grid_xt     : 30
-
-    coords:
-        - phalf
-        - pfull
-        - grid_xt
-        - grid_yt
-        - ak
-        - bk
-
-    data_vars:
-        - delz
-        - dpres
-        - spfh
-        - tmp
-        - ugrd
-        - vgrd
-        - pressfc
-        - clwmr
-        - icmr
-          # can't find graupel, rain water mixing ratio, or snow water mixing ratio
-        - o3mr
-        - ugrd10m
-        - vgrd10m
-        - spfh2m
-        - tmp2m
-        - vtype
-        - sotyp
-        - veg
-        - land
-        - soill1
-        - soill2
-        - soill3
-        - soill4
-        - soill1
-        - soilt2
-        - soilt3
-        - soilt4
-        - snod
-        - prateb_ave
-
 
 CICEDataset:
 
@@ -153,15 +149,8 @@ CICEDataset:
         - VGRDs
 
     data_vars:
-        - hi
-        - hs
-        - uvel
-        - vvel
-        - iage
+        - Tinz
         - aicen
         - vicen
-        - vsnon
-        - snowfracn
-        - Tinz
-        - Sinz
-        - Tsnz
+        - uvel
+        - vvel

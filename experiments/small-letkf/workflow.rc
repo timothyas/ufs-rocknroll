@@ -52,7 +52,7 @@
               BKGRD_FORECAST_ENS: succeed-all => xarray_diagnostics
               xarray_diagnostics: succeed => zarrchive_noaahpss
 		      BKGRD_FORECAST_ENS: succeed-all & PROD_FORECAST_ENS: succeed-all => cleanup
-		      cleanup: succeed => finish 
+		      cleanup: succeed => finish_hpss
 		"""
 
 

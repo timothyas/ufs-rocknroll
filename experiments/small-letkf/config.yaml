@@ -56,7 +56,7 @@ cycle_interval: 21600
 ensmems: 2
 
 # Define an (unique) experiment name for the UFS-RNR experiment.
-experiment_name: zarrchive-v3
+experiment_name: test-storage-2
 
 # Define the path to the platform configuration file.
 platform_config: !ENV ${HOMErnr}/cylc/platforms/platform.UFS-RNR.RDHPCS-Hera.yaml
